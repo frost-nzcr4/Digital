@@ -34,6 +34,7 @@ namespace Survival_on_island
         // начальные навыки персонажа для проверки.
         int NavSob = 30;
         int OD = 8;
+        int ODhod = 8;
 
         private void buttonContin_Click(object sender, EventArgs e)
         {
@@ -42,15 +43,27 @@ namespace Survival_on_island
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Random rand = new Random();
-            if (rand.Next(1, 101) < NavSob * 2) // Проверка навыка. Повезет или нет найти ягоды.
+            // Вычет очков действия
+            if (ODhod >= 2)
             {
-                eat += rand.Next(use1_var1_min, use1_var1_max + 1); // Генерирует кол-во в случае успеха.
+                ODhod -= 2;
+                    Random rand = new Random();
+                    if (rand.Next(1, 101) < NavSob * 2) // Проверка навыка. Повезет или нет найти ягоды.
+                    {
+                        eat += rand.Next(use1_var1_min, use1_var1_max + 1); // Генерирует кол-во в случае успеха.
+                    }
+                    //включаем таймер между действиями
+                    progressBar1.Value = 0;
+                    timer1.Enabled = true;
+                    buttonVer1.Enabled = false;
+                    buttonVer2.Enabled = false;
+                    buttonVer3.Enabled = false;
+                
             }
+            //обновляет все показатели экрана. вынести в отдельный метод.
             label_eat.Text = Convert.ToString(eat);
-            //включаем таймер между действиями
-            progressBar1.Value = 0;
-            timer1.Enabled = true;
+            labelOD.Text = "ОД: " + ODhod;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -71,11 +84,15 @@ namespace Survival_on_island
         {
             if (progressBar1.Value != 100)
             {
-                progressBar1.Value += 1;
+                progressBar1.Value += 10;
             }
             else
             {
                 timer1.Enabled = false;
+
+                buttonVer1.Enabled = true;
+                buttonVer2.Enabled = true;
+                buttonVer3.Enabled = true;
             }
         }
     }

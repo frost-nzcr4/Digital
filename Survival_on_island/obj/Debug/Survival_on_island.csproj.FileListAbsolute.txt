@@ -18,3 +18,13 @@ D:\Git\Survival_on_island\obj\Debug\Survival_on_island.Enter.resources
 D:\Git\Survival_on_island\obj\Debug\Survival_on_island.Island.resources
 D:\Git\Survival_on_island\obj\Debug\Survival_on_island.Properties.Resources.resources
 D:\Git\Survival_on_island\obj\Debug\Survival_on_island.csproj.GenerateResource.Cache
+G:\Git\Survival_on_island\obj\Debug\Survival_on_island.exe
+G:\Git\Survival_on_island\obj\Debug\Survival_on_island.pdb
+G:\Git\Survival_on_island\obj\Debug\Survival_on_island.csprojResolveAssemblyReference.cache
+G:\Git\Survival_on_island\obj\Debug\Survival_on_island.CreatePers.resources
+G:\Git\Survival_on_island\obj\Debug\Survival_on_island.Enter.resources
+G:\Git\Survival_on_island\obj\Debug\Survival_on_island.Island.resources
+G:\Git\Survival_on_island\obj\Debug\Survival_on_island.Properties.Resources.resources
+G:\Git\Survival_on_island\obj\Debug\Survival_on_island.csproj.GenerateResource.Cache
+G:\Git\Survival_on_island\bin\Debug\Survival_on_island.exe
+G:\Git\Survival_on_island\bin\Debug\Survival_on_island.pdb

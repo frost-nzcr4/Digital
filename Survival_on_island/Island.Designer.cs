@@ -40,6 +40,7 @@
             this.label_eat = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelOD = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -154,8 +155,20 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 25;
+            this.timer1.Interval = 200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // labelOD
+            // 
+            this.labelOD.AutoSize = true;
+            this.labelOD.BackColor = System.Drawing.Color.Transparent;
+            this.labelOD.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelOD.ForeColor = System.Drawing.Color.Yellow;
+            this.labelOD.Location = new System.Drawing.Point(177, 32);
+            this.labelOD.Name = "labelOD";
+            this.labelOD.Size = new System.Drawing.Size(60, 29);
+            this.labelOD.TabIndex = 14;
+            this.labelOD.Text = "ОД: ";
             // 
             // Island
             // 
@@ -164,6 +177,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.labelOD);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label_eat);
             this.Controls.Add(this.pictureBox3);
@@ -196,6 +210,7 @@
         private System.Windows.Forms.Label label_eat;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label labelOD;
 
     }
 }
