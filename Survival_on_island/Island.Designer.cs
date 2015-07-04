@@ -41,9 +41,13 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelOD = new System.Windows.Forms.Label();
+            this.buttonEndDay = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.labelHP = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonContin
@@ -170,6 +174,42 @@
             this.labelOD.TabIndex = 14;
             this.labelOD.Text = "ОД: ";
             // 
+            // buttonEndDay
+            // 
+            this.buttonEndDay.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonEndDay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonEndDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEndDay.Location = new System.Drawing.Point(615, 444);
+            this.buttonEndDay.Name = "buttonEndDay";
+            this.buttonEndDay.Size = new System.Drawing.Size(148, 34);
+            this.buttonEndDay.TabIndex = 15;
+            this.buttonEndDay.Text = "Закончить день";
+            this.buttonEndDay.UseVisualStyleBackColor = false;
+            this.buttonEndDay.Click += new System.EventHandler(this.buttonEndDay_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackgroundImage = global::Survival_on_island.Properties.Resources.hp;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(182, 64);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
+            // 
+            // labelHP
+            // 
+            this.labelHP.AutoSize = true;
+            this.labelHP.BackColor = System.Drawing.Color.Transparent;
+            this.labelHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelHP.ForeColor = System.Drawing.Color.Yellow;
+            this.labelHP.Location = new System.Drawing.Point(220, 67);
+            this.labelHP.Name = "labelHP";
+            this.labelHP.Size = new System.Drawing.Size(26, 29);
+            this.labelHP.TabIndex = 17;
+            this.labelHP.Text = "0";
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +217,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.labelHP);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.buttonEndDay);
             this.Controls.Add(this.labelOD);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label_eat);
@@ -193,6 +236,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,6 +255,9 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelOD;
+        private System.Windows.Forms.Button buttonEndDay;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label labelHP;
 
     }
 }

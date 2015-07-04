@@ -89,7 +89,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\hp.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\еда.png" />
   </ItemGroup>

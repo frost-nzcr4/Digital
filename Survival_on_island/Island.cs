@@ -14,6 +14,7 @@ namespace Survival_on_island
         public Island()
         {
             InitializeComponent();
+            Refresh();
         }
 
         //++++++++++++++++++
@@ -35,6 +36,14 @@ namespace Survival_on_island
         int NavSob = 30;
         int OD = 8;
         int ODhod = 8;
+        int HP = 33;
+
+        void Refresh()
+        {
+            label_eat.Text = Convert.ToString(eat);
+            labelOD.Text = "ОД: " + ODhod;
+            labelHP.Text = Convert.ToString( HP);
+        }
 
         private void buttonContin_Click(object sender, EventArgs e)
         {
@@ -60,9 +69,9 @@ namespace Survival_on_island
                     buttonVer3.Enabled = false;
                 
             }
-            //обновляет все показатели экрана. вынести в отдельный метод.
-            label_eat.Text = Convert.ToString(eat);
-            labelOD.Text = "ОД: " + ODhod;
+            //обновляет все показатели экрана
+            Refresh();
+            
             
         }
 
@@ -94,6 +103,18 @@ namespace Survival_on_island
                 buttonVer2.Enabled = true;
                 buttonVer3.Enabled = true;
             }
+        }
+
+        private void buttonEndDay_Click(object sender, EventArgs e)
+        {
+            //здесь будет счетчик дней
+            //
+
+            eat -= 2;
+            ODhod = OD;
+
+            //обновляет все показатели экрана
+            Refresh();
         }
     }
 }

@@ -121,10 +121,13 @@
   <data name="еда" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\еда.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="камень" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\камень.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="древесина" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\древесина.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="камень" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\камень.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
