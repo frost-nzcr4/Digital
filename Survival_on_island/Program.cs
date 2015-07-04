@@ -25,7 +25,7 @@ namespace Survival_on_island
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 		//	Application.Run(new Enter());
-        //    Application.Run(new CreatePers(null));
+            //    Application.Run(new CreatePers(null));
             Application.Run(new Island());
 		}
 		
