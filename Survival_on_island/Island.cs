@@ -15,5 +15,15 @@ namespace Survival_on_island
         {
             InitializeComponent();
         }
+
+        private void buttonContin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label_eat.Text += "2";
+        }
     }
 }
