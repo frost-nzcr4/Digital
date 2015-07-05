@@ -187,6 +187,13 @@ namespace Survival_on_island
             this.Close();
         }
 
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+            Island form = new Island();
+            form.Show();
+            this.Hide();
+        }
+
         
 
 

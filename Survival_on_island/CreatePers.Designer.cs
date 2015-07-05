@@ -73,6 +73,7 @@
             this.navNauka = new System.Windows.Forms.Label();
             this.navMed = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.buttonOK = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSPlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecPMin)).BeginInit();
@@ -88,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SpecLMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecLPlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttomClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonOK)).BeginInit();
             this.SuspendLayout();
             // 
             // SpecS
@@ -584,12 +586,23 @@
             this.label8.Text = "СЛ - Сила\r\nВС - Восприятие\r\nВН - Выносливость\r\nВЛ - Воля\r\nИН - Интеллект\r\nЛВ - Ло" +
     "вкость\r\nУД - Удача";
             // 
+            // buttonOK
+            // 
+            this.buttonOK.BackColor = System.Drawing.Color.Transparent;
+            this.buttonOK.Location = new System.Drawing.Point(452, 456);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(91, 22);
+            this.buttonOK.TabIndex = 50;
+            this.buttonOK.TabStop = false;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            // 
             // CreatePers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(652, 490);
+            this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.navMed);
             this.Controls.Add(this.navNauka);
@@ -650,6 +663,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SpecLMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecLPlus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttomClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonOK)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -700,5 +714,6 @@
         private System.Windows.Forms.Label navNauka;
         private System.Windows.Forms.Label navMed;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox buttonOK;
     }
 }

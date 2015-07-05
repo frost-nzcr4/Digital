@@ -27,7 +27,7 @@ namespace Survival_on_island
         {
             name = textBoxName.Text;
             CreatePers form = new CreatePers(name);
-            form.Show();
+            form.ShowDialog();
         }
 
         private void buttonContin_Click(object sender, EventArgs e)
@@ -35,6 +35,7 @@ namespace Survival_on_island
             name = textBoxName.Text;
             CreatePers form = new CreatePers(name);
             form.Show();
+            this.Hide();
         }
     }
 }

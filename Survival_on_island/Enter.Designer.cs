@@ -119,7 +119,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Enter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Выживание на острове v. 0.1";
+            this.Text = "Выживание на острове v. 0.2";
             this.ResumeLayout(false);
             this.PerformLayout();
 
