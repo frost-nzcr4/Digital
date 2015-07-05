@@ -48,10 +48,12 @@
             this.buttonUse3 = new System.Windows.Forms.Button();
             this.label_wood = new System.Windows.Forms.Label();
             this.label_rock = new System.Windows.Forms.Label();
+            this.buttonProfile = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUse1
@@ -264,6 +266,18 @@
             this.label_rock.TabIndex = 21;
             this.label_rock.Text = "0";
             // 
+            // buttonProfile
+            // 
+            this.buttonProfile.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProfile.BackgroundImage = global::Survival_on_island.Properties.Resources.user_01;
+            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonProfile.Location = new System.Drawing.Point(330, 32);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(64, 64);
+            this.buttonProfile.TabIndex = 22;
+            this.buttonProfile.TabStop = false;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,6 +285,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.buttonProfile);
             this.Controls.Add(this.label_rock);
             this.Controls.Add(this.label_wood);
             this.Controls.Add(this.buttonUse3);
@@ -295,6 +310,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonProfile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,6 +336,7 @@
         private System.Windows.Forms.Button buttonUse3;
         private System.Windows.Forms.Label label_wood;
         private System.Windows.Forms.Label label_rock;
+        private System.Windows.Forms.PictureBox buttonProfile;
 
     }
 }

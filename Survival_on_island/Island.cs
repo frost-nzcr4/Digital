@@ -20,9 +20,12 @@ namespace Survival_on_island
         public Island(int[] param)
         {
             InitializeComponent();
-            
+
+            HP = param[0];
+            Def = param[1];
             OD = param[2];
             ODhod = param[2];
+            Damage = param[3];
             Refresh();
         }
 
@@ -63,7 +66,9 @@ namespace Survival_on_island
         int NavBuild = 33;
         int OD = 0;
         int ODhod = 0;
-        int HP = 33;
+        int HP = 0;
+        int Def = 0;
+        int Damage = 0;
 
         void Refresh()
         {
@@ -192,6 +197,11 @@ namespace Survival_on_island
             buttonVer1.Text = "Пляж";
             buttonVer2.Text = "Склон";
             buttonVer3.Text = "Горы";
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("HP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);
         }
     }
 }
