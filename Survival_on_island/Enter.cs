@@ -33,9 +33,9 @@ namespace Survival_on_island
         private void buttonContin_Click(object sender, EventArgs e)
         {
             name = textBoxName.Text;
-            CreatePers form = new CreatePers(name);
-            form.Show();
-            this.Hide();
+            CreatePers CP = new CreatePers(name);
+            Enter En = new Enter();
+            CP.ShowDialog();
         }
     }
 }

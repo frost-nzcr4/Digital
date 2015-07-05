@@ -74,6 +74,9 @@
             this.navMed = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.PictureBox();
+            this.labelName = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labelOD = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSPlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecPMin)).BeginInit();
@@ -233,9 +236,9 @@
             this.label1.ForeColor = System.Drawing.Color.Lime;
             this.label1.Location = new System.Drawing.Point(197, 209);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Урон";
+            this.label1.Text = "Очки действия";
             // 
             // labelDamage
             // 
@@ -243,7 +246,7 @@
             this.labelDamage.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelDamage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelDamage.ForeColor = System.Drawing.Color.Lime;
-            this.labelDamage.Location = new System.Drawing.Point(296, 209);
+            this.labelDamage.Location = new System.Drawing.Point(296, 222);
             this.labelDamage.Name = "labelDamage";
             this.labelDamage.Size = new System.Drawing.Size(14, 13);
             this.labelDamage.TabIndex = 20;
@@ -596,12 +599,51 @@
             this.buttonOK.TabStop = false;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // labelName
+            // 
+            this.labelName.BackColor = System.Drawing.Color.Transparent;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelName.ForeColor = System.Drawing.Color.Lime;
+            this.labelName.Location = new System.Drawing.Point(27, 9);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(127, 24);
+            this.labelName.TabIndex = 51;
+            this.labelName.Text = "NAME";
+            this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.Lime;
+            this.label9.Location = new System.Drawing.Point(197, 222);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Урон";
+            // 
+            // labelOD
+            // 
+            this.labelOD.AutoSize = true;
+            this.labelOD.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelOD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelOD.ForeColor = System.Drawing.Color.Lime;
+            this.labelOD.Location = new System.Drawing.Point(296, 209);
+            this.labelOD.Name = "labelOD";
+            this.labelOD.Size = new System.Drawing.Size(14, 13);
+            this.labelOD.TabIndex = 53;
+            this.labelOD.Text = "0";
+            // 
             // CreatePers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(652, 490);
+            this.Controls.Add(this.labelOD);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.navMed);
@@ -715,5 +757,8 @@
         private System.Windows.Forms.Label navMed;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox buttonOK;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelOD;
     }
 }

@@ -72,6 +72,7 @@ namespace Survival_on_island
         {
             labelHP.Text = Convert.ToString ( 15 + Convert.ToInt16(SpecS.Text) + 2 * (Convert.ToInt16(SpecE.Text)) ); //здоровье
             labelDef.Text = Convert.ToString(Convert.ToInt16(SpecA.Text));
+            labelOD.Text = Convert.ToString( (Convert.ToInt16(SpecA.Text)/2 ) + 5 ); // подсчет ОД относительно ловкости. ОД = ЛВ/2 +5
             //Подсчет урона. Урон=Сила-5, но не меньше 1.
             if ((Convert.ToInt16(SpecS.Text) - 5) > 0)
             {
@@ -85,7 +86,8 @@ namespace Survival_on_island
             //дополнительные очки SPECIAL
             SpecAdd.Text = Convert.ToString(40 - Convert.ToInt16(SpecS.Text) - Convert.ToInt16(SpecP.Text) - Convert.ToInt16(SpecE.Text) - Convert.ToInt16(SpecC.Text) - Convert.ToInt16(SpecI.Text) - Convert.ToInt16(SpecA.Text) - Convert.ToInt16(SpecL.Text));
             
-            //навыки. подсчет
+            //вывод имени
+            labelName.Text = name;
             
 
             //навыки. вывод
@@ -189,9 +191,17 @@ namespace Survival_on_island
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            Island form = new Island();
-            form.Show();
+            //забираем параметры для передачи в другую форму
+            int hp = Convert.ToInt16(labelHP.Text);
+            int def = Convert.ToInt16(labelDef.Text);
+            int OD = Convert.ToInt16(labelOD.Text);
+            int damage = Convert.ToInt16(labelDamage.Text);
+            int[] param = {hp, def, OD, damage };
+
+            Island form = new Island(param);
             this.Hide();
+            form.Show();
+             
         }
 
         

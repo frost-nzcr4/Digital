@@ -17,6 +17,15 @@ namespace Survival_on_island
             Refresh();
         }
 
+        public Island(int[] param)
+        {
+            InitializeComponent();
+            
+            OD = param[2];
+            ODhod = param[2];
+            Refresh();
+        }
+
         //++++++++++++++++++
         //Переменные. ресурсы.
         //++++++++++++++++++
@@ -52,8 +61,8 @@ namespace Survival_on_island
         // начальные навыки персонажа для проверки.
         int NavSob = 30;
         int NavBuild = 33;
-        int OD = 8;
-        int ODhod = 8;
+        int OD = 0;
+        int ODhod = 0;
         int HP = 33;
 
         void Refresh()
