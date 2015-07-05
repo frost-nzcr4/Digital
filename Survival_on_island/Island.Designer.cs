@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Island));
-            this.buttonContin = new System.Windows.Forms.Button();
+            this.buttonUse1 = new System.Windows.Forms.Button();
             this.buttonVer1 = new System.Windows.Forms.Button();
             this.buttonVer2 = new System.Windows.Forms.Button();
             this.buttonVer3 = new System.Windows.Forms.Button();
@@ -44,24 +44,28 @@
             this.buttonEndDay = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.labelHP = new System.Windows.Forms.Label();
+            this.buttonUse2 = new System.Windows.Forms.Button();
+            this.buttonUse3 = new System.Windows.Forms.Button();
+            this.label_wood = new System.Windows.Forms.Label();
+            this.label_rock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonContin
+            // buttonUse1
             // 
-            this.buttonContin.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonContin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonContin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonContin.Location = new System.Drawing.Point(432, 53);
-            this.buttonContin.Name = "buttonContin";
-            this.buttonContin.Size = new System.Drawing.Size(148, 34);
-            this.buttonContin.TabIndex = 5;
-            this.buttonContin.Text = "Собирать ягоды";
-            this.buttonContin.UseVisualStyleBackColor = false;
-            this.buttonContin.Click += new System.EventHandler(this.buttonContin_Click);
+            this.buttonUse1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonUse1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonUse1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUse1.Location = new System.Drawing.Point(412, 53);
+            this.buttonUse1.Name = "buttonUse1";
+            this.buttonUse1.Size = new System.Drawing.Size(186, 34);
+            this.buttonUse1.TabIndex = 5;
+            this.buttonUse1.Text = "Собирать ягоды";
+            this.buttonUse1.UseVisualStyleBackColor = false;
+            this.buttonUse1.Click += new System.EventHandler(this.buttonUse1_Click);
             // 
             // buttonVer1
             // 
@@ -144,7 +148,7 @@
             this.label_eat.BackColor = System.Drawing.Color.Transparent;
             this.label_eat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_eat.ForeColor = System.Drawing.Color.Yellow;
-            this.label_eat.Location = new System.Drawing.Point(71, 32);
+            this.label_eat.Location = new System.Drawing.Point(70, 32);
             this.label_eat.Name = "label_eat";
             this.label_eat.Size = new System.Drawing.Size(26, 29);
             this.label_eat.TabIndex = 12;
@@ -152,14 +156,14 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(432, 187);
+            this.progressBar1.Location = new System.Drawing.Point(412, 185);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(184, 23);
+            this.progressBar1.Size = new System.Drawing.Size(186, 23);
             this.progressBar1.TabIndex = 13;
             // 
             // timer1
             // 
-            this.timer1.Interval = 200;
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // labelOD
@@ -210,6 +214,56 @@
             this.labelHP.TabIndex = 17;
             this.labelHP.Text = "0";
             // 
+            // buttonUse2
+            // 
+            this.buttonUse2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonUse2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonUse2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUse2.Location = new System.Drawing.Point(412, 93);
+            this.buttonUse2.Name = "buttonUse2";
+            this.buttonUse2.Size = new System.Drawing.Size(186, 34);
+            this.buttonUse2.TabIndex = 18;
+            this.buttonUse2.Text = "Добывать древесину";
+            this.buttonUse2.UseVisualStyleBackColor = false;
+            this.buttonUse2.Click += new System.EventHandler(this.buttonUse2_Click);
+            // 
+            // buttonUse3
+            // 
+            this.buttonUse3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonUse3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonUse3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUse3.Location = new System.Drawing.Point(412, 133);
+            this.buttonUse3.Name = "buttonUse3";
+            this.buttonUse3.Size = new System.Drawing.Size(186, 34);
+            this.buttonUse3.TabIndex = 19;
+            this.buttonUse3.Text = "Добывать камень";
+            this.buttonUse3.UseVisualStyleBackColor = false;
+            this.buttonUse3.Click += new System.EventHandler(this.buttonUse3_Click);
+            // 
+            // label_wood
+            // 
+            this.label_wood.AutoSize = true;
+            this.label_wood.BackColor = System.Drawing.Color.Transparent;
+            this.label_wood.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_wood.ForeColor = System.Drawing.Color.Yellow;
+            this.label_wood.Location = new System.Drawing.Point(70, 70);
+            this.label_wood.Name = "label_wood";
+            this.label_wood.Size = new System.Drawing.Size(26, 29);
+            this.label_wood.TabIndex = 20;
+            this.label_wood.Text = "0";
+            // 
+            // label_rock
+            // 
+            this.label_rock.AutoSize = true;
+            this.label_rock.BackColor = System.Drawing.Color.Transparent;
+            this.label_rock.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_rock.ForeColor = System.Drawing.Color.Yellow;
+            this.label_rock.Location = new System.Drawing.Point(70, 108);
+            this.label_rock.Name = "label_rock";
+            this.label_rock.Size = new System.Drawing.Size(26, 29);
+            this.label_rock.TabIndex = 21;
+            this.label_rock.Text = "0";
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +271,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.label_rock);
+            this.Controls.Add(this.label_wood);
+            this.Controls.Add(this.buttonUse3);
+            this.Controls.Add(this.buttonUse2);
             this.Controls.Add(this.labelHP);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.buttonEndDay);
@@ -229,7 +287,7 @@
             this.Controls.Add(this.buttonVer3);
             this.Controls.Add(this.buttonVer2);
             this.Controls.Add(this.buttonVer1);
-            this.Controls.Add(this.buttonContin);
+            this.Controls.Add(this.buttonUse1);
             this.Name = "Island";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Island";
@@ -244,7 +302,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonContin;
+        private System.Windows.Forms.Button buttonUse1;
         private System.Windows.Forms.Button buttonVer1;
         private System.Windows.Forms.Button buttonVer2;
         private System.Windows.Forms.Button buttonVer3;
@@ -258,6 +316,10 @@
         private System.Windows.Forms.Button buttonEndDay;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label labelHP;
+        private System.Windows.Forms.Button buttonUse2;
+        private System.Windows.Forms.Button buttonUse3;
+        private System.Windows.Forms.Label label_wood;
+        private System.Windows.Forms.Label label_rock;
 
     }
 }
