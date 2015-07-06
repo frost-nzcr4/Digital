@@ -15,6 +15,9 @@ namespace Survival_on_island
         {
             InitializeComponent();
             this.name = Name1;
+
+            pictureFon.SendToBack();
+            
         }
 
         string name;
@@ -198,7 +201,7 @@ namespace Survival_on_island
             int damage = Convert.ToInt16(labelDamage.Text);
             int[] param = {hp, def, OD, damage };
 
-            Island form = new Island(param);
+            Island form = new Island(param, name);
             this.Hide();
             form.Show();
              

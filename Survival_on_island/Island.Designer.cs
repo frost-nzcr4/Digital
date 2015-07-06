@@ -303,6 +303,8 @@
             this.Controls.Add(this.buttonVer2);
             this.Controls.Add(this.buttonVer1);
             this.Controls.Add(this.buttonUse1);
+            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Island";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выживание на острове v. 0.2";

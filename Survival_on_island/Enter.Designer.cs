@@ -117,6 +117,8 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(402, 375);
+            this.MinimumSize = new System.Drawing.Size(402, 375);
             this.Name = "Enter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выживание на острове v. 0.2";

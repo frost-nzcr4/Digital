@@ -17,7 +17,7 @@ namespace Survival_on_island
             Refresh();
         }
 
-        public Island(int[] param)
+        public Island(int[] param, string name)
         {
             InitializeComponent();
 
@@ -26,6 +26,8 @@ namespace Survival_on_island
             OD = param[2];
             ODhod = param[2];
             Damage = param[3];
+            Name = name;
+            
             Refresh();
         }
 
@@ -62,6 +64,7 @@ namespace Survival_on_island
         int use3_var3_max = 7;
 
         // начальные навыки персонажа для проверки.
+        string Name = "";
         int NavSob = 30;
         int NavBuild = 33;
         int OD = 0;
@@ -201,7 +204,7 @@ namespace Survival_on_island
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Имя: " + "HP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);
+            MessageBox.Show("Имя: " + Name + "\nHP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);
         }
     }
 }

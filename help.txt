@@ -53,7 +53,7 @@ git tag -d v.0.2
 git push Digital master :v.0.2
 
 какая-то штуковина:
-gitk --all
+gitk --all &
 
 Обновить данные с гитхаб
 git fetch -p Digital

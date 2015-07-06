@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePers));
+            this.pictureFon = new System.Windows.Forms.PictureBox();
             this.SpecS = new System.Windows.Forms.Label();
             this.SpecSPlus = new System.Windows.Forms.PictureBox();
             this.SpecSMin = new System.Windows.Forms.PictureBox();
@@ -77,6 +78,7 @@
             this.labelName = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelOD = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSPlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecPMin)).BeginInit();
@@ -94,6 +96,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttomClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonOK)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureFon
+            // 
+            this.pictureFon.Image = ((System.Drawing.Image)(resources.GetObject("pictureFon.Image")));
+            this.pictureFon.Location = new System.Drawing.Point(1, 0);
+            this.pictureFon.Name = "pictureFon";
+            this.pictureFon.Size = new System.Drawing.Size(653, 495);
+            this.pictureFon.TabIndex = 54;
+            this.pictureFon.TabStop = false;
             // 
             // SpecS
             // 
@@ -640,7 +651,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(652, 490);
+            this.ClientSize = new System.Drawing.Size(651, 490);
             this.Controls.Add(this.labelOD);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.labelName);
@@ -687,9 +698,13 @@
             this.Controls.Add(this.SpecSMin);
             this.Controls.Add(this.SpecSPlus);
             this.Controls.Add(this.SpecS);
+            this.Controls.Add(this.pictureFon);
+            this.MaximumSize = new System.Drawing.Size(667, 528);
+            this.MinimumSize = new System.Drawing.Size(667, 528);
             this.Name = "CreatePers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Создание персонажа";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSPlus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecPMin)).EndInit();
@@ -713,6 +728,7 @@
 
         #endregion
 
+        private System.Windows.Forms.PictureBox pictureFon;
         private System.Windows.Forms.Label SpecS;
         private System.Windows.Forms.PictureBox SpecSPlus;
         private System.Windows.Forms.PictureBox SpecSMin;
@@ -760,5 +776,6 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelOD;
+        
     }
 }
