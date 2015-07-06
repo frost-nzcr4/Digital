@@ -603,9 +603,10 @@
             // buttonOK
             // 
             this.buttonOK.BackColor = System.Drawing.Color.Transparent;
-            this.buttonOK.Location = new System.Drawing.Point(452, 456);
+            this.buttonOK.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonOK.BackgroundImage")));
+            this.buttonOK.Location = new System.Drawing.Point(455, 456);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(91, 22);
+            this.buttonOK.Size = new System.Drawing.Size(92, 23);
             this.buttonOK.TabIndex = 50;
             this.buttonOK.TabStop = false;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
