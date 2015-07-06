@@ -201,7 +201,7 @@ namespace Survival_on_island
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("HP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);
+            MessageBox.Show("Имя: " + "HP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);
         }
     }
 }

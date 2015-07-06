@@ -1,4 +1,4 @@
-github.com
+﻿github.com
 
 устанавливает Git Bush, там прописываем для регистрации:
 git config --global user.name "NAME"
@@ -40,3 +40,14 @@ git status
 
 sintiger.github.io
 https://github.com/SinTiger/sintiger.github.io.git
+
+
+про релизы, не сложно, парочка команд обычно:
+1) git tag -a -m "v0.2.0 - Какой нибудь текст" v0.2.0 <коммит>
+2) git tag push <репозиторий> —-tags
+
+удалить тег локально:
+git tag -d v.0.2
+
+удалить тег в гитхаб:
+git push Digital master :v.0.2
