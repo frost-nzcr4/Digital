@@ -15,7 +15,6 @@ namespace Survival_on_island
         {
             InitializeComponent();
             Refresh();
-
             
 
         }
@@ -44,8 +43,17 @@ namespace Survival_on_island
         //!Сделать добавление через конструктор класса.
         Items knife = new Items("Каменный нож", "Самодельный каменный нож.\nУрон: +1", 0, 1);
         Items fe_knife = new Items("Железный нож", "Найденный железный нож. Самому такой не сделать.\nУрон: +3\nЕда при охоте: +2", 0, 1);
-
-
+        Items smallBasket = new Items("Лукошко", "Небольшая емкость для сбора ягод.\nСбор ягод: +1", 0, 1);
+        Items Basket = new Items("Корзина", "Средняя емкость для сбора ягод.\nСбор ягод: +2", 0, 1);
+        Items WoodAxe = new Items("Деревянный топор", "Самый простой и не прочный топор. С таким много не нарубишь.", 0, 1);
+        Items RockAxe = new Items("Каменный топор", "Самый лучше топор, что можно сделать в этим условиях.", 0, 1);
+        Items FeAxe = new Items("Железный топор", "Лучший топор, о котором можно только мечтать на этом острове. С таким много не нарубишь.", 0, 1);
+        Items WoodPick = new Items("Деревянная кирка","Самая простая кирка. Добывать камень такой очень сложно.", 0, 1);
+        Items RockPick = new Items("Каменная кирка", "Долбить камнем о камень? Глупая затея, но других вариантов нет.", 0, 1);
+        Items FePick = new Items("Железная кирка", "Обладателю такой кирки можно только позавидовать.", 0, 1);
+        
+        
+        
 
         //++++++++++++++++++
         //Переменные. ресурсы.
@@ -130,11 +138,70 @@ namespace Survival_on_island
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*
-            Random rand = new Random();
-            eat += rand.Next(use1_var2_min, use1_var2_max+1);
-            label_eat.Text = Convert.ToString(eat);
-             * */
+                // Вычет очков действия
+                if (ODhod >= 2)
+                {
+                    
+                    Random rand = new Random();
+                    if (use == 1) // поиск ягод
+                    {
+                        if (smallBasket.value == 1) //Проверка на наличие нужного инструмента
+                        {
+                            ODhod -= 2;
+                            if (rand.Next(1, 101) < NavSob * 2) // Проверка навыка. Повезет или нет найти ягоды.
+                            {
+                                eat += rand.Next(use1[2], use1[3] + 1); // Генерирует кол-во в случае успеха.
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Вам необходимо лукошко!");
+                        }
+                    }
+
+                    if (use == 2) // поиск древесины
+                    {
+                        if (WoodAxe.value == 1) //Проверка на наличие нужного инструмента
+                        {
+                            ODhod -= 2;
+                            if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти древисину.
+                            {
+                                wood += rand.Next(use2[2], use2[3] + 1); // Генерирует кол-во в случае успеха.
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Вам необходим деревянный топор!");
+                        }
+                    }
+                    if (use == 3) // поиск камня
+                    {
+                        if (WoodPick.value == 1) //Проверка на наличие нужного инструмента
+                        {
+                            ODhod -= 2;
+                            if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти камни.
+                            {
+                                rock += rand.Next(use3[2], use3[3] + 1); // Генерирует кол-во в случае успеха.
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Вам необходима деревянная кирка!");
+                        }
+                    }
+                    //включаем таймер между действиями
+                    progressBar1.Value = 0;
+                    timer1.Enabled = true;
+                    buttonVer1.Enabled = false;
+                    buttonVer2.Enabled = false;
+                    buttonVer3.Enabled = false;
+
+                }
+                //обновляет все показатели экрана
+                Refresh();
+
+
+
         }
 
         private void buttonVer3_Click(object sender, EventArgs e)
@@ -163,6 +230,7 @@ namespace Survival_on_island
             }
         }
 
+        //Кнопка "закончить день"
         private void buttonEndDay_Click(object sender, EventArgs e)
         {
             //здесь будет счетчик дней
@@ -184,32 +252,37 @@ namespace Survival_on_island
         private void buttonUse1_Click(object sender, EventArgs e)
         {
             use = 1;
-            buttonVer1.Text = "Равнина";
-            buttonVer2.Text = "Лес";
-            buttonVer3.Text = "Болото";
+            buttonVer1.Text = "На равнине";
+            buttonVer2.Text = "В лесу";
+            buttonVer3.Text = "На болоте";
         }
 
         // Кнопка действия 2. "Добывать древесину"
         private void buttonUse2_Click(object sender, EventArgs e)
         {
             use = 2;
-            buttonVer1.Text = "Пляж";
-            buttonVer2.Text = "Равнина";
-            buttonVer3.Text = "Чаща";
+            buttonVer1.Text = "Собирать ветки";
+            buttonVer2.Text = "Рубить в лесу";
+            buttonVer3.Text = "Рубить в чаще";
         }
 
         // Кнопка действия 3. "Добывать камень"
         private void buttonUse3_Click(object sender, EventArgs e)
         {
             use = 3;
-            buttonVer1.Text = "Пляж";
-            buttonVer2.Text = "Склон";
-            buttonVer3.Text = "Горы";
+            buttonVer1.Text = "Искать на пляже";
+            buttonVer2.Text = "У склона";
+            buttonVer3.Text = "Из скалы";
         }
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Имя: " + Name + "\nHP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);  
+            MessageBox.Show("Имя: " + Name + "\nHP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);
+
+            //временно даем инструменты:
+            smallBasket.value = 1;
+            WoodAxe.value = 1;
+            WoodPick.value = 1;
         }
 
         private void pictureRKnife_Click(object sender, EventArgs e)

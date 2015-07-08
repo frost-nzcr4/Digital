@@ -85,7 +85,7 @@
             this.buttonVer1.Name = "buttonVer1";
             this.buttonVer1.Size = new System.Drawing.Size(148, 34);
             this.buttonVer1.TabIndex = 6;
-            this.buttonVer1.Text = "Равнина";
+            this.buttonVer1.Text = "На равнине";
             this.buttonVer1.UseVisualStyleBackColor = false;
             this.buttonVer1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -99,7 +99,7 @@
             this.buttonVer2.Name = "buttonVer2";
             this.buttonVer2.Size = new System.Drawing.Size(148, 34);
             this.buttonVer2.TabIndex = 7;
-            this.buttonVer2.Text = "Лес";
+            this.buttonVer2.Text = "В лесу";
             this.buttonVer2.UseVisualStyleBackColor = false;
             this.buttonVer2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -113,7 +113,7 @@
             this.buttonVer3.Name = "buttonVer3";
             this.buttonVer3.Size = new System.Drawing.Size(148, 34);
             this.buttonVer3.TabIndex = 8;
-            this.buttonVer3.Text = "Болото";
+            this.buttonVer3.Text = "На болоте";
             this.buttonVer3.UseVisualStyleBackColor = false;
             this.buttonVer3.Click += new System.EventHandler(this.buttonVer3_Click);
             // 
