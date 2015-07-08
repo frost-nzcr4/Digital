@@ -64,3 +64,6 @@ git diff 728e 4480
 
 
 git branch
+
+скачивает информацию по коммитам с гитхаба
+git fetch -p Digital
