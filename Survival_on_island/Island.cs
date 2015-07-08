@@ -15,6 +15,9 @@ namespace Survival_on_island
         {
             InitializeComponent();
             Refresh();
+
+            
+
         }
 
         public Island(int[] param, string name)
@@ -31,6 +34,19 @@ namespace Survival_on_island
             Refresh();
         }
 
+
+        // ПРЕДМЕТЫ \ ИНСТРУМЕНТЫ
+
+        //    knife.name = "Каменный нож";
+        //   knife.text = "Самодельный каменный нож. Урон: +1";
+        //    knife.value = 0;
+        //    knife.maxValue = 1;
+        //!Сделать добавление через конструктор класса.
+        Items knife = new Items("Каменный нож", "Самодельный каменный нож.\nУрон: +1", 0, 1);
+        Items fe_knife = new Items("Железный нож", "Найденный железный нож. Самому такой не сделать.\nУрон: +3\nЕда при охоте: +2", 0, 1);
+
+
+
         //++++++++++++++++++
         //Переменные. ресурсы.
         //++++++++++++++++++
@@ -41,27 +57,13 @@ namespace Survival_on_island
         //действие
         int use = 1;
 
-        //стандарт выпадения ресурсов. use - действие, var - вариант (локация).
-        int use1_var1_min = 2;
-        int use1_var1_max = 3;
-        int use1_var2_min = 3;
-        int use1_var2_max = 5;
-        int use1_var3_min = 5;
-        int use1_var3_max = 7;
+        //стандарт выпадения ресурсов. Массив минимальных и максимальных значений для разных вариантов действия 1. {д1_мин, д1_макс, д2_мин ... и т.д.}
+        int[] use1 = { 2, 3, 3, 5, 5, 7}; //Сбор ягод
 
-        int use2_var1_min = 1;
-        int use2_var1_max = 2;
-        int use2_var2_min = 3;
-        int use2_var2_max = 5;
-        int use2_var3_min = 5;
-        int use2_var3_max = 7;
+        int[] use2 = { 1, 2, 3, 5, 5, 7}; //Добыча древесины
 
-        int use3_var1_min = 1;
-        int use3_var1_max = 2;
-        int use3_var2_min = 3;
-        int use3_var2_max = 5;
-        int use3_var3_min = 5;
-        int use3_var3_max = 7;
+        int[] use3 = { 1, 2, 3, 5, 5, 7 }; //Добыча камня
+
 
         // начальные навыки персонажа для проверки.
         string Name = "";
@@ -82,7 +84,7 @@ namespace Survival_on_island
             labelHP.Text = Convert.ToString( HP);
         }
 
-
+        // Кнопка локации\типа действия. Действие 1.
         private void button1_Click(object sender, EventArgs e)
         {
             // Вычет очков действия
@@ -94,21 +96,21 @@ namespace Survival_on_island
                     {
                         if (rand.Next(1, 101) < NavSob * 2) // Проверка навыка. Повезет или нет найти ягоды.
                         {
-                            eat += rand.Next(use1_var1_min, use1_var1_max + 1); // Генерирует кол-во в случае успеха.
+                            eat += rand.Next(use1[0], use1[1] + 1); // Генерирует кол-во в случае успеха.
                         }
                     }
                     if (use == 2) // поиск древесины
                     {
                         if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти древисину.
                         {
-                            wood += rand.Next(use2_var1_min, use2_var1_max + 1); // Генерирует кол-во в случае успеха.
+                            wood += rand.Next(use2[0], use2[1] + 1); // Генерирует кол-во в случае успеха.
                         }
                     }
                     if (use == 3) // поиск камня
                     {
                         if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти камни.
                         {
-                            rock += rand.Next(use3_var1_min, use3_var1_max + 1); // Генерирует кол-во в случае успеха.
+                            rock += rand.Next(use3[0], use3[1] + 1); // Генерирует кол-во в случае успеха.
                         }
                     }
                     //включаем таймер между действиями
@@ -178,6 +180,7 @@ namespace Survival_on_island
             }
         }
 
+        // Кнопка действия 1. "Собирать ягоды"
         private void buttonUse1_Click(object sender, EventArgs e)
         {
             use = 1;
@@ -186,6 +189,7 @@ namespace Survival_on_island
             buttonVer3.Text = "Болото";
         }
 
+        // Кнопка действия 2. "Добывать древесину"
         private void buttonUse2_Click(object sender, EventArgs e)
         {
             use = 2;
@@ -194,6 +198,7 @@ namespace Survival_on_island
             buttonVer3.Text = "Чаща";
         }
 
+        // Кнопка действия 3. "Добывать камень"
         private void buttonUse3_Click(object sender, EventArgs e)
         {
             use = 3;
@@ -204,7 +209,18 @@ namespace Survival_on_island
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Имя: " + Name + "\nHP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);
+            MessageBox.Show("Имя: " + Name + "\nHP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);  
         }
+
+        private void pictureRKnife_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(knife.name + "\n" + knife.text);
+        }
+
+        
+
+
+
+
     }
 }

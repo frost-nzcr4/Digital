@@ -51,6 +51,7 @@
             this.buttonProfile = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureRKnife = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRKnife)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUse1
@@ -304,6 +306,18 @@
             this.pictureBox6.TabIndex = 24;
             this.pictureBox6.TabStop = false;
             // 
+            // pictureRKnife
+            // 
+            this.pictureRKnife.BackColor = System.Drawing.Color.Transparent;
+            this.pictureRKnife.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureRKnife.BackgroundImage")));
+            this.pictureRKnife.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureRKnife.Location = new System.Drawing.Point(46, 478);
+            this.pictureRKnife.Name = "pictureRKnife";
+            this.pictureRKnife.Size = new System.Drawing.Size(50, 50);
+            this.pictureRKnife.TabIndex = 25;
+            this.pictureRKnife.TabStop = false;
+            this.pictureRKnife.Click += new System.EventHandler(this.pictureRKnife_Click);
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +325,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.pictureRKnife);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.buttonProfile);
@@ -343,6 +358,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRKnife)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,6 +387,7 @@
         private System.Windows.Forms.PictureBox buttonProfile;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureRKnife;
 
     }
 }
