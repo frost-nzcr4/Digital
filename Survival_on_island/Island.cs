@@ -51,6 +51,7 @@ namespace Survival_on_island
         Items WoodPick = new Items("Деревянная кирка","Самая простая кирка. Добывать камень такой очень сложно.", 0, 1);
         Items RockPick = new Items("Каменная кирка", "Долбить камнем о камень? Глупая затея, но других вариантов нет.", 0, 1);
         Items FePick = new Items("Железная кирка", "Обладателю такой кирки можно только позавидовать.", 0, 1);
+        Items Rom = new Items("Бутылка рома", "Крепкий напиток так любимый моряками.", 0, 20);
         
         
         
@@ -96,14 +97,38 @@ namespace Survival_on_island
             {
                 pictureSmallBasket.Visible = true;
             }
+            else
+            {
+                pictureSmallBasket.Visible = false;
+            }
             if (WoodAxe.value > 0)
             {
                 pictureWoodAxe.Visible = true;
+            }
+            else
+            {
+                pictureWoodAxe.Visible = false;
             }
             if (WoodPick.value > 0)
             {
                 pictureWoodPick.Visible = true;
             }
+            else
+            {
+                pictureWoodPick.Visible = false;
+            }
+            //Ром
+            if (Rom.value > 0)
+            {
+                pictureRom.Visible = true;
+                labelRomValue.Visible = true;
+            }
+            else
+            {
+                pictureRom.Visible = false;
+                labelRomValue.Visible = false;
+            }
+            labelRomValue.Text = Convert.ToString(Rom.value);
 
         }
 
@@ -305,9 +330,29 @@ namespace Survival_on_island
             smallBasket.value = 1;
             WoodAxe.value = 1;
             WoodPick.value = 1;
+            Rom.ItemAdd();
+            Rom.ItemAdd();
 
             Refresh();
         }
+
+        private void pictureWoodAxe_Click(object sender, EventArgs e)
+        {
+            WoodAxe.ItemMinus();
+            Refresh();
+        }
+
+        private void pictureRom_Click(object sender, EventArgs e)
+        {
+            if (Rom.value > 0)
+            {
+                Rom.ItemMinus();
+                ODhod += 4;
+            }
+            Refresh();
+        }
+
+
 
         
 

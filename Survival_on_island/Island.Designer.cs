@@ -56,6 +56,8 @@
             this.pictureWoodAxe = new System.Windows.Forms.PictureBox();
             this.pictureWoodPick = new System.Windows.Forms.PictureBox();
             this.pictureBoxBox = new System.Windows.Forms.PictureBox();
+            this.pictureRom = new System.Windows.Forms.PictureBox();
+            this.labelRomValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -68,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureWoodAxe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureWoodPick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRom)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUse1
@@ -318,18 +321,18 @@
             // 
             this.pictureBoxTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxTable.BackgroundImage")));
             this.pictureBoxTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTable.Location = new System.Drawing.Point(-2, 444);
+            this.pictureBoxTable.Location = new System.Drawing.Point(-2, 421);
             this.pictureBoxTable.Name = "pictureBoxTable";
-            this.pictureBoxTable.Size = new System.Drawing.Size(519, 183);
+            this.pictureBoxTable.Size = new System.Drawing.Size(519, 206);
             this.pictureBoxTable.TabIndex = 25;
             this.pictureBoxTable.TabStop = false;
             // 
             // pictureSmallBasket
             // 
-            this.pictureSmallBasket.BackColor = System.Drawing.Color.Transparent;
+            this.pictureSmallBasket.BackColor = System.Drawing.SystemColors.Control;
             this.pictureSmallBasket.BackgroundImage = global::Survival_on_island.Properties.Resources.smallBasket;
             this.pictureSmallBasket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureSmallBasket.Location = new System.Drawing.Point(12, 453);
+            this.pictureSmallBasket.Location = new System.Drawing.Point(12, 428);
             this.pictureSmallBasket.Name = "pictureSmallBasket";
             this.pictureSmallBasket.Size = new System.Drawing.Size(50, 50);
             this.pictureSmallBasket.TabIndex = 26;
@@ -341,18 +344,19 @@
             this.pictureWoodAxe.BackColor = System.Drawing.SystemColors.Control;
             this.pictureWoodAxe.BackgroundImage = global::Survival_on_island.Properties.Resources.топор_дерево;
             this.pictureWoodAxe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureWoodAxe.Location = new System.Drawing.Point(68, 453);
+            this.pictureWoodAxe.Location = new System.Drawing.Point(68, 428);
             this.pictureWoodAxe.Name = "pictureWoodAxe";
             this.pictureWoodAxe.Size = new System.Drawing.Size(50, 50);
             this.pictureWoodAxe.TabIndex = 27;
             this.pictureWoodAxe.TabStop = false;
             this.pictureWoodAxe.Visible = false;
+            this.pictureWoodAxe.Click += new System.EventHandler(this.pictureWoodAxe_Click);
             // 
             // pictureWoodPick
             // 
             this.pictureWoodPick.BackgroundImage = global::Survival_on_island.Properties.Resources.кирка_дерево;
             this.pictureWoodPick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureWoodPick.Location = new System.Drawing.Point(124, 453);
+            this.pictureWoodPick.Location = new System.Drawing.Point(124, 428);
             this.pictureWoodPick.Name = "pictureWoodPick";
             this.pictureWoodPick.Size = new System.Drawing.Size(50, 50);
             this.pictureWoodPick.TabIndex = 28;
@@ -371,6 +375,31 @@
             this.pictureBoxBox.TabStop = false;
             this.pictureBoxBox.Click += new System.EventHandler(this.pictureBoxBox_Click);
             // 
+            // pictureRom
+            // 
+            this.pictureRom.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureRom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureRom.BackgroundImage")));
+            this.pictureRom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureRom.Location = new System.Drawing.Point(12, 484);
+            this.pictureRom.Name = "pictureRom";
+            this.pictureRom.Size = new System.Drawing.Size(50, 50);
+            this.pictureRom.TabIndex = 30;
+            this.pictureRom.TabStop = false;
+            this.pictureRom.Visible = false;
+            this.pictureRom.Click += new System.EventHandler(this.pictureRom_Click);
+            // 
+            // labelRomValue
+            // 
+            this.labelRomValue.AutoSize = true;
+            this.labelRomValue.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelRomValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRomValue.ForeColor = System.Drawing.Color.Yellow;
+            this.labelRomValue.Location = new System.Drawing.Point(28, 537);
+            this.labelRomValue.Name = "labelRomValue";
+            this.labelRomValue.Size = new System.Drawing.Size(20, 24);
+            this.labelRomValue.TabIndex = 31;
+            this.labelRomValue.Text = "0";
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +407,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.labelRomValue);
+            this.Controls.Add(this.pictureRom);
             this.Controls.Add(this.pictureBoxBox);
             this.Controls.Add(this.pictureWoodPick);
             this.Controls.Add(this.pictureWoodAxe);
@@ -421,6 +452,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureWoodAxe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureWoodPick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,6 +486,8 @@
         private System.Windows.Forms.PictureBox pictureWoodAxe;
         private System.Windows.Forms.PictureBox pictureWoodPick;
         private System.Windows.Forms.PictureBox pictureBoxBox;
+        private System.Windows.Forms.PictureBox pictureRom;
+        private System.Windows.Forms.Label labelRomValue;
 
     }
 }
