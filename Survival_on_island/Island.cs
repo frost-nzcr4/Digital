@@ -90,6 +90,21 @@ namespace Survival_on_island
             label_rock.Text = Convert.ToString(rock);
             labelOD.Text = "ОД: " + ODhod;
             labelHP.Text = Convert.ToString( HP);
+
+            //Отображение инструментов
+            if (smallBasket.value > 0)
+            {
+                pictureSmallBasket.Visible = true;
+            }
+            if (WoodAxe.value > 0)
+            {
+                pictureWoodAxe.Visible = true;
+            }
+            if (WoodPick.value > 0)
+            {
+                pictureWoodPick.Visible = true;
+            }
+
         }
 
         // Кнопка локации\типа действия. Действие 1.
@@ -277,18 +292,24 @@ namespace Survival_on_island
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Имя: " + Name + "\nHP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage);
+            MessageBox.Show("Имя: " + Name + "\nHP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage , "Характеристики персонажа");
 
+            
+        }
+
+        //Временный предмет в инструментами.
+        private void pictureBoxBox_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Вы нашли ящик с инструментами.\nЯщик только на время теста и для проверки механики игры.", "Ящик с инструментами");
             //временно даем инструменты:
             smallBasket.value = 1;
             WoodAxe.value = 1;
             WoodPick.value = 1;
+
+            Refresh();
         }
 
-        private void pictureRKnife_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(knife.name + "\n" + knife.text);
-        }
+        
 
         
 

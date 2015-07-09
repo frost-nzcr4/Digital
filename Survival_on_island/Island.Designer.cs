@@ -51,7 +51,11 @@
             this.buttonProfile = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureRKnife = new System.Windows.Forms.PictureBox();
+            this.pictureBoxTable = new System.Windows.Forms.PictureBox();
+            this.pictureSmallBasket = new System.Windows.Forms.PictureBox();
+            this.pictureWoodAxe = new System.Windows.Forms.PictureBox();
+            this.pictureWoodPick = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -59,7 +63,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureRKnife)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSmallBasket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWoodAxe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWoodPick)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBox)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUse1
@@ -306,17 +314,62 @@
             this.pictureBox6.TabIndex = 24;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureRKnife
+            // pictureBoxTable
             // 
-            this.pictureRKnife.BackColor = System.Drawing.Color.Transparent;
-            this.pictureRKnife.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureRKnife.BackgroundImage")));
-            this.pictureRKnife.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureRKnife.Location = new System.Drawing.Point(46, 478);
-            this.pictureRKnife.Name = "pictureRKnife";
-            this.pictureRKnife.Size = new System.Drawing.Size(50, 50);
-            this.pictureRKnife.TabIndex = 25;
-            this.pictureRKnife.TabStop = false;
-            this.pictureRKnife.Click += new System.EventHandler(this.pictureRKnife_Click);
+            this.pictureBoxTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxTable.BackgroundImage")));
+            this.pictureBoxTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTable.Location = new System.Drawing.Point(-2, 444);
+            this.pictureBoxTable.Name = "pictureBoxTable";
+            this.pictureBoxTable.Size = new System.Drawing.Size(519, 183);
+            this.pictureBoxTable.TabIndex = 25;
+            this.pictureBoxTable.TabStop = false;
+            // 
+            // pictureSmallBasket
+            // 
+            this.pictureSmallBasket.BackColor = System.Drawing.Color.Transparent;
+            this.pictureSmallBasket.BackgroundImage = global::Survival_on_island.Properties.Resources.smallBasket;
+            this.pictureSmallBasket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureSmallBasket.Location = new System.Drawing.Point(12, 453);
+            this.pictureSmallBasket.Name = "pictureSmallBasket";
+            this.pictureSmallBasket.Size = new System.Drawing.Size(50, 50);
+            this.pictureSmallBasket.TabIndex = 26;
+            this.pictureSmallBasket.TabStop = false;
+            this.pictureSmallBasket.Visible = false;
+            // 
+            // pictureWoodAxe
+            // 
+            this.pictureWoodAxe.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureWoodAxe.BackgroundImage = global::Survival_on_island.Properties.Resources.топор_дерево;
+            this.pictureWoodAxe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureWoodAxe.Location = new System.Drawing.Point(68, 453);
+            this.pictureWoodAxe.Name = "pictureWoodAxe";
+            this.pictureWoodAxe.Size = new System.Drawing.Size(50, 50);
+            this.pictureWoodAxe.TabIndex = 27;
+            this.pictureWoodAxe.TabStop = false;
+            this.pictureWoodAxe.Visible = false;
+            // 
+            // pictureWoodPick
+            // 
+            this.pictureWoodPick.BackgroundImage = global::Survival_on_island.Properties.Resources.кирка_дерево;
+            this.pictureWoodPick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureWoodPick.Location = new System.Drawing.Point(124, 453);
+            this.pictureWoodPick.Name = "pictureWoodPick";
+            this.pictureWoodPick.Size = new System.Drawing.Size(50, 50);
+            this.pictureWoodPick.TabIndex = 28;
+            this.pictureWoodPick.TabStop = false;
+            this.pictureWoodPick.Visible = false;
+            // 
+            // pictureBoxBox
+            // 
+            this.pictureBoxBox.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxBox.BackgroundImage")));
+            this.pictureBoxBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxBox.Location = new System.Drawing.Point(386, 325);
+            this.pictureBoxBox.Name = "pictureBoxBox";
+            this.pictureBoxBox.Size = new System.Drawing.Size(64, 64);
+            this.pictureBoxBox.TabIndex = 29;
+            this.pictureBoxBox.TabStop = false;
+            this.pictureBoxBox.Click += new System.EventHandler(this.pictureBoxBox_Click);
             // 
             // Island
             // 
@@ -325,7 +378,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Controls.Add(this.pictureRKnife);
+            this.Controls.Add(this.pictureBoxBox);
+            this.Controls.Add(this.pictureWoodPick);
+            this.Controls.Add(this.pictureWoodAxe);
+            this.Controls.Add(this.pictureSmallBasket);
+            this.Controls.Add(this.pictureBoxTable);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.buttonProfile);
@@ -346,6 +403,7 @@
             this.Controls.Add(this.buttonVer2);
             this.Controls.Add(this.buttonVer1);
             this.Controls.Add(this.buttonUse1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Island";
@@ -358,7 +416,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureRKnife)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSmallBasket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWoodAxe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWoodPick)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,7 +449,11 @@
         private System.Windows.Forms.PictureBox buttonProfile;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureRKnife;
+        private System.Windows.Forms.PictureBox pictureBoxTable;
+        private System.Windows.Forms.PictureBox pictureSmallBasket;
+        private System.Windows.Forms.PictureBox pictureWoodAxe;
+        private System.Windows.Forms.PictureBox pictureWoodPick;
+        private System.Windows.Forms.PictureBox pictureBoxBox;
 
     }
 }

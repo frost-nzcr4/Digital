@@ -700,6 +700,7 @@
             this.Controls.Add(this.SpecSPlus);
             this.Controls.Add(this.SpecS);
             this.Controls.Add(this.pictureFon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(667, 528);
             this.MinimumSize = new System.Drawing.Size(667, 528);
             this.Name = "CreatePers";

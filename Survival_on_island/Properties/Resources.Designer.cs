@@ -73,6 +73,16 @@ namespace Survival_on_island.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap smallBasket {
+            get {
+                object obj = ResourceManager.GetObject("smallBasket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_01 {
             get {
                 object obj = ResourceManager.GetObject("user-01", resourceCulture);
@@ -106,6 +116,26 @@ namespace Survival_on_island.Properties {
         internal static System.Drawing.Bitmap камень {
             get {
                 object obj = ResourceManager.GetObject("камень", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap кирка_дерево {
+            get {
+                object obj = ResourceManager.GetObject("кирка_дерево", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap топор_дерево {
+            get {
+                object obj = ResourceManager.GetObject("топор_дерево", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
