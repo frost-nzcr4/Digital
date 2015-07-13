@@ -58,6 +58,11 @@
             this.pictureBoxBox = new System.Windows.Forms.PictureBox();
             this.pictureRom = new System.Windows.Forms.PictureBox();
             this.labelRomValue = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label_skin = new System.Windows.Forms.Label();
+            this.buttonUse4 = new System.Windows.Forms.Button();
+            this.buttonUse5 = new System.Windows.Forms.Button();
+            this.buttonUse6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureWoodPick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUse1
@@ -78,9 +84,9 @@
             this.buttonUse1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonUse1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonUse1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonUse1.Location = new System.Drawing.Point(412, 53);
+            this.buttonUse1.Location = new System.Drawing.Point(404, 12);
             this.buttonUse1.Name = "buttonUse1";
-            this.buttonUse1.Size = new System.Drawing.Size(186, 34);
+            this.buttonUse1.Size = new System.Drawing.Size(194, 34);
             this.buttonUse1.TabIndex = 5;
             this.buttonUse1.Text = "Собирать ягоды";
             this.buttonUse1.UseVisualStyleBackColor = false;
@@ -92,9 +98,9 @@
             this.buttonVer1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonVer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVer1.ForeColor = System.Drawing.Color.Lime;
-            this.buttonVer1.Location = new System.Drawing.Point(615, 53);
+            this.buttonVer1.Location = new System.Drawing.Point(615, 12);
             this.buttonVer1.Name = "buttonVer1";
-            this.buttonVer1.Size = new System.Drawing.Size(148, 34);
+            this.buttonVer1.Size = new System.Drawing.Size(157, 34);
             this.buttonVer1.TabIndex = 6;
             this.buttonVer1.Text = "На равнине";
             this.buttonVer1.UseVisualStyleBackColor = false;
@@ -106,9 +112,9 @@
             this.buttonVer2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonVer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVer2.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonVer2.Location = new System.Drawing.Point(615, 93);
+            this.buttonVer2.Location = new System.Drawing.Point(615, 52);
             this.buttonVer2.Name = "buttonVer2";
-            this.buttonVer2.Size = new System.Drawing.Size(148, 34);
+            this.buttonVer2.Size = new System.Drawing.Size(157, 34);
             this.buttonVer2.TabIndex = 7;
             this.buttonVer2.Text = "В лесу";
             this.buttonVer2.UseVisualStyleBackColor = false;
@@ -120,9 +126,9 @@
             this.buttonVer3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonVer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonVer3.ForeColor = System.Drawing.Color.Red;
-            this.buttonVer3.Location = new System.Drawing.Point(615, 133);
+            this.buttonVer3.Location = new System.Drawing.Point(615, 92);
             this.buttonVer3.Name = "buttonVer3";
-            this.buttonVer3.Size = new System.Drawing.Size(148, 34);
+            this.buttonVer3.Size = new System.Drawing.Size(157, 34);
             this.buttonVer3.TabIndex = 8;
             this.buttonVer3.Text = "На болоте";
             this.buttonVer3.UseVisualStyleBackColor = false;
@@ -175,7 +181,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(412, 185);
+            this.progressBar1.Location = new System.Drawing.Point(208, 178);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(186, 23);
             this.progressBar1.TabIndex = 13;
@@ -238,9 +244,9 @@
             this.buttonUse2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonUse2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonUse2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonUse2.Location = new System.Drawing.Point(412, 93);
+            this.buttonUse2.Location = new System.Drawing.Point(404, 52);
             this.buttonUse2.Name = "buttonUse2";
-            this.buttonUse2.Size = new System.Drawing.Size(186, 34);
+            this.buttonUse2.Size = new System.Drawing.Size(194, 34);
             this.buttonUse2.TabIndex = 18;
             this.buttonUse2.Text = "Добывать древесину";
             this.buttonUse2.UseVisualStyleBackColor = false;
@@ -251,9 +257,9 @@
             this.buttonUse3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonUse3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonUse3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonUse3.Location = new System.Drawing.Point(412, 133);
+            this.buttonUse3.Location = new System.Drawing.Point(404, 92);
             this.buttonUse3.Name = "buttonUse3";
-            this.buttonUse3.Size = new System.Drawing.Size(186, 34);
+            this.buttonUse3.Size = new System.Drawing.Size(194, 34);
             this.buttonUse3.TabIndex = 19;
             this.buttonUse3.Text = "Добывать камень";
             this.buttonUse3.UseVisualStyleBackColor = false;
@@ -288,7 +294,7 @@
             this.buttonProfile.BackColor = System.Drawing.Color.Transparent;
             this.buttonProfile.BackgroundImage = global::Survival_on_island.Properties.Resources.user_01;
             this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonProfile.Location = new System.Drawing.Point(330, 32);
+            this.buttonProfile.Location = new System.Drawing.Point(308, 32);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Size = new System.Drawing.Size(64, 64);
             this.buttonProfile.TabIndex = 22;
@@ -400,6 +406,68 @@
             this.labelRomValue.TabIndex = 31;
             this.labelRomValue.Text = "0";
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.BackgroundImage = global::Survival_on_island.Properties.Resources.skin;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Location = new System.Drawing.Point(32, 146);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox7.TabIndex = 32;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label_skin
+            // 
+            this.label_skin.AutoSize = true;
+            this.label_skin.BackColor = System.Drawing.Color.Transparent;
+            this.label_skin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_skin.ForeColor = System.Drawing.Color.Yellow;
+            this.label_skin.Location = new System.Drawing.Point(70, 146);
+            this.label_skin.Name = "label_skin";
+            this.label_skin.Size = new System.Drawing.Size(26, 29);
+            this.label_skin.TabIndex = 33;
+            this.label_skin.Text = "0";
+            // 
+            // buttonUse4
+            // 
+            this.buttonUse4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonUse4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonUse4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUse4.Location = new System.Drawing.Point(404, 132);
+            this.buttonUse4.Name = "buttonUse4";
+            this.buttonUse4.Size = new System.Drawing.Size(194, 34);
+            this.buttonUse4.TabIndex = 34;
+            this.buttonUse4.Text = "Охотиться";
+            this.buttonUse4.UseVisualStyleBackColor = false;
+            this.buttonUse4.Click += new System.EventHandler(this.buttonUse4_Click);
+            // 
+            // buttonUse5
+            // 
+            this.buttonUse5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonUse5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonUse5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUse5.Location = new System.Drawing.Point(404, 172);
+            this.buttonUse5.Name = "buttonUse5";
+            this.buttonUse5.Size = new System.Drawing.Size(194, 34);
+            this.buttonUse5.TabIndex = 35;
+            this.buttonUse5.Text = "Рыбачить";
+            this.buttonUse5.UseVisualStyleBackColor = false;
+            this.buttonUse5.Click += new System.EventHandler(this.buttonUse5_Click);
+            // 
+            // buttonUse6
+            // 
+            this.buttonUse6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonUse6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonUse6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUse6.Location = new System.Drawing.Point(404, 212);
+            this.buttonUse6.Name = "buttonUse6";
+            this.buttonUse6.Size = new System.Drawing.Size(194, 34);
+            this.buttonUse6.TabIndex = 36;
+            this.buttonUse6.Text = "Обследовать корабль";
+            this.buttonUse6.UseVisualStyleBackColor = false;
+            this.buttonUse6.Click += new System.EventHandler(this.buttonUse6_Click);
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,6 +475,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.buttonUse6);
+            this.Controls.Add(this.buttonUse5);
+            this.Controls.Add(this.buttonUse4);
+            this.Controls.Add(this.label_skin);
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.labelRomValue);
             this.Controls.Add(this.pictureRom);
             this.Controls.Add(this.pictureBoxBox);
@@ -453,6 +526,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureWoodPick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,6 +562,11 @@
         private System.Windows.Forms.PictureBox pictureBoxBox;
         private System.Windows.Forms.PictureBox pictureRom;
         private System.Windows.Forms.Label labelRomValue;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label_skin;
+        private System.Windows.Forms.Button buttonUse4;
+        private System.Windows.Forms.Button buttonUse5;
+        private System.Windows.Forms.Button buttonUse6;
 
     }
 }
