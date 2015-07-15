@@ -1,4 +1,6 @@
 ﻿github.com
+http://rogerdudler.github.io/git-guide/index.ru.html
+
 
 устанавливает Git Bush, там прописываем для регистрации:
 git config --global user.name "NAME"
