@@ -63,6 +63,8 @@
             this.buttonUse4 = new System.Windows.Forms.Button();
             this.buttonUse5 = new System.Windows.Forms.Button();
             this.buttonUse6 = new System.Windows.Forms.Button();
+            this.toolTipROM = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipSmallBasket = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -469,6 +471,13 @@
             this.buttonUse6.UseVisualStyleBackColor = false;
             this.buttonUse6.Click += new System.EventHandler(this.buttonUse6_Click);
             // 
+            // toolTipROM
+            // 
+            this.toolTipROM.AutoPopDelay = 5000;
+            this.toolTipROM.InitialDelay = 500;
+            this.toolTipROM.ReshowDelay = 100;
+            // 
+           
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,6 +577,8 @@
         private System.Windows.Forms.Button buttonUse4;
         private System.Windows.Forms.Button buttonUse5;
         private System.Windows.Forms.Button buttonUse6;
+        private System.Windows.Forms.ToolTip toolTipROM;
+        private System.Windows.Forms.ToolTip toolTipSmallBasket;
 
     }
 }

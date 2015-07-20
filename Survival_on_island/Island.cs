@@ -23,6 +23,19 @@ namespace Survival_on_island
         {
             InitializeComponent();
 
+            //
+            //  Всплывающие подсказки
+            //
+            toolTipROM.ToolTipTitle = Rom.name;
+            toolTipROM.SetToolTip(pictureRom, Rom.text);
+
+            toolTipSmallBasket.SetToolTip(pictureSmallBasket, smallBasket.name + "\n" + smallBasket.text);
+            
+            toolTipSmallBasket.SetToolTip(pictureWoodAxe, WoodAxe.name + "\n" + WoodAxe.text);
+            
+
+
+
             HP = param[0];
             Def = param[1];
             OD = param[2];
@@ -32,7 +45,7 @@ namespace Survival_on_island
             
             Refresh();
         }
-
+        
 
         // ПРЕДМЕТЫ \ ИНСТРУМЕНТЫ
             //основные
@@ -40,19 +53,21 @@ namespace Survival_on_island
         Items fe_knife = new Items("Железный нож", "Найденный железный нож. Самому такой не сделать.\nУрон: +3\nЕда при охоте: +2", 0, 1, 1);
         Items smallBasket = new Items("Лукошко", "Небольшая емкость для сбора ягод.\nСбор ягод: +1", 0, 1, 4);
         Items Basket = new Items("Корзина", "Средняя емкость для сбора ягод.\nСбор ягод: +2", 0, 1, 4);
-        Items WoodAxe = new Items("Деревянный топор", "Самый простой и не прочный топор. С таким много не нарубишь.", 0, 1, 4);
+        Items WoodAxe = new Items("Деревянный топор", "Самый простой и не прочный топор.\nС таким много не нарубишь.", 0, 1, 4);
         Items RockAxe = new Items("Каменный топор", "Самый лучше топор, что можно сделать в этим условиях.", 0, 1, 4);
         Items FeAxe = new Items("Железный топор", "Лучший топор, о котором можно только мечтать на этом острове. С таким много не нарубишь.", 0, 1, 4);
         Items WoodPick = new Items("Деревянная кирка", "Самая простая кирка. Добывать камень такой очень сложно.", 0, 1, 4);
         Items RockPick = new Items("Каменная кирка", "Долбить камнем о камень? Глупая затея, но других вариантов нет.", 0, 1, 4);
         Items FePick = new Items("Железная кирка", "Обладателю такой кирки можно только позавидовать.", 0, 1, 4);
         Items Lance = new Items("Копье", "Хороший инструмент для охоты на дичь.", 0, 1, 1);
+        Items Fe_Lance = new Items("Железное копье", "Отличный инструмент для охоты на дичь.", 0, 1, 1);
         Items Baton = new Items("Дубинка", "Сгодится для охоты. Особенно хороша против крупных зверей.", 0, 1, 1);
             //оружие дальнего боя
-        Items Bow = new Items("Лук", "Простой лук для убийства на расстоянии\nУрон: +3", 0, 1, 2);
+        Items Bow = new Items("Лук", "Простой лук для убийства на расстоянии.\nУрон: +3", 0, 1, 2);
+        Items Strong_Bow = new Items("Усиленный Лук", "Усиленный лук, отлично подойдет для охоты.\nУрон: +3", 0, 1, 2);
             //вспомогательные
         Items Medical = new Items("Медицинская аптечка", "Помогает залечивать раны.\nЗдоровье: +5", 0, 20, 4);
-        Items Rom = new Items("Бутылка рома", "Крепкий напиток так любимый моряками. После глотка хочется больше работать.\nЗдоровье: +2\nОД: +3", 0, 20, 4);
+        Items Rom = new Items("Бутылка рома", "Крепкий напиток так любимый моряками.\nПосле глотка хочется больше работать.\nЗдоровье: +2\nОД: +4", 0, 20, 4);
         Items Bandaging = new Items("Перевязка", "Материя для перевязки ран, изготовленныя своими руками.\nЗдоровье: +4", 0, 20, 4);
         
             //одежда
@@ -347,8 +362,7 @@ namespace Survival_on_island
 
         private void pictureWoodAxe_Click(object sender, EventArgs e)
         {
-            WoodAxe.ItemMinus();
-            Refresh();
+            
         }
 
         private void pictureRom_Click(object sender, EventArgs e)
@@ -385,6 +399,8 @@ namespace Survival_on_island
             buttonVer2.Text = "В трюме";
             buttonVer3.Text = "В воде у скал";
         }
+
+
 
 
 
