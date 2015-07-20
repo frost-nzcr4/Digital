@@ -340,19 +340,19 @@
             this.pictureSmallBasket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureSmallBasket.Location = new System.Drawing.Point(12, 428);
             this.pictureSmallBasket.Name = "pictureSmallBasket";
-            this.pictureSmallBasket.Size = new System.Drawing.Size(50, 50);
+            this.pictureSmallBasket.Size = new System.Drawing.Size(32, 32);
             this.pictureSmallBasket.TabIndex = 26;
             this.pictureSmallBasket.TabStop = false;
             this.pictureSmallBasket.Visible = false;
             // 
             // pictureWoodAxe
             // 
-            this.pictureWoodAxe.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureWoodAxe.BackColor = System.Drawing.Color.Transparent;
             this.pictureWoodAxe.BackgroundImage = global::Survival_on_island.Properties.Resources.топор_дерево;
             this.pictureWoodAxe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureWoodAxe.Location = new System.Drawing.Point(68, 428);
             this.pictureWoodAxe.Name = "pictureWoodAxe";
-            this.pictureWoodAxe.Size = new System.Drawing.Size(50, 50);
+            this.pictureWoodAxe.Size = new System.Drawing.Size(32, 32);
             this.pictureWoodAxe.TabIndex = 27;
             this.pictureWoodAxe.TabStop = false;
             this.pictureWoodAxe.Visible = false;
@@ -360,11 +360,12 @@
             // 
             // pictureWoodPick
             // 
+            this.pictureWoodPick.BackColor = System.Drawing.Color.Transparent;
             this.pictureWoodPick.BackgroundImage = global::Survival_on_island.Properties.Resources.кирка_дерево;
             this.pictureWoodPick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureWoodPick.Location = new System.Drawing.Point(124, 428);
             this.pictureWoodPick.Name = "pictureWoodPick";
-            this.pictureWoodPick.Size = new System.Drawing.Size(50, 50);
+            this.pictureWoodPick.Size = new System.Drawing.Size(32, 32);
             this.pictureWoodPick.TabIndex = 28;
             this.pictureWoodPick.TabStop = false;
             this.pictureWoodPick.Visible = false;
