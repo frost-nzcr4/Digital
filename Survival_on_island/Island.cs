@@ -29,8 +29,8 @@ namespace Survival_on_island
             toolTipROM.ToolTipTitle = Rom.name;
             toolTipROM.SetToolTip(pictureRom, Rom.text);
 
-            toolTipSmallBasket.SetToolTip(pictureSmallBasket, smallBasket.name + "\n" + smallBasket.text);
-            
+            toolTipSmallBasket.SetToolTip(pictureSmallBasket, SmallBasket.name + "\n" + SmallBasket.text);
+            toolTipSmallBasket.SetToolTip(pictureBasket, Basket.name + "\n" + Basket.text);
             toolTipSmallBasket.SetToolTip(pictureWoodAxe, WoodAxe.name + "\n" + WoodAxe.text);
             
 
@@ -49,9 +49,9 @@ namespace Survival_on_island
 
         // ПРЕДМЕТЫ \ ИНСТРУМЕНТЫ
             //основные
-        Items knife = new Items("Каменный нож", "Самодельный каменный нож.\nУрон: +1", 0, 1, 1);
-        Items fe_knife = new Items("Железный нож", "Найденный железный нож. Самому такой не сделать.\nУрон: +3\nЕда при охоте: +2", 0, 1, 1);
-        Items smallBasket = new Items("Лукошко", "Небольшая емкость для сбора ягод.\nСбор ягод: +1", 0, 1, 4);
+        Items Knife = new Items("Каменный нож", "Самодельный каменный нож.\nУрон: +1", 0, 1, 1);
+        Items Fe_knife = new Items("Железный нож", "Найденный железный нож. Самому такой не сделать.\nУрон: +3\nЕда при охоте: +2", 0, 1, 1);
+        Items SmallBasket = new Items("Лукошко", "Небольшая емкость для сбора ягод.\nСбор ягод: +1", 0, 1, 4);
         Items Basket = new Items("Корзина", "Средняя емкость для сбора ягод.\nСбор ягод: +2", 0, 1, 4);
         Items WoodAxe = new Items("Деревянный топор", "Самый простой и не прочный топор.\nС таким много не нарубишь.", 0, 1, 4);
         Items RockAxe = new Items("Каменный топор", "Самый лучше топор, что можно сделать в этим условиях.", 0, 1, 4);
@@ -90,12 +90,16 @@ namespace Survival_on_island
         //номер действия.
         int use = 1;
 
+        //переменые для герератора
+        int min = 0;
+        int max = 0;
+
         //стандарт выпадения ресурсов. Массив минимальных и максимальных значений для разных вариантов действия 1. {д1_мин, д1_макс, д2_мин ... и т.д.}
         int[] use1 = { 2, 3, 3, 5, 5, 7}; //Сбор ягод
 
-        int[] use2 = { 1, 2, 3, 5, 5, 7}; //Добыча древесины
+        int[] use2 = { 0, 1, 1, 2, 2, 3}; //Добыча древесины
 
-        int[] use3 = { 1, 2, 3, 5, 5, 7 }; //Добыча камня
+        int[] use3 = { 0, 1, 1, 2, 2, 3}; //Добыча камня
 
 
         // начальные навыки персонажа для проверки.
@@ -117,7 +121,8 @@ namespace Survival_on_island
             labelHP.Text = Convert.ToString( HP);
 
             //Отображение инструментов
-            if (smallBasket.value > 0)
+            // маленькая корзина
+            if (SmallBasket.value > 0)
             {
                 pictureSmallBasket.Visible = true;
             }
@@ -125,6 +130,16 @@ namespace Survival_on_island
             {
                 pictureSmallBasket.Visible = false;
             }
+            //корзина
+            if (Basket.value > 0)
+            {
+                pictureBasket.Visible = true;
+            }
+            else
+            {
+                pictureBasket.Visible = false;
+            }
+
             if (WoodAxe.value > 0)
             {
                 pictureWoodAxe.Visible = true;
@@ -166,13 +181,29 @@ namespace Survival_on_island
                     Random rand = new Random();
                     if (use == 1) // поиск ягод
                     {
+                        EnableTimer(); // включает таймер действия для прогресс бара.
                         if (rand.Next(1, 101) < NavSob * 2) // Проверка навыка. Повезет или нет найти ягоды.
                         {
-                            eat += rand.Next(use1[0], use1[1] + 1); // Генерирует кол-во в случае успеха.
+                            min = use1[0];
+                            max = use1[1];
+                            if (Basket.value > 0) //если есть корзина, то прибавить к максимальному сбору еды +2
+                            {
+                                max += 2;
+                            }
+                            else if (SmallBasket.value > 0) //иначе, если есть маленькия корзина, то прибавить +1
+                            {
+                                max += 1;
+                            }
+                            //временная строка для выводы минимума и максимума
+                            labelLog.Text = ("Min: " + min + "\nMax: " + max);
+                            
+
+                            eat += rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
                         }
                     }
                     if (use == 2) // поиск древесины
                     {
+                        EnableTimer();
                         if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти древисину.
                         {
                             wood += rand.Next(use2[0], use2[1] + 1); // Генерирует кол-во в случае успеха.
@@ -180,36 +211,28 @@ namespace Survival_on_island
                     }
                     if (use == 3) // поиск камня
                     {
+                        EnableTimer();
                         if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти камни.
                         {
                             rock += rand.Next(use3[0], use3[1] + 1); // Генерирует кол-во в случае успеха.
                         }
                     }
-                    //включаем таймер между действиями
-                    progressBar1.Value = 0;
-                    timer1.Enabled = true;
-                    buttonVer1.Enabled = false;
-                    buttonVer2.Enabled = false;
-                    buttonVer3.Enabled = false;
-                
+                 
             }
-            //обновляет все показатели экрана
-            Refresh();
             
             
         }
 
-
+        // Кнопка локации\типа действия. Действие 2.
         private void button2_Click(object sender, EventArgs e)
         {
-                // Вычет очков действия
+                // Проверка очков действия
                 if (ODhod >= 2)
                 {
-                    
                     Random rand = new Random();
                     if (use == 1) // поиск ягод
                     {
-                        if (smallBasket.value == 1) //Проверка на наличие нужного инструмента
+                        if (SmallBasket.value == 1) //Проверка на наличие нужного инструмента
                         {
                             ODhod -= 2;
                             if (rand.Next(1, 101) < NavSob * 2) // Проверка навыка. Повезет или нет найти ягоды.
@@ -253,12 +276,8 @@ namespace Survival_on_island
                             MessageBox.Show("Вам необходима деревянная кирка!");
                         }
                     }
-                    //включаем таймер между действиями
-                    progressBar1.Value = 0;
-                    timer1.Enabled = true;
-                    buttonVer1.Enabled = false;
-                    buttonVer2.Enabled = false;
-                    buttonVer3.Enabled = false;
+                    
+                    
 
                 }
                 //обновляет все показатели экрана
@@ -266,6 +285,18 @@ namespace Survival_on_island
 
 
 
+        }
+
+        //метод включения таймера между действиями
+        void EnableTimer() 
+        {
+            progressBar1.Value = 0;     // обнуляет полосу прогресса
+            timer1.Enabled = true;      // включает таймер
+            buttonVer1.Enabled = false; //отключает кнопки вариантов действий
+            buttonVer2.Enabled = false;
+            buttonVer3.Enabled = false;
+
+            
         }
 
         private void buttonVer3_Click(object sender, EventArgs e)
@@ -277,7 +308,7 @@ namespace Survival_on_island
              */
         }
 
-
+        // таймер. сначала считает, увеличивая полосу прогресса, потом включает кнопки вариантов действия.
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (progressBar1.Value != 100)
@@ -291,7 +322,10 @@ namespace Survival_on_island
                 buttonVer1.Enabled = true;
                 buttonVer2.Enabled = true;
                 buttonVer3.Enabled = true;
+
+                Refresh();
             }
+
         }
 
         //Кнопка "закончить день"
@@ -351,7 +385,8 @@ namespace Survival_on_island
         {
             MessageBox.Show("Вы нашли ящик с инструментами.\nЯщик только на время теста и для проверки механики игры.", "Ящик с инструментами");
             //временно даем инструменты:
-            smallBasket.value = 1;
+            SmallBasket.value = 1;
+            Basket.value = 1;
             WoodAxe.value = 1;
             WoodPick.value = 1;
             Rom.ItemAdd();
@@ -398,6 +433,18 @@ namespace Survival_on_island
             buttonVer1.Text = "На берегу";
             buttonVer2.Text = "В трюме";
             buttonVer3.Text = "В воде у скал";
+        }
+
+
+        //клик на корзину. удалить потом
+        private void pictureBasket_Click(object sender, EventArgs e)
+        {
+            Basket.ItemMinus();
+        }
+        //клик на маленькую корзину. удалить потом
+        private void pictureSmallBasket_Click(object sender, EventArgs e)
+        {
+            SmallBasket.ItemMinus();
         }
 
 
