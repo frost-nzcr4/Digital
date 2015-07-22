@@ -190,6 +190,9 @@ namespace Survival_on_island
         private void buttomClose_Click(object sender, EventArgs e)
         {
             this.Close();
+
+            var enter_form = Program.GetFormByName("Enter");
+            enter_form.Show();
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
@@ -202,7 +205,7 @@ namespace Survival_on_island
             int[] param = {hp, def, OD, damage };
 
             Island form = new Island(param, name);
-            this.Hide();
+            this.Close();
             form.Show();
              
         }

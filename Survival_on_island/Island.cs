@@ -268,6 +268,9 @@ namespace Survival_on_island
             {
                 MessageBox.Show("Сожалеем, но вы умерли");
                 this.Close();
+
+                var enter_form = Program.GetFormByName("Enter");
+                enter_form.Show();
             }
 
 
