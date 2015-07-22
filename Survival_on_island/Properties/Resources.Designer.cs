@@ -153,6 +153,16 @@ namespace Survival_on_island.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap топор {
+            get {
+                object obj = ResourceManager.GetObject("топор", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap топор_дерево {
             get {
                 object obj = ResourceManager.GetObject("топор_дерево", resourceCulture);

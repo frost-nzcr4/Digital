@@ -29,14 +29,16 @@ namespace Survival_on_island
             toolTipROM.ToolTipTitle = Rom.name;
             toolTipROM.SetToolTip(pictureRom, Rom.text);
 
-            toolTipSmallBasket.SetToolTip(pictureSmallBasket, SmallBasket.name + "\n" + SmallBasket.text);
-            toolTipSmallBasket.SetToolTip(pictureBasket, Basket.name + "\n" + Basket.text);
-            toolTipSmallBasket.SetToolTip(pictureWoodAxe, WoodAxe.name + "\n" + WoodAxe.text);
-            
+            toolTipAll.SetToolTip(pictureSmallBasket, SmallBasket.name + "\n" + SmallBasket.text);
+            toolTipAll.SetToolTip(pictureBasket, Basket.name + "\n" + Basket.text);
+            toolTipAll.SetToolTip(pictureWoodAxe, WoodAxe.name + "\n" + WoodAxe.text);
+            toolTipAll.SetToolTip(pictureRockAxe, RockAxe.name + "\n" + RockAxe.text);
 
 
 
-            HP = param[0];
+
+            HPmax = param[0];
+            HPnow = param[0];
             Def = param[1];
             OD = param[2];
             ODhod = param[2];
@@ -53,8 +55,8 @@ namespace Survival_on_island
         Items Fe_knife = new Items("Железный нож", "Найденный железный нож. Самому такой не сделать.\nУрон: +3\nЕда при охоте: +2", 0, 1, 1);
         Items SmallBasket = new Items("Лукошко", "Небольшая емкость для сбора ягод.\nСбор ягод: +1", 0, 1, 4);
         Items Basket = new Items("Корзина", "Средняя емкость для сбора ягод.\nСбор ягод: +2", 0, 1, 4);
-        Items WoodAxe = new Items("Деревянный топор", "Самый простой и не прочный топор.\nС таким много не нарубишь.", 0, 1, 4);
-        Items RockAxe = new Items("Каменный топор", "Самый лучше топор, что можно сделать в этим условиях.", 0, 1, 4);
+        Items WoodAxe = new Items("Деревянный топор", "Самый простой и не прочный топор.\nС таким много не нарубишь.\nСбор древесины: +0-1", 0, 1, 4);
+        Items RockAxe = new Items("Каменный топор", "Самый лучше топор, что можно сделать в этим условиях.\nСбор древесины: +1-2", 0, 1, 4);
         Items FeAxe = new Items("Железный топор", "Лучший топор, о котором можно только мечтать на этом острове. С таким много не нарубишь.", 0, 1, 4);
         Items WoodPick = new Items("Деревянная кирка", "Самая простая кирка. Добывать камень такой очень сложно.", 0, 1, 4);
         Items RockPick = new Items("Каменная кирка", "Долбить камнем о камень? Глупая затея, но других вариантов нет.", 0, 1, 4);
@@ -94,6 +96,9 @@ namespace Survival_on_island
         int min = 0;
         int max = 0;
 
+        //переменные дня
+        int day = 1;
+
         //стандарт выпадения ресурсов. Массив минимальных и максимальных значений для разных вариантов действия 1. {д1_мин, д1_макс, д2_мин ... и т.д.}
         int[] use1 = { 2, 3, 3, 5, 5, 7}; //Сбор ягод
 
@@ -108,17 +113,27 @@ namespace Survival_on_island
         int NavBuild = 33;
         int OD = 0;
         int ODhod = 0;
-        int HP = 0;
+        int HPmax = 0;
+        int HPnow = 0;
         int Def = 0;
         int Damage = 0;
 
         void Refresh()
         {
+            //Проверка на HP
+            if (HPnow > HPmax)
+            {
+                HPnow = HPmax;
+            }
+
+            //заполнение полей с данными
             label_eat.Text = Convert.ToString(eat);
             label_wood.Text = Convert.ToString(wood);
             label_rock.Text = Convert.ToString(rock);
             labelOD.Text = "ОД: " + ODhod;
-            labelHP.Text = Convert.ToString( HP);
+            labelHP.Text = Convert.ToString( HPnow);
+
+            
 
             //Отображение инструментов
             // маленькая корзина
@@ -139,7 +154,7 @@ namespace Survival_on_island
             {
                 pictureBasket.Visible = false;
             }
-
+            //топоры
             if (WoodAxe.value > 0)
             {
                 pictureWoodAxe.Visible = true;
@@ -148,6 +163,15 @@ namespace Survival_on_island
             {
                 pictureWoodAxe.Visible = false;
             }
+            if (RockAxe.value > 0)
+            {
+                pictureRockAxe.Visible = true;
+            }
+            else
+            {
+                pictureRockAxe.Visible = false;
+            }
+
             if (WoodPick.value > 0)
             {
                 pictureWoodPick.Visible = true;
@@ -168,6 +192,18 @@ namespace Survival_on_island
                 labelRomValue.Visible = false;
             }
             labelRomValue.Text = Convert.ToString(Rom.value);
+
+
+
+
+            //проверка на смерть
+            if (HPnow <= 0)
+            {
+                MessageBox.Show("Сожалеем, но вы умерли");
+                this.Close();
+            }
+
+
 
         }
 
@@ -195,9 +231,8 @@ namespace Survival_on_island
                                 max += 1;
                             }
                             //временная строка для выводы минимума и максимума
-                            labelLog.Text = ("Min: " + min + "\nMax: " + max);
+                            labelLog.Text = ("\nMin: " + min + "\nMax: " + max);
                             
-
                             eat += rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
                         }
                     }
@@ -206,7 +241,21 @@ namespace Survival_on_island
                         EnableTimer();
                         if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти древисину.
                         {
-                            wood += rand.Next(use2[0], use2[1] + 1); // Генерирует кол-во в случае успеха.
+                            min = use2[0];
+                            max = use2[1];
+                            if (RockAxe.value > 0) //если есть каменный топор, то прибавить к максимальному сбору +2
+                            {
+                                min += 1;
+                                max += 2;
+                            }
+                            else if (WoodAxe.value > 0) //иначе, если есть маленькия корзина, то прибавить +1
+                            {
+                                max += 1;
+                            }
+                            //временная строка для выводы минимума и максимума
+                            labelLog.Text = ( "Шанс: " + (NavSob + NavBuild) + "% Min: " + min + " Max: " + max + "\n" + labelLog.Text);
+
+                            wood += rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
                         }
                     }
                     if (use == 3) // поиск камня
@@ -331,8 +380,9 @@ namespace Survival_on_island
         //Кнопка "закончить день"
         private void buttonEndDay_Click(object sender, EventArgs e)
         {
-            //здесь будет счетчик дней
-            //
+            //счетчик дней
+            day++;
+            NextDay();
 
             eat -= 2;
             ODhod = OD;
@@ -341,8 +391,45 @@ namespace Survival_on_island
             Refresh();
             if (eat < 0)
             {
-                MessageBox.Show("Сожалеем, но вы умерли от голода");
-                this.Close();
+                HPnow -= 5;
+                MessageBox.Show("Вы голодаете. Кол-во HP уменьшено", "ГОЛОД!");
+            }
+            Refresh();
+        }
+
+        //счетчик дней
+        void NextDay()
+        {
+            if (day <= 30)
+            {
+                labelLog.Text = "Сегодня " + day + " июня";
+            }
+            if (day > 30 && day <= 61)
+            {
+                labelLog.Text = "Сегодня " + (day - 30) + " июля";
+            }
+            if (day > 61 && day <= 92)
+            {
+                labelLog.Text = "Сегодня " + (day - 61) + " августа";
+            }
+            if (day > 92 && day <= 122)
+            {
+                labelLog.Text = "Сегодня " + (day - 92) + " сентября";
+            }
+            if (day > 122 && day <= 153)
+            {
+                labelLog.Text = "Сегодня " + (day - 122) + " октября";
+            }
+            //пасхалка
+            if (day == 122 + 22)
+            {
+                MessageBox.Show("У Вадимки день рождения! =)\nС неба падает ящик рома!");
+                Rom.value += 8;
+            }
+
+            if (day > 153 && day <= 183)
+            {
+                labelLog.Text = "Сегодня " + (day - 153) + " ноября";
             }
         }
 
@@ -375,7 +462,7 @@ namespace Survival_on_island
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Имя: " + Name + "\nHP: " + HP + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage , "Характеристики персонажа");
+            MessageBox.Show("Имя: " + Name + "\nHP: " + HPnow + "\nЗащита: " + Def + "\nОД: " + OD + "\nУрон: " + Damage , "Характеристики персонажа");
 
             
         }
@@ -388,6 +475,7 @@ namespace Survival_on_island
             SmallBasket.value = 1;
             Basket.value = 1;
             WoodAxe.value = 1;
+            RockAxe.ItemAdd();
             WoodPick.value = 1;
             Rom.ItemAdd();
             Rom.ItemAdd();
@@ -395,10 +483,7 @@ namespace Survival_on_island
             Refresh();
         }
 
-        private void pictureWoodAxe_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void pictureRom_Click(object sender, EventArgs e)
         {
@@ -440,23 +525,42 @@ namespace Survival_on_island
         private void pictureBasket_Click(object sender, EventArgs e)
         {
             Basket.ItemMinus();
+            Refresh();
         }
         //клик на маленькую корзину. удалить потом
         private void pictureSmallBasket_Click(object sender, EventArgs e)
         {
             SmallBasket.ItemMinus();
+            Refresh();
+        }
+
+        private void pictureWoodAxe_Click(object sender, EventArgs e)
+        {
+            WoodAxe.ItemMinus();
+            Refresh();
+        }
+
+        private void pictureRockAxe_Click(object sender, EventArgs e)
+        {
+            RockAxe.ItemMinus();
+            Refresh();
+        }
+
+        //КОСТЕР
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            eat += 10;
+            HPnow += 10;
+            Refresh();
         }
 
 
 
 
 
+
+
+
         
-
-        
-
-
-
-
     }
 }

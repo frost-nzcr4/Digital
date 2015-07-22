@@ -64,9 +64,10 @@
             this.buttonUse5 = new System.Windows.Forms.Button();
             this.buttonUse6 = new System.Windows.Forms.Button();
             this.toolTipROM = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipSmallBasket = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAll = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBasket = new System.Windows.Forms.PictureBox();
             this.labelLog = new System.Windows.Forms.Label();
+            this.pictureRockAxe = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -82,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureRom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBasket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRockAxe)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUse1
@@ -327,6 +329,7 @@
             this.pictureBox6.Size = new System.Drawing.Size(64, 64);
             this.pictureBox6.TabIndex = 24;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBoxTable
             // 
@@ -353,7 +356,7 @@
             // 
             // pictureWoodAxe
             // 
-            this.pictureWoodAxe.BackColor = System.Drawing.Color.Transparent;
+            this.pictureWoodAxe.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureWoodAxe.BackgroundImage = global::Survival_on_island.Properties.Resources.топор_дерево;
             this.pictureWoodAxe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureWoodAxe.Location = new System.Drawing.Point(50, 565);
@@ -366,7 +369,7 @@
             // 
             // pictureWoodPick
             // 
-            this.pictureWoodPick.BackColor = System.Drawing.Color.Transparent;
+            this.pictureWoodPick.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureWoodPick.BackgroundImage = global::Survival_on_island.Properties.Resources.кирка_дерево;
             this.pictureWoodPick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureWoodPick.Location = new System.Drawing.Point(88, 565);
@@ -496,12 +499,25 @@
             // 
             // labelLog
             // 
-            this.labelLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelLog.Location = new System.Drawing.Point(8, 446);
             this.labelLog.Name = "labelLog";
-            this.labelLog.Size = new System.Drawing.Size(219, 106);
+            this.labelLog.Size = new System.Drawing.Size(370, 106);
             this.labelLog.TabIndex = 38;
             this.labelLog.Text = "Логи дебага:";
+            // 
+            // pictureRockAxe
+            // 
+            this.pictureRockAxe.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureRockAxe.BackgroundImage = global::Survival_on_island.Properties.Resources.топор;
+            this.pictureRockAxe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureRockAxe.Location = new System.Drawing.Point(50, 603);
+            this.pictureRockAxe.Name = "pictureRockAxe";
+            this.pictureRockAxe.Size = new System.Drawing.Size(32, 32);
+            this.pictureRockAxe.TabIndex = 39;
+            this.pictureRockAxe.TabStop = false;
+            this.pictureRockAxe.Visible = false;
+            this.pictureRockAxe.Click += new System.EventHandler(this.pictureRockAxe_Click);
             // 
             // Island
             // 
@@ -510,6 +526,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 762);
+            this.Controls.Add(this.pictureRockAxe);
             this.Controls.Add(this.labelLog);
             this.Controls.Add(this.pictureBasket);
             this.Controls.Add(this.buttonUse6);
@@ -565,6 +582,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureRom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBasket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRockAxe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -606,9 +624,10 @@
         private System.Windows.Forms.Button buttonUse5;
         private System.Windows.Forms.Button buttonUse6;
         private System.Windows.Forms.ToolTip toolTipROM;
-        private System.Windows.Forms.ToolTip toolTipSmallBasket;
+        private System.Windows.Forms.ToolTip toolTipAll;
         private System.Windows.Forms.PictureBox pictureBasket;
         private System.Windows.Forms.Label labelLog;
+        private System.Windows.Forms.PictureBox pictureRockAxe;
 
     }
 }
