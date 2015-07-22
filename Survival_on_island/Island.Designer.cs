@@ -78,6 +78,10 @@
             this.label_rope = new System.Windows.Forms.Label();
             this.label_resin = new System.Windows.Forms.Label();
             this.label_ore = new System.Windows.Forms.Label();
+            this.pictureShlem1 = new System.Windows.Forms.PictureBox();
+            this.pictureKurtka1 = new System.Windows.Forms.PictureBox();
+            this.pictureSapogi1 = new System.Windows.Forms.PictureBox();
+            this.pictureShtani1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -100,6 +104,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShlem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKurtka1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSapogi1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShtani1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUse1
@@ -650,6 +658,50 @@
             this.label_ore.TabIndex = 49;
             this.label_ore.Text = "0";
             // 
+            // pictureShlem1
+            // 
+            this.pictureShlem1.BackColor = System.Drawing.Color.White;
+            this.pictureShlem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureShlem1.BackgroundImage")));
+            this.pictureShlem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureShlem1.Location = new System.Drawing.Point(567, 592);
+            this.pictureShlem1.Name = "pictureShlem1";
+            this.pictureShlem1.Size = new System.Drawing.Size(32, 32);
+            this.pictureShlem1.TabIndex = 50;
+            this.pictureShlem1.TabStop = false;
+            // 
+            // pictureKurtka1
+            // 
+            this.pictureKurtka1.BackColor = System.Drawing.Color.White;
+            this.pictureKurtka1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureKurtka1.BackgroundImage")));
+            this.pictureKurtka1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureKurtka1.Location = new System.Drawing.Point(567, 630);
+            this.pictureKurtka1.Name = "pictureKurtka1";
+            this.pictureKurtka1.Size = new System.Drawing.Size(32, 32);
+            this.pictureKurtka1.TabIndex = 51;
+            this.pictureKurtka1.TabStop = false;
+            // 
+            // pictureSapogi1
+            // 
+            this.pictureSapogi1.BackColor = System.Drawing.Color.White;
+            this.pictureSapogi1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSapogi1.BackgroundImage")));
+            this.pictureSapogi1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureSapogi1.Location = new System.Drawing.Point(567, 712);
+            this.pictureSapogi1.Name = "pictureSapogi1";
+            this.pictureSapogi1.Size = new System.Drawing.Size(32, 32);
+            this.pictureSapogi1.TabIndex = 52;
+            this.pictureSapogi1.TabStop = false;
+            // 
+            // pictureShtani1
+            // 
+            this.pictureShtani1.BackColor = System.Drawing.Color.White;
+            this.pictureShtani1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureShtani1.BackgroundImage")));
+            this.pictureShtani1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureShtani1.Location = new System.Drawing.Point(567, 667);
+            this.pictureShtani1.Name = "pictureShtani1";
+            this.pictureShtani1.Size = new System.Drawing.Size(32, 32);
+            this.pictureShtani1.TabIndex = 52;
+            this.pictureShtani1.TabStop = false;
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -657,6 +709,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 762);
+            this.Controls.Add(this.pictureShtani1);
+            this.Controls.Add(this.pictureSapogi1);
+            this.Controls.Add(this.pictureKurtka1);
+            this.Controls.Add(this.pictureShlem1);
             this.Controls.Add(this.label_ore);
             this.Controls.Add(this.label_resin);
             this.Controls.Add(this.label_rope);
@@ -730,6 +786,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShlem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKurtka1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSapogi1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShtani1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -785,6 +845,10 @@
         private System.Windows.Forms.Label label_rope;
         private System.Windows.Forms.Label label_resin;
         private System.Windows.Forms.Label label_ore;
+        private System.Windows.Forms.PictureBox pictureShlem1;
+        private System.Windows.Forms.PictureBox pictureKurtka1;
+        private System.Windows.Forms.PictureBox pictureSapogi1;
+        private System.Windows.Forms.PictureBox pictureShtani1;
 
     }
 }
