@@ -68,6 +68,16 @@
             this.pictureBasket = new System.Windows.Forms.PictureBox();
             this.labelLog = new System.Windows.Forms.Label();
             this.pictureRockAxe = new System.Windows.Forms.PictureBox();
+            this.picturePerson = new System.Windows.Forms.PictureBox();
+            this.pictureRockPick = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label_water = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.label_rope = new System.Windows.Forms.Label();
+            this.label_resin = new System.Windows.Forms.Label();
+            this.label_ore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -84,6 +94,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBasket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRockAxe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePerson)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRockPick)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUse1
@@ -157,7 +173,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::Survival_on_island.Properties.Resources.древесина;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(32, 70);
+            this.pictureBox2.Location = new System.Drawing.Point(32, 108);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.TabIndex = 10;
@@ -168,7 +184,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = global::Survival_on_island.Properties.Resources.камень;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(32, 108);
+            this.pictureBox3.Location = new System.Drawing.Point(32, 146);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(32, 32);
             this.pictureBox3.TabIndex = 11;
@@ -278,7 +294,7 @@
             this.label_wood.BackColor = System.Drawing.Color.Transparent;
             this.label_wood.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_wood.ForeColor = System.Drawing.Color.Yellow;
-            this.label_wood.Location = new System.Drawing.Point(70, 70);
+            this.label_wood.Location = new System.Drawing.Point(70, 108);
             this.label_wood.Name = "label_wood";
             this.label_wood.Size = new System.Drawing.Size(26, 29);
             this.label_wood.TabIndex = 20;
@@ -290,7 +306,7 @@
             this.label_rock.BackColor = System.Drawing.Color.Transparent;
             this.label_rock.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_rock.ForeColor = System.Drawing.Color.Yellow;
-            this.label_rock.Location = new System.Drawing.Point(70, 108);
+            this.label_rock.Location = new System.Drawing.Point(70, 146);
             this.label_rock.Name = "label_rock";
             this.label_rock.Size = new System.Drawing.Size(26, 29);
             this.label_rock.TabIndex = 21;
@@ -421,7 +437,7 @@
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.BackgroundImage = global::Survival_on_island.Properties.Resources.skin;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(32, 146);
+            this.pictureBox7.Location = new System.Drawing.Point(32, 184);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(32, 32);
             this.pictureBox7.TabIndex = 32;
@@ -433,7 +449,7 @@
             this.label_skin.BackColor = System.Drawing.Color.Transparent;
             this.label_skin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_skin.ForeColor = System.Drawing.Color.Yellow;
-            this.label_skin.Location = new System.Drawing.Point(70, 146);
+            this.label_skin.Location = new System.Drawing.Point(70, 184);
             this.label_skin.Name = "label_skin";
             this.label_skin.Size = new System.Drawing.Size(26, 29);
             this.label_skin.TabIndex = 33;
@@ -519,6 +535,121 @@
             this.pictureRockAxe.Visible = false;
             this.pictureRockAxe.Click += new System.EventHandler(this.pictureRockAxe_Click);
             // 
+            // picturePerson
+            // 
+            this.picturePerson.BackColor = System.Drawing.Color.Transparent;
+            this.picturePerson.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picturePerson.BackgroundImage")));
+            this.picturePerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picturePerson.Location = new System.Drawing.Point(523, 592);
+            this.picturePerson.Name = "picturePerson";
+            this.picturePerson.Size = new System.Drawing.Size(120, 160);
+            this.picturePerson.TabIndex = 40;
+            this.picturePerson.TabStop = false;
+            // 
+            // pictureRockPick
+            // 
+            this.pictureRockPick.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureRockPick.BackgroundImage = global::Survival_on_island.Properties.Resources.кирка;
+            this.pictureRockPick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureRockPick.Location = new System.Drawing.Point(88, 603);
+            this.pictureRockPick.Name = "pictureRockPick";
+            this.pictureRockPick.Size = new System.Drawing.Size(32, 32);
+            this.pictureRockPick.TabIndex = 41;
+            this.pictureRockPick.TabStop = false;
+            this.pictureRockPick.Visible = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(32, 70);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox8.TabIndex = 42;
+            this.pictureBox8.TabStop = false;
+            // 
+            // label_water
+            // 
+            this.label_water.AutoSize = true;
+            this.label_water.BackColor = System.Drawing.Color.Transparent;
+            this.label_water.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_water.ForeColor = System.Drawing.Color.Yellow;
+            this.label_water.Location = new System.Drawing.Point(70, 70);
+            this.label_water.Name = "label_water";
+            this.label_water.Size = new System.Drawing.Size(26, 29);
+            this.label_water.TabIndex = 43;
+            this.label_water.Text = "0";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(32, 222);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox9.TabIndex = 44;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Location = new System.Drawing.Point(32, 260);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox10.TabIndex = 45;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
+            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox11.Location = new System.Drawing.Point(32, 298);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox11.TabIndex = 46;
+            this.pictureBox11.TabStop = false;
+            // 
+            // label_rope
+            // 
+            this.label_rope.AutoSize = true;
+            this.label_rope.BackColor = System.Drawing.Color.Transparent;
+            this.label_rope.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_rope.ForeColor = System.Drawing.Color.Yellow;
+            this.label_rope.Location = new System.Drawing.Point(70, 222);
+            this.label_rope.Name = "label_rope";
+            this.label_rope.Size = new System.Drawing.Size(26, 29);
+            this.label_rope.TabIndex = 47;
+            this.label_rope.Text = "0";
+            // 
+            // label_resin
+            // 
+            this.label_resin.AutoSize = true;
+            this.label_resin.BackColor = System.Drawing.Color.Transparent;
+            this.label_resin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_resin.ForeColor = System.Drawing.Color.Yellow;
+            this.label_resin.Location = new System.Drawing.Point(70, 260);
+            this.label_resin.Name = "label_resin";
+            this.label_resin.Size = new System.Drawing.Size(26, 29);
+            this.label_resin.TabIndex = 48;
+            this.label_resin.Text = "0";
+            // 
+            // label_ore
+            // 
+            this.label_ore.AutoSize = true;
+            this.label_ore.BackColor = System.Drawing.Color.Transparent;
+            this.label_ore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_ore.ForeColor = System.Drawing.Color.Yellow;
+            this.label_ore.Location = new System.Drawing.Point(70, 298);
+            this.label_ore.Name = "label_ore";
+            this.label_ore.Size = new System.Drawing.Size(26, 29);
+            this.label_ore.TabIndex = 49;
+            this.label_ore.Text = "0";
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,6 +657,16 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 762);
+            this.Controls.Add(this.label_ore);
+            this.Controls.Add(this.label_resin);
+            this.Controls.Add(this.label_rope);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.label_water);
+            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureRockPick);
+            this.Controls.Add(this.picturePerson);
             this.Controls.Add(this.pictureRockAxe);
             this.Controls.Add(this.labelLog);
             this.Controls.Add(this.pictureBasket);
@@ -583,6 +724,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBasket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRockAxe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePerson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureRockPick)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,6 +775,16 @@
         private System.Windows.Forms.PictureBox pictureBasket;
         private System.Windows.Forms.Label labelLog;
         private System.Windows.Forms.PictureBox pictureRockAxe;
+        private System.Windows.Forms.PictureBox picturePerson;
+        private System.Windows.Forms.PictureBox pictureRockPick;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label_water;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Label label_rope;
+        private System.Windows.Forms.Label label_resin;
+        private System.Windows.Forms.Label label_ore;
 
     }
 }

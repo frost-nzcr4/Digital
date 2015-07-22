@@ -29,14 +29,25 @@ namespace Survival_on_island
             toolTipROM.ToolTipTitle = Rom.name;
             toolTipROM.SetToolTip(pictureRom, Rom.text);
 
+                //ресурсы
+            toolTipAll.SetToolTip(pictureBox1, "Еда");
+            toolTipAll.SetToolTip(pictureBox8, "Вода");
+            toolTipAll.SetToolTip(pictureBox2, "Древесина");
+            toolTipAll.SetToolTip(pictureBox3, "Камень");
+            toolTipAll.SetToolTip(pictureBox7, "Кожа");
+            toolTipAll.SetToolTip(pictureBox9, "Веревки");
+            toolTipAll.SetToolTip(pictureBox10, "Смола");
+            toolTipAll.SetToolTip(pictureBox11, "Руда");
+                //инструменты
             toolTipAll.SetToolTip(pictureSmallBasket, SmallBasket.name + "\n" + SmallBasket.text);
             toolTipAll.SetToolTip(pictureBasket, Basket.name + "\n" + Basket.text);
             toolTipAll.SetToolTip(pictureWoodAxe, WoodAxe.name + "\n" + WoodAxe.text);
             toolTipAll.SetToolTip(pictureRockAxe, RockAxe.name + "\n" + RockAxe.text);
+            toolTipAll.SetToolTip(pictureWoodPick, WoodPick.name + "\n" + WoodPick.text);
+            toolTipAll.SetToolTip(pictureRockPick, RockPick.name + "\n" + RockPick.text);
 
 
-
-
+            //присвоение параметрам формы значений входящих параметров
             HPmax = param[0];
             HPnow = param[0];
             Def = param[1];
@@ -58,8 +69,8 @@ namespace Survival_on_island
         Items WoodAxe = new Items("Деревянный топор", "Самый простой и не прочный топор.\nС таким много не нарубишь.\nСбор древесины: +0-1", 0, 1, 4);
         Items RockAxe = new Items("Каменный топор", "Самый лучше топор, что можно сделать в этим условиях.\nСбор древесины: +1-2", 0, 1, 4);
         Items FeAxe = new Items("Железный топор", "Лучший топор, о котором можно только мечтать на этом острове. С таким много не нарубишь.", 0, 1, 4);
-        Items WoodPick = new Items("Деревянная кирка", "Самая простая кирка. Добывать камень такой очень сложно.", 0, 1, 4);
-        Items RockPick = new Items("Каменная кирка", "Долбить камнем о камень? Глупая затея, но других вариантов нет.", 0, 1, 4);
+        Items WoodPick = new Items("Деревянная кирка", "Самая простая кирка.\nДобывать камень такой очень сложно.\nСбор камня +0-1", 0, 1, 4);
+        Items RockPick = new Items("Каменная кирка", "Долбить камнем о камень?\nГлупая затея, но других вариантов нет.\nСбор камня +1-2", 0, 1, 4);
         Items FePick = new Items("Железная кирка", "Обладателю такой кирки можно только позавидовать.", 0, 1, 4);
         Items Lance = new Items("Копье", "Хороший инструмент для охоты на дичь.", 0, 1, 1);
         Items Fe_Lance = new Items("Железное копье", "Отличный инструмент для охоты на дичь.", 0, 1, 1);
@@ -98,6 +109,9 @@ namespace Survival_on_island
 
         //переменные дня
         int day = 1;
+
+        //переменная для добычи ресурсов. нужна для вывода добытых ресурсов на экран подсказок
+        int addRes = 0;
 
         //стандарт выпадения ресурсов. Массив минимальных и максимальных значений для разных вариантов действия 1. {д1_мин, д1_макс, д2_мин ... и т.д.}
         int[] use1 = { 2, 3, 3, 5, 5, 7}; //Сбор ягод
@@ -171,7 +185,7 @@ namespace Survival_on_island
             {
                 pictureRockAxe.Visible = false;
             }
-
+            //кирки
             if (WoodPick.value > 0)
             {
                 pictureWoodPick.Visible = true;
@@ -179,6 +193,14 @@ namespace Survival_on_island
             else
             {
                 pictureWoodPick.Visible = false;
+            }
+            if (RockPick.value > 0)
+            {
+                pictureRockPick.Visible = true;
+            }
+            else
+            {
+                pictureRockPick.Visible = false;
             }
             //Ром
             if (Rom.value > 0)
@@ -231,9 +253,10 @@ namespace Survival_on_island
                                 max += 1;
                             }
                             //временная строка для выводы минимума и максимума
-                            labelLog.Text = ("\nMin: " + min + "\nMax: " + max);
-                            
-                            eat += rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
+                            labelLog.Text = ("Шанс: " + (NavSob + NavSob) + "% Min: " + min + " Max: " + max + "\n" + labelLog.Text);
+                            addRes = rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
+                            labelLog.Text = ("Вы нашли " + addRes + " еды" + "\n" + labelLog.Text);
+                            eat += addRes;
                         }
                     }
                     if (use == 2) // поиск древесины
@@ -243,19 +266,23 @@ namespace Survival_on_island
                         {
                             min = use2[0];
                             max = use2[1];
-                            if (RockAxe.value > 0) //если есть каменный топор, то прибавить к максимальному сбору +2
+                            if (RockAxe.value > 0) //если есть каменный топор, то прибавить к максимальному сбору +1-2
                             {
                                 min += 1;
                                 max += 2;
                             }
-                            else if (WoodAxe.value > 0) //иначе, если есть маленькия корзина, то прибавить +1
+                            else if (WoodAxe.value > 0) //иначе, если есть деревянный топор, то прибавить +1
                             {
                                 max += 1;
                             }
                             //временная строка для выводы минимума и максимума
                             labelLog.Text = ( "Шанс: " + (NavSob + NavBuild) + "% Min: " + min + " Max: " + max + "\n" + labelLog.Text);
-
-                            wood += rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
+                            addRes = rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
+                            if (addRes > 0) //проверка на кол-во добытого ресурса. показывает строку, только если ресурса больше 0.
+                            {
+                                labelLog.Text = ("Вы нашли " + addRes + " древесины" + "\n" + labelLog.Text);
+                            }
+                            wood += addRes;
                         }
                     }
                     if (use == 3) // поиск камня
@@ -263,7 +290,25 @@ namespace Survival_on_island
                         EnableTimer();
                         if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти камни.
                         {
-                            rock += rand.Next(use3[0], use3[1] + 1); // Генерирует кол-во в случае успеха.
+                            min = use3[0];
+                            max = use3[1];
+                            if (RockPick.value > 0) //если есть каменная кирка, то прибавить к максимальному сбору +1-2
+                            {
+                                min += 1;
+                                max += 2;
+                            }
+                            else if (WoodPick.value > 0) //иначе, если есть деревянная кирка, то прибавить +1
+                            {
+                                max += 1;
+                            }
+                            //временная строка для выводы минимума и максимума
+                            labelLog.Text = ("Шанс: " + (NavSob + NavBuild) + "% Min: " + min + " Max: " + max + "\n" + labelLog.Text);
+                            addRes = rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
+                            if (addRes > 0) //проверка на кол-во добытого ресурса. показывает строку, только если ресурса больше 0.
+                            {
+                                labelLog.Text = ("Вы нашли " + addRes + " камня" + "\n" + labelLog.Text);
+                            }
+                            rock += addRes;
                         }
                     }
                  
@@ -284,9 +329,24 @@ namespace Survival_on_island
                         if (SmallBasket.value == 1) //Проверка на наличие нужного инструмента
                         {
                             ODhod -= 2;
+                            EnableTimer(); // включает таймер действия для прогресс бара.
                             if (rand.Next(1, 101) < NavSob * 2) // Проверка навыка. Повезет или нет найти ягоды.
                             {
-                                eat += rand.Next(use1[2], use1[3] + 1); // Генерирует кол-во в случае успеха.
+                                min = use1[2];
+                                max = use1[3];
+                                if (Basket.value > 0) //если есть корзина, то прибавить к максимальному сбору еды +2
+                                {
+                                    max += 2;
+                                }
+                                else if (SmallBasket.value > 0) //иначе, если есть маленькия корзина, то прибавить +1
+                                {
+                                    max += 1;
+                                }
+                                //временная строка для выводы минимума и максимума
+                                labelLog.Text = ("Шанс: " + (NavSob + NavSob) + "% Min: " + min + " Max: " + max + "\n" + labelLog.Text);
+                                addRes = rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
+                                labelLog.Text = ("Вы нашли " + addRes + " еды" + "\n" + labelLog.Text);
+                                eat += addRes;
                             }
                         }
                         else
@@ -300,9 +360,28 @@ namespace Survival_on_island
                         if (WoodAxe.value == 1) //Проверка на наличие нужного инструмента
                         {
                             ODhod -= 2;
+                            EnableTimer();
                             if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти древисину.
                             {
-                                wood += rand.Next(use2[2], use2[3] + 1); // Генерирует кол-во в случае успеха.
+                                min = use2[2];
+                                max = use2[3];
+                                if (RockAxe.value > 0) //если есть каменный топор, то прибавить к максимальному сбору +1-2
+                                {
+                                    min += 1;
+                                    max += 2;
+                                }
+                                else if (WoodAxe.value > 0) //иначе, если есть деревянный топор, то прибавить +1
+                                {
+                                    max += 1;
+                                }
+                                //временная строка для выводы минимума и максимума
+                                labelLog.Text = ("Шанс: " + (NavSob + NavBuild) + "% Min: " + min + " Max: " + max + "\n" + labelLog.Text);
+                                addRes = rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
+                                if (addRes > 0) //проверка на кол-во добытого ресурса. показывает строку, только если ресурса больше 0.
+                                {
+                                    labelLog.Text = ("Вы нашли " + addRes + " древесины" + "\n" + labelLog.Text);
+                                }
+                                wood += addRes;
                             }
                         }
                         else
@@ -315,9 +394,28 @@ namespace Survival_on_island
                         if (WoodPick.value == 1) //Проверка на наличие нужного инструмента
                         {
                             ODhod -= 2;
+                            EnableTimer();
                             if (rand.Next(1, 101) < NavSob + NavBuild) // Проверка навыка. Повезет или нет найти камни.
                             {
-                                rock += rand.Next(use3[2], use3[3] + 1); // Генерирует кол-во в случае успеха.
+                                min = use3[2];
+                                max = use3[3];
+                                if (RockPick.value > 0) //если есть каменная кирка, то прибавить к максимальному сбору +1-2
+                                {
+                                    min += 1;
+                                    max += 2;
+                                }
+                                else if (WoodPick.value > 0) //иначе, если есть деревянная кирка, то прибавить +1
+                                {
+                                    max += 1;
+                                }
+                                //временная строка для выводы минимума и максимума
+                                labelLog.Text = ("Шанс: " + (NavSob + NavBuild) + "% Min: " + min + " Max: " + max + "\n" + labelLog.Text);
+                                addRes = rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
+                                if (addRes > 0) //проверка на кол-во добытого ресурса. показывает строку, только если ресурса больше 0.
+                                {
+                                    labelLog.Text = ("Вы нашли " + addRes + " камня" + "\n" + labelLog.Text);
+                                }
+                                rock += addRes;
                             }
                         }
                         else
@@ -325,15 +423,9 @@ namespace Survival_on_island
                             MessageBox.Show("Вам необходима деревянная кирка!");
                         }
                     }
-                    
-                    
-
                 }
                 //обновляет все показатели экрана
                 Refresh();
-
-
-
         }
 
         //метод включения таймера между действиями
@@ -477,6 +569,7 @@ namespace Survival_on_island
             WoodAxe.value = 1;
             RockAxe.ItemAdd();
             WoodPick.value = 1;
+            RockPick.value = 1;
             Rom.ItemAdd();
             Rom.ItemAdd();
 
