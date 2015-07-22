@@ -6,6 +6,7 @@
 
 ```ShellSession
 git clone https://github.com/SinTiger/Digital.git
+cd Digital
 ```
 
 ## Необходимые пакеты
@@ -19,11 +20,22 @@ sudo apt-get install mono-complete
 
 ```ShellSession
 cd Survival_on_island
-xbuild Survival_on_island.csproj
+xbuild Survival_on_island/Survival_on_island.csproj
 ```
 
 ## Запуск
 
 ```ShellSession
-mono bin/Debug/Survival_on_island.exe
+mono Survival_on_island/bin/Debug/Survival_on_island.exe
 ```
+
+## IDE
+
+```ShellSession
+sudo apt-get install exuberant-ctags monodevelop monodevelop-database monodevelop-nunit monodevelop-versioncontrol
+monodevelop Survival_on_island/Survival_on_island.csproj
+```
+
+или откройте проект через меню:
+
+    File > Open > Survival_on_island/Survival_on_island.csproj
