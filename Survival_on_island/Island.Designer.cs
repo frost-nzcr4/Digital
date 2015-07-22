@@ -82,6 +82,14 @@
             this.pictureKurtka1 = new System.Windows.Forms.PictureBox();
             this.pictureSapogi1 = new System.Windows.Forms.PictureBox();
             this.pictureShtani1 = new System.Windows.Forms.PictureBox();
+            this.pictureBow = new System.Windows.Forms.PictureBox();
+            this.pictureStrongBow = new System.Windows.Forms.PictureBox();
+            this.pictureBaton = new System.Windows.Forms.PictureBox();
+            this.pictureLance = new System.Windows.Forms.PictureBox();
+            this.pictureBowDouble = new System.Windows.Forms.PictureBox();
+            this.pictureStrongBowDouble = new System.Windows.Forms.PictureBox();
+            this.pictureBatonDouble = new System.Windows.Forms.PictureBox();
+            this.pictureLanceDouble = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -108,6 +116,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureKurtka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSapogi1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureShtani1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureStrongBow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBaton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBowDouble)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureStrongBowDouble)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBatonDouble)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLanceDouble)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUse1
@@ -702,6 +718,102 @@
             this.pictureShtani1.TabIndex = 52;
             this.pictureShtani1.TabStop = false;
             // 
+            // pictureBow
+            // 
+            this.pictureBow.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureBow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBow.BackgroundImage")));
+            this.pictureBow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBow.Location = new System.Drawing.Point(476, 565);
+            this.pictureBow.Name = "pictureBow";
+            this.pictureBow.Size = new System.Drawing.Size(32, 32);
+            this.pictureBow.TabIndex = 53;
+            this.pictureBow.TabStop = false;
+            this.pictureBow.Visible = false;
+            this.pictureBow.Click += new System.EventHandler(this.pictureBow_Click);
+            // 
+            // pictureStrongBow
+            // 
+            this.pictureStrongBow.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureStrongBow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureStrongBow.BackgroundImage")));
+            this.pictureStrongBow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureStrongBow.Location = new System.Drawing.Point(476, 603);
+            this.pictureStrongBow.Name = "pictureStrongBow";
+            this.pictureStrongBow.Size = new System.Drawing.Size(32, 32);
+            this.pictureStrongBow.TabIndex = 54;
+            this.pictureStrongBow.TabStop = false;
+            this.pictureStrongBow.Visible = false;
+            this.pictureStrongBow.Click += new System.EventHandler(this.pictureStrongBow_Click);
+            // 
+            // pictureBaton
+            // 
+            this.pictureBaton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureBaton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBaton.BackgroundImage")));
+            this.pictureBaton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBaton.Location = new System.Drawing.Point(438, 565);
+            this.pictureBaton.Name = "pictureBaton";
+            this.pictureBaton.Size = new System.Drawing.Size(32, 32);
+            this.pictureBaton.TabIndex = 55;
+            this.pictureBaton.TabStop = false;
+            this.pictureBaton.Visible = false;
+            this.pictureBaton.Click += new System.EventHandler(this.pictureBaton_Click);
+            // 
+            // pictureLance
+            // 
+            this.pictureLance.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureLance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureLance.BackgroundImage")));
+            this.pictureLance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureLance.Location = new System.Drawing.Point(400, 565);
+            this.pictureLance.Name = "pictureLance";
+            this.pictureLance.Size = new System.Drawing.Size(32, 32);
+            this.pictureLance.TabIndex = 56;
+            this.pictureLance.TabStop = false;
+            this.pictureLance.Visible = false;
+            this.pictureLance.Click += new System.EventHandler(this.pictureLance_Click);
+            // 
+            // pictureBowDouble
+            // 
+            this.pictureBowDouble.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureBowDouble.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBowDouble.BackgroundImage")));
+            this.pictureBowDouble.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBowDouble.Location = new System.Drawing.Point(874, 674);
+            this.pictureBowDouble.Name = "pictureBowDouble";
+            this.pictureBowDouble.Size = new System.Drawing.Size(32, 32);
+            this.pictureBowDouble.TabIndex = 57;
+            this.pictureBowDouble.TabStop = false;
+            // 
+            // pictureStrongBowDouble
+            // 
+            this.pictureStrongBowDouble.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureStrongBowDouble.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureStrongBowDouble.BackgroundImage")));
+            this.pictureStrongBowDouble.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureStrongBowDouble.Location = new System.Drawing.Point(874, 712);
+            this.pictureStrongBowDouble.Name = "pictureStrongBowDouble";
+            this.pictureStrongBowDouble.Size = new System.Drawing.Size(32, 32);
+            this.pictureStrongBowDouble.TabIndex = 58;
+            this.pictureStrongBowDouble.TabStop = false;
+            // 
+            // pictureBatonDouble
+            // 
+            this.pictureBatonDouble.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureBatonDouble.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBatonDouble.BackgroundImage")));
+            this.pictureBatonDouble.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBatonDouble.Location = new System.Drawing.Point(836, 675);
+            this.pictureBatonDouble.Name = "pictureBatonDouble";
+            this.pictureBatonDouble.Size = new System.Drawing.Size(32, 32);
+            this.pictureBatonDouble.TabIndex = 59;
+            this.pictureBatonDouble.TabStop = false;
+            // 
+            // pictureLanceDouble
+            // 
+            this.pictureLanceDouble.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureLanceDouble.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureLanceDouble.BackgroundImage")));
+            this.pictureLanceDouble.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureLanceDouble.Location = new System.Drawing.Point(798, 675);
+            this.pictureLanceDouble.Name = "pictureLanceDouble";
+            this.pictureLanceDouble.Size = new System.Drawing.Size(32, 32);
+            this.pictureLanceDouble.TabIndex = 60;
+            this.pictureLanceDouble.TabStop = false;
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -709,6 +821,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 762);
+            this.Controls.Add(this.pictureLanceDouble);
+            this.Controls.Add(this.pictureBatonDouble);
+            this.Controls.Add(this.pictureStrongBowDouble);
+            this.Controls.Add(this.pictureBowDouble);
+            this.Controls.Add(this.pictureLance);
+            this.Controls.Add(this.pictureBaton);
+            this.Controls.Add(this.pictureStrongBow);
+            this.Controls.Add(this.pictureBow);
             this.Controls.Add(this.pictureShtani1);
             this.Controls.Add(this.pictureSapogi1);
             this.Controls.Add(this.pictureKurtka1);
@@ -790,6 +910,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureKurtka1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSapogi1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureShtani1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureStrongBow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBaton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBowDouble)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureStrongBowDouble)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBatonDouble)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLanceDouble)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -849,6 +977,14 @@
         private System.Windows.Forms.PictureBox pictureKurtka1;
         private System.Windows.Forms.PictureBox pictureSapogi1;
         private System.Windows.Forms.PictureBox pictureShtani1;
+        private System.Windows.Forms.PictureBox pictureBow;
+        private System.Windows.Forms.PictureBox pictureStrongBow;
+        private System.Windows.Forms.PictureBox pictureBaton;
+        private System.Windows.Forms.PictureBox pictureLance;
+        private System.Windows.Forms.PictureBox pictureBowDouble;
+        private System.Windows.Forms.PictureBox pictureStrongBowDouble;
+        private System.Windows.Forms.PictureBox pictureBatonDouble;
+        private System.Windows.Forms.PictureBox pictureLanceDouble;
 
     }
 }

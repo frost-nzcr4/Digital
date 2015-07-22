@@ -23,6 +23,17 @@ namespace Survival_on_island
         {
             InitializeComponent();
 
+            //Прячем оружие за край экрана
+                //луки
+            pictureBowDouble.Left = 1200;
+            pictureStrongBowDouble.Left = 1200;
+                //ближнее
+            pictureBatonDouble.Left = 1200;
+            pictureLanceDouble.Left = 1200;
+
+
+
+
             //
             //  Всплывающие подсказки
             //
@@ -45,6 +56,12 @@ namespace Survival_on_island
             toolTipAll.SetToolTip(pictureRockAxe, RockAxe.name + "\n" + RockAxe.text);
             toolTipAll.SetToolTip(pictureWoodPick, WoodPick.name + "\n" + WoodPick.text);
             toolTipAll.SetToolTip(pictureRockPick, RockPick.name + "\n" + RockPick.text);
+                //оружие
+            toolTipAll.SetToolTip(pictureBow, Bow.name + "\n" + Bow.text);
+            toolTipAll.SetToolTip(pictureStrongBow, StrongBow.name + "\n" + StrongBow.text);
+            toolTipAll.SetToolTip(pictureBaton, Baton.name + "\n" + Baton.text);
+            toolTipAll.SetToolTip(pictureLance, Lance.name + "\n" + Lance.text);
+
                 //экипировка
             toolTipAll.SetToolTip(pictureShlem1, SkinHat.name + "\n" + SkinHat.text);
             toolTipAll.SetToolTip(pictureKurtka1, SkinShirt.name + "\n" + SkinShirt.text);
@@ -76,12 +93,12 @@ namespace Survival_on_island
         Items WoodPick = new Items("Деревянная кирка", "Самая простая кирка.\nДобывать камень такой очень сложно.\nСбор камня +0-1", 0, 1, 4);
         Items RockPick = new Items("Каменная кирка", "Долбить камнем о камень?\nГлупая затея, но других вариантов нет.\nСбор камня +1-2", 0, 1, 4);
         Items FePick = new Items("Железная кирка", "Обладателю такой кирки можно только позавидовать.", 0, 1, 4);
-        Items Lance = new Items("Копье", "Хороший инструмент для охоты на дичь.", 0, 1, 1);
-        Items FeLance = new Items("Железное копье", "Отличный инструмент для охоты на дичь.", 0, 1, 1);
-        Items Baton = new Items("Дубинка", "Сгодится для охоты. Особенно хороша против крупных зверей.", 0, 1, 1);
+        Items Lance = new Items("Копье", "Хороший инструмент для охоты на дичь.\nУрон: +1", 0, 1, 1);
+        Items FeLance = new Items("Железное копье", "Отличный инструмент для охоты на дичь.\nУрон: +3", 0, 1, 1);
+        Items Baton = new Items("Дубинка", "Сгодится для охоты.\nОсобенно хороша против крупных зверей.\nУрон: +2\nДополнительно против крупной дичи: +2", 0, 1, 1);
             //оружие дальнего боя
         Items Bow = new Items("Лук", "Простой лук для убийства на расстоянии.\nУрон: +3", 0, 1, 2);
-        Items StrongBow = new Items("Усиленный Лук", "Усиленный лук, отлично подойдет для охоты.\nУрон: +3", 0, 1, 2);
+        Items StrongBow = new Items("Усиленный Лук", "Усиленный лук, отлично подойдет для охоты.\nУрон: +5", 0, 1, 2);
             //вспомогательные
         Items Medical = new Items("Медицинская аптечка", "Помогает залечивать раны.\nЗдоровье: +5", 0, 20, 4);
         Items Rom = new Items("Бутылка рома", "Крепкий напиток так любимый моряками.\nПосле глотка хочется больше работать.\nЗдоровье: +2\nОД: +4", 0, 20, 4);
@@ -139,6 +156,7 @@ namespace Survival_on_island
         int Def = 0;
         int DefWithMod = 0;
         int Damage = 0;
+        int DamageNow = 0;
 
         void Refresh()
         {
@@ -210,6 +228,55 @@ namespace Survival_on_island
             {
                 pictureRockPick.Visible = false;
             }
+
+            //
+            //  Оружие
+            //
+            //луки
+            if (Bow.value > 0)
+            {
+                pictureBow.Visible = true;
+            }
+            else
+            {
+                pictureBow.Visible = false;
+            } 
+            if (StrongBow.value > 0)
+            {
+                pictureStrongBow.Visible = true;
+            }
+            else
+            {
+                pictureStrongBow.Visible = false;
+            }
+            //ближний бой
+            if (Baton.value > 0)
+            {
+                pictureBaton.Visible = true;
+            }
+            else
+            {
+                pictureBaton.Visible = false;
+            }
+            if (Lance.value > 0)
+            {
+                pictureLance.Visible = true;
+            }
+            else
+            {
+                pictureLance.Visible = false;
+            }
+
+            //проверка на экипированное оружие
+            DamageNow = Damage;
+            if (Bow.equip == 1) { DamageNow += 3; }
+            if (StrongBow.equip == 1) { DamageNow += 5; }
+            if (Baton.equip == 1) { DamageNow += 2; }
+            if (Lance.equip == 1) { DamageNow += 1; }
+
+            //
+            //  Сопутствующее снаряжение
+            //
             //Ром
             if (Rom.value > 0)
             {
@@ -223,7 +290,9 @@ namespace Survival_on_island
             }
             labelRomValue.Text = Convert.ToString(Rom.value);
 
-            //проверка и отображение экипировки
+            //
+            //  экипировка
+            //
             DefWithMod = Def;
             if (SkinHat.value > 0)
             {
@@ -602,7 +671,7 @@ namespace Survival_on_island
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Имя: " + Name + "\nHP: " + HPnow + "\nКласс брони: " + DefWithMod + "\nОД: " + OD + "\nУрон: " + Damage , "Характеристики персонажа");
+            MessageBox.Show("Имя: " + Name + "\nHP: " + HPnow + "\nКласс брони: " + DefWithMod + "\nОД: " + OD + "\nУрон: " + DamageNow , "Характеристики персонажа");
 
             
         }
@@ -626,6 +695,12 @@ namespace Survival_on_island
             SkinShirt.ItemAdd();
             SkinPants.ItemAdd();
             SkinShoes.ItemAdd();
+
+            //даем оружие
+            Bow.ItemAdd();
+            StrongBow.ItemAdd();
+            Baton.ItemAdd();
+            Lance.ItemAdd();
 
             Refresh();
         }
@@ -698,6 +773,65 @@ namespace Survival_on_island
         {
             eat += 10;
             HPnow += 10;
+            Refresh();
+        }
+
+        //Клик на лук. ставим его в слот дальнего оружия, предварительно снимая всё, что там может быть.
+        private void pictureBow_Click(object sender, EventArgs e)
+        {
+            //Снятие луков из слотов
+            pictureBowDouble.Left = 1200;
+            pictureStrongBowDouble.Left = 1200;
+            Bow.equip = 0;
+            StrongBow.equip = 0;
+
+            Bow.equip = 1;
+            pictureBowDouble.Left = 525;
+            pictureBowDouble.Top = 673;
+
+            Refresh();
+        }
+
+        private void pictureStrongBow_Click(object sender, EventArgs e)
+        {
+            //Снятие луков из слотов
+            pictureBowDouble.Left = 1200;
+            pictureStrongBowDouble.Left = 1200;
+            Bow.equip = 0;
+            StrongBow.equip = 0;
+
+            StrongBow.equip = 1;
+            pictureStrongBowDouble.Left = 525;
+            pictureStrongBowDouble.Top = 673;
+
+            Refresh();
+        }
+
+        private void pictureBaton_Click(object sender, EventArgs e)
+        {
+            pictureBatonDouble.Left = 1200;
+            pictureLanceDouble.Left = 1200;
+            Baton.equip = 0;
+            Lance.equip = 0;
+
+            Baton.equip = 1;
+            pictureBatonDouble.Left = 525;
+            pictureBatonDouble.Top = 712;
+
+            Refresh();
+        }
+
+        private void pictureLance_Click(object sender, EventArgs e)
+        {
+            pictureBatonDouble.Left = 1200;
+            pictureLanceDouble.Left = 1200;
+            Baton.equip = 0;
+            Lance.equip = 0;
+
+            Lance.equip = 1;
+            pictureLanceDouble.Left = 525;
+            pictureLanceDouble.Top = 712;
+
             Refresh();
         }
 
