@@ -207,15 +207,6 @@ namespace Survival_on_island
             Island form = new Island(param, name);
             this.Close();
             form.Show();
-             
         }
-
-        
-
-
-
-
-
-
     }
 }
