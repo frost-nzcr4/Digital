@@ -49,4 +49,20 @@ monodevelop Survival_on_island/Survival_on_island.csproj
     File > Open > Survival_on_island/Survival_on_island.csproj
 
 После первого открытия MonoDevelop начнёт скачивать и устанавливать пакеты, указанные в зависимостях проекта.
-Это займёт какое-то время.
+Это займёт какое-то время. Если у вас не устанавливаются пакеты из NuGet репозитория см. Приложение 1.
+
+## Приложение 1. Установка репозитория NuGet
+
+### MonoDevelop версии 5 и выше
+
+Проверьте наличие дополнения "NuGet package management":
+
+    Tools > Add-in manager > Installed > IDE extensions
+
+если его нет, то установите через:
+
+    Tools > Add-in manager > Gallery > IDE extensions
+
+### MonoDevelop версии 4 и ниже
+
+Установите как сказано в инструкции https://github.com/mrward/monodevelop-nuget-addin
