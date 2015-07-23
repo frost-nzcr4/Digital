@@ -76,6 +76,32 @@ monodevelop Survival_on_island/Survival_on_island.csproj
 
 Дополнительная информация по возможным ошибкам при установке доступна здесь http://headsigned.com/article/running-nuget-command-line-on-linux
 
+## Тестирование с помощью xUnit.net
+
+### Установка xUnit.net через NuGet в MonoDevelop
+
+Установите зависимость от пакета xUnit, для этого откройте:
+
+    Project > Add NuGet packages ("Add packages" в MonoDevelop версии < 5.9.4)
+
+введите в поиск поочерёдно названия и установите их:
+
+* для xUnit 2.0.0: "packageid:xunit" и "packageid:xunit.runner.console";
+
+* для xUnit 1.9.2: "packageid:xunit" и "packageid:xunit.runners".
+
+### Запуск тестов
+
+#### xUnit 2.0.0
+
+xbuild Survival_on_island.Tests/Survival_on_island.Tests.csproj
+mono Survival_on_island/packages/xunit.runner.console.2.0.0/tools/xunit.console.exe Survival_on_island.Tests/bin/Debug/Survival_on_island.Tests.dll
+
+#### xUnit 1.9.2
+
+xbuild Survival_on_island.Tests/Survival_on_island.Tests.csproj
+mono Survival_on_island/packages/xunit.runners.1.9.2/tools/xunit.console.clr4.exe Survival_on_island.Tests/bin/Debug/Survival_on_island.Tests.dll
+
 ## Приложение 1. Установка репозитория NuGet
 
 ### MonoDevelop версии 5 и выше
@@ -91,3 +117,19 @@ monodevelop Survival_on_island/Survival_on_island.csproj
 ### MonoDevelop версии 4 и ниже
 
 Установите как сказано в инструкции https://github.com/mrward/monodevelop-nuget-addin
+
+## Приложение 2. Дополнение xUnit.NET для запуска из MonoDevelop
+
+Скудная документация доступна в вопросах на гитхабе https://github.com/xunit/xamarinstudio.xunit.
+
+Установить можно с помощью:
+
+    Tools > Add-in manager > Gallery > Testing > xUnit.NET testing framework support
+
+Внимание:
+
+    Судя по вопросам, работает только с xUnit 1.x.
+
+## Приложение 3. Как запустить debug в тестах
+
+http://codebetter.com/glennblock/2014/05/15/debugging-xunit-tests-in-xamarin-studio-and-mono-develop-using-the-debugging-trick/
