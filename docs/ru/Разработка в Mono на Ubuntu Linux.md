@@ -133,3 +133,19 @@ mono Survival_on_island/packages/xunit.runners.1.9.2/tools/xunit.console.clr4.ex
 ## Приложение 3. Как запустить debug в тестах
 
 http://codebetter.com/glennblock/2014/05/15/debugging-xunit-tests-in-xamarin-studio-and-mono-develop-using-the-debugging-trick/
+
+## Приложение 4. Проблемы в совместной работе xUnit и Mono
+
+Описание проблемы:
+
+    https://github.com/xunit/xunit/issues/158
+    https://github.com/mono/mono/pull/1654
+
+Решения:
+
+    1. В xUnit 2.1 beta 4 сделали новый ключ -noappdomain, чтобы обойти баг в Mono.
+    
+    2. В Mono в какой-то из последних версий 4.0.3 или 4.2 должны были выпилить баг #1654.
+    
+    3. Можно поставить xUnit старой версии 1.9.2 и будет работать.
+       Так сделали в этом коммите: https://github.com/williambogaiv/morse-codec/commit/fdf5bcf23b8df44a88116d260b12760a0b446fd9
