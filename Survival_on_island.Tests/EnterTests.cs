@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;  // IEnumerable
 using Xunit;
+using Xunit.Extensions;
 
 namespace Survival_on_island.Tests
 {
