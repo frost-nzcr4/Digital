@@ -63,6 +63,16 @@ namespace Survival_on_island.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Basket {
+            get {
+                object obj = ResourceManager.GetObject("Basket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hp {
             get {
                 object obj = ResourceManager.GetObject("hp", resourceCulture);
@@ -133,9 +143,29 @@ namespace Survival_on_island.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap кирка {
+            get {
+                object obj = ResourceManager.GetObject("кирка", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap кирка_дерево {
             get {
                 object obj = ResourceManager.GetObject("кирка_дерево", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap топор {
+            get {
+                object obj = ResourceManager.GetObject("топор", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
