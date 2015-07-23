@@ -30,4 +30,10 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Survival_on_island\Survival_on_island.csproj">
+      <Project>{F982A3BE-BB61-4303-B345-DB64A926BA7E}</Project>
+      <Name>Survival_on_island</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
