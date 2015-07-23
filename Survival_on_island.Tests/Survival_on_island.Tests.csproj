@@ -39,4 +39,8 @@
       <Name>Survival_on_island</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+  </ItemGroup>
 </Project>
