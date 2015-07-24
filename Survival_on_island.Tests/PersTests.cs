@@ -23,6 +23,15 @@ namespace Survival_on_island.Tests
             Assert.Equal(NavMed, pers.NavMed);
         }
 
+        [Fact]
+        public void EscapeName()
+        {
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6);
+            Assert.Equal("Герой", pers.EscapeName());
+            pers.name = "\\//:?";
+            Assert.Equal("\\//:?", pers.EscapeName());
+        }
+
         [Theory]
         [InlineData("Герой", 1, 2, 3, 4, 5, 6)]
         public void Load(string name, int NavSob, int NavHunt, int NavFish, int NavBuild, int NavNauka, int NavMed)
@@ -44,7 +53,7 @@ namespace Survival_on_island.Tests
         public void Save(string name, int NavSob, int NavHunt, int NavFish, int NavBuild, int NavNauka, int NavMed)
         {
             Pers pers1 = new Pers(name, NavSob, NavHunt, NavFish, NavBuild, NavNauka, NavMed);
-            string fixturePersOut = Path.Combine(projectPath, "PersTests", "fixtures", pers1.name + ".json");
+            string fixturePersOut = Path.Combine(projectPath, "PersTests", "fixtures", pers1.EscapeName() + ".json");
 
             PersFile.Save(pers1, fixturePersOut);
             Pers pers2 = PersFile.Load(fixturePersOut);

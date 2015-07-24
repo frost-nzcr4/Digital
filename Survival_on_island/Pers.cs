@@ -37,6 +37,17 @@ namespace Survival_on_island
             NavMed = NavMed1;
         }
 
+        /// <summary>
+        /// Escapes the name to write JSON to it.
+        /// </summary>
+        /// <returns>The name.</returns>
+        public string EscapeName()
+        {
+            // TODO: Надо проверять на валидность или экранировать this.name, т. к. там могут быть невалидные символы
+            // непригодные для имени файла.
+            return name;
+        }
+
     }
 
     public static class PersFile
