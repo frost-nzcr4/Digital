@@ -51,6 +51,31 @@ monodevelop Survival_on_island/Survival_on_island.csproj
 После первого открытия MonoDevelop начнёт скачивать и устанавливать пакеты, указанные в зависимостях проекта.
 Это займёт какое-то время. Если у вас не устанавливаются пакеты из NuGet репозитория см. Приложение 1.
 
+## Установка NuGet Command Line
+
+Этот пакет необходим для скачивания других пакетов из консоли.
+
+1. Откройте меню:
+
+    Project > Add NuGet packages ("Add packages" в MonoDevelop версии < 5.9.4)
+
+введите в поиск "packageid:NuGet.CommandLine" и установите пакет.
+
+2. Добавьте доверенные серитификаты безопасности:
+
+    mozroots --import --sync
+
+3. Чтобы загрузить пакеты используйте:
+
+    mono Survival_on_island/packages/NuGet.CommandLine.2.8.6/tools/NuGet.exe install [packageid] [-Version версия] -o Survival_on_island/packages/
+
+Внимание:
+
+    Существует небольшая проблема в NuGet для Linux: он игнорирует параметр "output directory" в файле nuget.config,
+    необходимо использовать аргумент `-o папка` чтобы указать папку для сохранения пакетов.
+
+Дополнительная информация по возможным ошибкам при установке доступна здесь http://headsigned.com/article/running-nuget-command-line-on-linux
+
 ## Приложение 1. Установка репозитория NuGet
 
 ### MonoDevelop версии 5 и выше
