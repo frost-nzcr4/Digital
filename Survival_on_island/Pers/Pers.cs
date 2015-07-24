@@ -14,11 +14,21 @@ namespace Survival_on_island
         public int NavMining;
         public int NavWood;
 
-        // Характеристики.
+        // Параметры.
         public int hp;
         public int def;
         public int od;
         public int damage;
+        public int morality;
+
+        // Характеристики.
+        public int Strength;
+        public int Perception;
+        public int Endurance;
+        public int Will;
+        public int Intelligence;
+        public int Agility;
+        public int Luck;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Survival_on_island.Pers"/> class.
@@ -30,12 +40,21 @@ namespace Survival_on_island
         /// <param name="NavCraft1">Навык строительства.</param>
         /// <param name="NavMining1">Навык науки.</param>
         /// <param name="NavWood1">Навык медицины.</param>
-        /// <param name="hp">Здоровье.</param>
-        /// <param name="def">Защита.</param>
-        /// <param name="od">Очки действия.</param>
-        /// <param name="damage">Урон.</param>
+        /// <param name="hp1">Здоровье.</param>
+        /// <param name="def1">Защита.</param>
+        /// <param name="od1">Очки действия.</param>
+        /// <param name="damage1">Урон.</param>
+        /// <param name="morality1">Morality1.</param>
+        /// <param name="Strength1">Сила.</param>
+        /// <param name="Perception1">Восприятие.</param>
+        /// <param name="Endurance1">Выносливость.</param>
+        /// <param name="Will1">Воля.</param>
+        /// <param name="Intelligence1">Intelligence1.</param>
+        /// <param name="Agility1">Agility1.</param>
+        /// <param name="Luck1">Удача.</param>
         public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavCraft1, int NavMining1, int NavWood1,
-            int hp1, int def1, int od1, int damage1)
+            int hp1, int def1, int od1, int damage1, int morality1,
+            int Strength1, int Perception1, int Endurance1, int Will1, int Intelligence1, int Agility1, int Luck1)
         {
             name = name1;
 
@@ -50,6 +69,15 @@ namespace Survival_on_island
             def = def1;
             od = od1;
             damage = damage1;
+            morality = morality1;
+
+            Strength = Strength1;
+            Perception = Perception1;
+            Endurance = Endurance1;
+            Will = Will1;
+            Intelligence = Intelligence1;
+            Agility = Agility1;
+            Luck = Luck1;
         }
 
         /// <summary>
