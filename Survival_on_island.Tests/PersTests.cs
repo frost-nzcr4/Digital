@@ -1,10 +1,14 @@
-﻿using Xunit;
+﻿using System.IO;
+using Xunit;
 using Xunit.Extensions;
 
 namespace Survival_on_island.Tests
 {
     public class PersTests
     {
+        private static string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+        //private static string projectPath = Directory.GetParent(System.AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
+
         [Theory]
         [InlineData("Герой", 1, 2, 3, 4, 5, 6)]
         public void Pers(string name, int NavSob, int NavHunt, int NavFish, int NavBuild, int NavNauka, int NavMed)
@@ -20,10 +24,12 @@ namespace Survival_on_island.Tests
         }
 
         [Theory]
-        [InlineData("Герой", 1, 2, 3, 4, 5, 6, "PersTests/fixtures/pers.json")]
-        public void Load(string name, int NavSob, int NavHunt, int NavFish, int NavBuild, int NavNauka, int NavMed, string filename)
+        [InlineData("Герой", 1, 2, 3, 4, 5, 6)]
+        public void Load(string name, int NavSob, int NavHunt, int NavFish, int NavBuild, int NavNauka, int NavMed)
         {
-            Pers pers = Pers.Load(filename);
+            string fixturePersIn = Path.Combine(projectPath, "PersTests", "fixtures", "Pers.json");
+
+            Pers pers = PersFile.Load(fixturePersIn);
             Assert.Equal(name, pers.name);
             Assert.Equal(NavSob, pers.NavSob);
             Assert.Equal(NavHunt, pers.NavHunt);
@@ -34,12 +40,14 @@ namespace Survival_on_island.Tests
         }
 
         [Theory]
-        [InlineData("Герой", 1, 2, 3, 4, 5, 6, "PersTests/fixtures/pers.json", "PersTests/fixtures/pers-out.json")]
-        public void Save(string name, int NavSob, int NavHunt, int NavFish, int NavBuild, int NavNauka, int NavMed, string filename, string filenameToSave)
+        [InlineData("Герой", 1, 2, 3, 4, 5, 6)]
+        public void Save(string name, int NavSob, int NavHunt, int NavFish, int NavBuild, int NavNauka, int NavMed)
         {
+            string fixturePersOut = Path.Combine(projectPath, "PersTests", "fixtures", "pers-out.json");
+
             Pers pers1 = new Pers(name, NavSob, NavHunt, NavFish, NavBuild, NavNauka, NavMed);
-            Pers.Save(pers1, fixturePersOut);
-            Pers pers2 = Pers.Load(filenameToSave);
+            PersFile.Save(pers1, fixturePersOut);
+            Pers pers2 = PersFile.Load(fixturePersOut);
             Assert.Equal(pers1.name, pers2.name);
             Assert.Equal(pers1.NavSob, pers2.NavSob);
             Assert.Equal(pers1.NavHunt, pers2.NavHunt);
