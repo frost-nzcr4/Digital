@@ -32,6 +32,34 @@ namespace Survival_on_island.Tests
             Assert.Equal("\\//:?", pers.EscapeName());
         }
 
+        [Fact]
+        public void SaveWithPredefinedName()
+        {
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6);
+            string save_folder = Path.Combine(projectPath, "saves");
+            string pers_saved = Path.Combine(projectPath, "saves", pers.EscapeName() + ".json");
+
+            Directory.CreateDirectory(save_folder);
+            pers.Save();
+            Assert.True(File.Exists(pers_saved));
+            File.Delete(pers_saved);
+            Directory.Delete(save_folder);
+        }
+
+        [Fact]
+        public void SaveWithSpecifiedName()
+        {
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6);
+            string save_folder = Path.Combine(projectPath, "saves");
+            string pers_saved = Path.Combine(projectPath, "saves", pers.EscapeName() + "-specified-name.json");
+
+            Directory.CreateDirectory(save_folder);
+            pers.Save(pers_saved);
+            Assert.True(File.Exists(pers_saved));
+            File.Delete(pers_saved);
+            Directory.Delete(save_folder);
+        }
+
         [Theory]
         [InlineData("Герой", 1, 2, 3, 4, 5, 6)]
         public void Load(string name, int NavSob, int NavHunt, int NavFish, int NavBuild, int NavNauka, int NavMed)
