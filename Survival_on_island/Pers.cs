@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.IO;
 
 namespace Survival_on_island
 {
@@ -33,6 +35,21 @@ namespace Survival_on_island
             NavBuild = NavBuild1;
             NavNauka = NavNauka1;
             NavMed = NavMed1;
+        }
+    }
+
+    public static class PersFile
+    {
+        public static Pers Load(string filename)
+        {
+            var pers_file = File.ReadAllText(filename);
+            Pers pers = JsonConvert.DeserializeObject<Pers>(pers_file);
+            return pers;
+        }
+
+        public static bool Save(string filename)
+        {
+            return true;
         }
     }
 }
