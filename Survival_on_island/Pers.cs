@@ -36,6 +36,7 @@ namespace Survival_on_island
             NavNauka = NavNauka1;
             NavMed = NavMed1;
         }
+
     }
 
     public static class PersFile
@@ -47,9 +48,10 @@ namespace Survival_on_island
             return pers;
         }
 
-        public static bool Save(string filename)
+        public static void Save(Pers pers, string filename)
         {
-            return true;
+            string json = JsonConvert.SerializeObject(pers, Formatting.Indented);
+            File.WriteAllText(filename, json);
         }
     }
 }
