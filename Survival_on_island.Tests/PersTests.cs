@@ -43,11 +43,12 @@ namespace Survival_on_island.Tests
         [InlineData("Герой", 1, 2, 3, 4, 5, 6)]
         public void Save(string name, int NavSob, int NavHunt, int NavFish, int NavBuild, int NavNauka, int NavMed)
         {
-            string fixturePersOut = Path.Combine(projectPath, "PersTests", "fixtures", "pers-out.json");
-
             Pers pers1 = new Pers(name, NavSob, NavHunt, NavFish, NavBuild, NavNauka, NavMed);
+            string fixturePersOut = Path.Combine(projectPath, "PersTests", "fixtures", pers1.name + ".json");
+
             PersFile.Save(pers1, fixturePersOut);
             Pers pers2 = PersFile.Load(fixturePersOut);
+            File.Delete(fixturePersOut);
             Assert.Equal(pers1.name, pers2.name);
             Assert.Equal(pers1.NavSob, pers2.NavSob);
             Assert.Equal(pers1.NavHunt, pers2.NavHunt);
