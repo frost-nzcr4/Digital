@@ -32,6 +32,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Compile Include="EnterTests.cs" />
+    <Compile Include="ItemsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Survival_on_island\Survival_on_island.csproj">
