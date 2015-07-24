@@ -5,5 +5,9 @@
   "NavFish": 3,
   "NavBuild": 4,
   "NavNauka": 5,
-  "NavMed": 6
+  "NavMed": 6,
+  "hp": 7,
+  "def": 8,
+  "od": 9,
+  "damage": 10
 }
