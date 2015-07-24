@@ -34,6 +34,7 @@
     <Compile Include="EnterTests.cs" />
     <Compile Include="ItemsTests.cs" />
     <Compile Include="PersTests\PersTests.cs" />
+    <Compile Include="PersTests\PersFileTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Survival_on_island\Survival_on_island.csproj">
