@@ -11,7 +11,7 @@ namespace Survival_on_island.Tests.PersTests
 
         [Theory]
         [InlineData("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)]
-        public void Load(string name, int NavSob, int NavHunt, int NavFish, int NavCraft, int NavNauka, int NavMed,
+        public void Load(string name, int NavSob, int NavHunt, int NavFish, int NavCraft, int NavMining, int NavMed,
             int hp, int def, int od, int damage)
         {
             string fixturePersIn = Path.Combine(projectPath, "PersTests", "fixtures", "Pers.json");
@@ -22,7 +22,7 @@ namespace Survival_on_island.Tests.PersTests
             Assert.Equal(NavHunt, pers.NavHunt);
             Assert.Equal(NavFish, pers.NavFish);
             Assert.Equal(NavCraft, pers.NavCraft);
-            Assert.Equal(NavNauka, pers.NavNauka);
+            Assert.Equal(NavMining, pers.NavMining);
             Assert.Equal(NavMed, pers.NavMed);
             Assert.Equal(hp, pers.hp);
             Assert.Equal(def, pers.def);
@@ -32,10 +32,10 @@ namespace Survival_on_island.Tests.PersTests
 
         [Theory]
         [InlineData("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)]
-        public void Save(string name, int NavSob, int NavHunt, int NavFish, int NavCraft, int NavNauka, int NavMed,
+        public void Save(string name, int NavSob, int NavHunt, int NavFish, int NavCraft, int NavMining, int NavMed,
             int hp, int def, int od, int damage)
         {
-            Pers pers1 = new Pers(name, NavSob, NavHunt, NavFish, NavCraft, NavNauka, NavMed, hp, def, od, damage);
+            Pers pers1 = new Pers(name, NavSob, NavHunt, NavFish, NavCraft, NavMining, NavMed, hp, def, od, damage);
             string fixturePersOut = Path.Combine(projectPath, "PersTests", "fixtures", pers1.EscapeName() + ".json");
 
             PersFile.Save(pers1, fixturePersOut);
@@ -46,7 +46,7 @@ namespace Survival_on_island.Tests.PersTests
             Assert.Equal(pers1.NavHunt, pers2.NavHunt);
             Assert.Equal(pers1.NavFish, pers2.NavFish);
             Assert.Equal(pers1.NavCraft, pers2.NavCraft);
-            Assert.Equal(pers1.NavNauka, pers2.NavNauka);
+            Assert.Equal(pers1.NavMining, pers2.NavMining);
             Assert.Equal(pers1.NavMed, pers2.NavMed);
             Assert.Equal(pers1.hp, pers2.hp);
             Assert.Equal(pers1.def, pers2.def);

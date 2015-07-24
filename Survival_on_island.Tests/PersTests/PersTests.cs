@@ -11,16 +11,16 @@ namespace Survival_on_island.Tests.PersTests
 
         [Theory]
         [InlineData("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)]
-        public void Pers(string name, int NavSob, int NavHunt, int NavFish, int NavCraft, int NavNauka, int NavMed,
+        public void Pers(string name, int NavSob, int NavHunt, int NavFish, int NavCraft, int NavMining, int NavMed,
             int hp, int def, int od, int damage)
         {
-            Pers pers = new Pers(name, NavSob, NavHunt, NavFish, NavCraft, NavNauka, NavMed, hp, def, od, damage);
+            Pers pers = new Pers(name, NavSob, NavHunt, NavFish, NavCraft, NavMining, NavMed, hp, def, od, damage);
             Assert.Equal(name, pers.name);
             Assert.Equal(NavSob, pers.NavSob);
             Assert.Equal(NavHunt, pers.NavHunt);
             Assert.Equal(NavFish, pers.NavFish);
             Assert.Equal(NavCraft, pers.NavCraft);
-            Assert.Equal(NavNauka, pers.NavNauka);
+            Assert.Equal(NavMining, pers.NavMining);
             Assert.Equal(NavMed, pers.NavMed);
             Assert.Equal(hp, pers.hp);
             Assert.Equal(def, pers.def);

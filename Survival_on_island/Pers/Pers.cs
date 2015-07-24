@@ -11,7 +11,7 @@ namespace Survival_on_island
         public int NavHunt;
         public int NavFish;
         public int NavCraft;
-        public int NavNauka;
+        public int NavMining;
         public int NavMed;
 
         // Характеристики.
@@ -28,13 +28,13 @@ namespace Survival_on_island
         /// <param name="NavHunt1">Навык охоты.</param>
         /// <param name="NavFish1">Навык рыбалки.</param>
         /// <param name="NavCraft1">Навык строительства.</param>
-        /// <param name="NavNauka1">Навык науки.</param>
+        /// <param name="NavMining1">Навык науки.</param>
         /// <param name="NavMed1">Навык медицины.</param>
         /// <param name="hp">Здоровье.</param>
         /// <param name="def">Защита.</param>
         /// <param name="od">Очки действия.</param>
         /// <param name="damage">Урон.</param>
-        public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavCraft1, int NavNauka1, int NavMed1,
+        public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavCraft1, int NavMining1, int NavMed1,
             int hp1, int def1, int od1, int damage1)
         {
             name = name1;
@@ -43,7 +43,7 @@ namespace Survival_on_island
             NavHunt = NavHunt1;
             NavFish = NavFish1;
             NavCraft = NavCraft1;
-            NavNauka = NavNauka1;
+            NavMining = NavMining1;
             NavMed = NavMed1;
 
             hp = hp1;
