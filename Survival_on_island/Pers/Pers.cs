@@ -10,7 +10,7 @@ namespace Survival_on_island
         public int NavSob;
         public int NavHunt;
         public int NavFish;
-        public int NavBuild;
+        public int NavCraft;
         public int NavNauka;
         public int NavMed;
 
@@ -27,14 +27,14 @@ namespace Survival_on_island
         /// <param name="NavSob1">Навык собирательства.</param>
         /// <param name="NavHunt1">Навык охоты.</param>
         /// <param name="NavFish1">Навык рыбалки.</param>
-        /// <param name="NavBuild1">Навык строительства.</param>
+        /// <param name="NavCraft1">Навык строительства.</param>
         /// <param name="NavNauka1">Навык науки.</param>
         /// <param name="NavMed1">Навык медицины.</param>
         /// <param name="hp">Здоровье.</param>
         /// <param name="def">Защита.</param>
         /// <param name="od">Очки действия.</param>
         /// <param name="damage">Урон.</param>
-        public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavBuild1, int NavNauka1, int NavMed1,
+        public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavCraft1, int NavNauka1, int NavMed1,
             int hp1, int def1, int od1, int damage1)
         {
             name = name1;
@@ -42,7 +42,7 @@ namespace Survival_on_island
             NavSob = NavSob1;
             NavHunt = NavHunt1;
             NavFish = NavFish1;
-            NavBuild = NavBuild1;
+            NavCraft = NavCraft1;
             NavNauka = NavNauka1;
             NavMed = NavMed1;
 
