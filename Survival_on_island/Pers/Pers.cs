@@ -14,6 +14,12 @@ namespace Survival_on_island
         public int NavNauka;
         public int NavMed;
 
+        // Характеристики.
+        public int hp;
+        public int def;
+        public int od;
+        public int damage;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Survival_on_island.Pers"/> class.
         /// </summary>
@@ -24,15 +30,26 @@ namespace Survival_on_island
         /// <param name="NavBuild1">Навык строительства.</param>
         /// <param name="NavNauka1">Навык науки.</param>
         /// <param name="NavMed1">Навык медицины.</param>
-        public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavBuild1, int NavNauka1, int NavMed1)
+        /// <param name="hp">Здоровье.</param>
+        /// <param name="def">Защита.</param>
+        /// <param name="od">Очки действия.</param>
+        /// <param name="damage">Урон.</param>
+        public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavBuild1, int NavNauka1, int NavMed1,
+            int hp1, int def1, int od1, int damage1)
         {
             name = name1;
+
             NavSob = NavSob1;
             NavHunt = NavHunt1;
             NavFish = NavFish1;
             NavBuild = NavBuild1;
             NavNauka = NavNauka1;
             NavMed = NavMed1;
+
+            hp = hp1;
+            def = def1;
+            od = od1;
+            damage = damage1;
         }
 
         /// <summary>
