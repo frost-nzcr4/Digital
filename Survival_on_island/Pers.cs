@@ -48,6 +48,24 @@ namespace Survival_on_island
             return name;
         }
 
+        /// <summary>
+        /// Save this instance to predefined filename.
+        /// </summary>
+        public void Save()
+        {
+            string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string filename = Path.Combine(projectPath, "saves", EscapeName() + ".json");
+            Save(filename);
+        }
+
+        /// <summary>
+        /// Save this instance to specified filename.
+        /// </summary>
+        /// <param name="filename">Filename.</param>
+        public void Save(string filename)
+        {
+            PersFile.Save(this, filename);
+        }
     }
 
     public static class PersFile
