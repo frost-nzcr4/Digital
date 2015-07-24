@@ -53,5 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="PersTests\fixtures\Pers.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PersTests\" />
+    <Folder Include="PersTests\fixtures\" />
   </ItemGroup>
 </Project>
