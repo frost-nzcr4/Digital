@@ -361,14 +361,9 @@ namespace Survival_on_island
                         {
                             min = use1[0];
                             max = use1[1];
-                            if (Basket.value > 0) //если есть корзина, то прибавить к максимальному сбору еды +2
-                            {
-                                max += 2;
-                            }
-                            else if (SmallBasket.value > 0) //иначе, если есть маленькия корзина, то прибавить +1
-                            {
-                                max += 1;
-                            }
+                            if (Basket.value > 0) { max += 2; } //если есть корзина, то прибавить к максимальному сбору еды +2
+                            else if (SmallBasket.value > 0) { max += 1; } //иначе, если есть маленькия корзина, то прибавить +1
+
                             //временная строка для выводы минимума и максимума
                             labelLog.Text = ("Шанс: " + (NavSob + NavSob) + "% Min: " + min + " Max: " + max + "\n" + labelLog.Text);
                             addRes = rand.Next(min, max + 1); // Генерирует кол-во в случае успеха.
@@ -833,6 +828,14 @@ namespace Survival_on_island
             pictureLanceDouble.Top = 712;
 
             Refresh();
+        }
+
+        //Кнопка "Выйти из игры"
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Program.GetFormByName("Enter").Show(); //находит скрытую форму и оказывает её.
+
         }
 
 

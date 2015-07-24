@@ -20,19 +20,84 @@ namespace Survival_on_island
             
         }
 
+        //Имя
         string name;
 
-        //навыки
-        int NavSob = 20;
-        int NavHunt = 20;
-        int NavFish = 20;
-        int NavBuild = 20;
-        int NavNauka = 20;
-        int NavMed = 20;
+        //начальные навыки
+        int NavSob = 0;
+        int NavHunt = 0;
+        int NavFish = 0;
+        int NavCraft = 0;
+        int NavMining = 0;
+        int NavWood = 0;
+        int NavDefault = 20; //Кол-во % навыков по-умолчанию. Необходимо для ввода уровней сложности.
 
-        private void SpecAdd_ValueChanged(object sender, EventArgs e)
+        //Характеристики
+        int Strength = 5;
+        int Perception = 5;
+        int Endurance  = 5;
+        int Will = 5;           //Воля. Вместо 'C'
+        int Intelligence  = 5;
+        int Agility  = 5;
+        int Luck = 5;
+        int SpecialAll = 40;       //Всего навыков
+
+        //Параметры
+        int hp = 0;
+        int def = 0;
+        int OD = 0;
+        int damage = 0;
+        int morality = 0;
+
+
+        //Метод обновления статов
+        void Refresh_Stat()
         {
-            
+            //Вывод имени
+            labelName.Text = name;
+
+            //Выводим характеристики на экран
+            SpecS.Text = Convert.ToString(Strength);
+            SpecP.Text = Convert.ToString(Perception);
+            SpecE.Text = Convert.ToString(Endurance);
+            SpecC.Text = Convert.ToString(Will);
+            SpecI.Text = Convert.ToString(Intelligence);
+            SpecA.Text = Convert.ToString(Agility);
+            SpecL.Text = Convert.ToString(Luck);
+            SpecialAll = 40 - (Strength + Perception + Endurance + Will + Intelligence + Agility + Luck);
+            SpecAdd.Text = Convert.ToString(SpecialAll);
+
+            //Считаем и выводим основые параметры. HP, Защита, ОД, Урон, Мораль.
+            hp = Strength + (2*Endurance) + 15;
+            labelHP.Text = Convert.ToString(hp);
+            def = Agility;
+            labelDef.Text = Convert.ToString(def);
+            OD = (Agility/2) + 5;
+            labelOD.Text = Convert.ToString(OD);
+            damage = Strength;
+            labelDamage.Text = Convert.ToString(damage);
+            morality = 20 + (Will * 4);
+            labelMorality.Text = Convert.ToString(morality);
+
+            //Подсчет и вывод навыков
+            NavSob = NavDefault + (Perception * 2);
+            labelNavSob.Text = Convert.ToString(NavSob);
+            NavHunt = NavDefault + Perception + Agility;
+            labelNavHunt.Text = Convert.ToString(NavHunt);
+            NavFish = NavDefault + Will + Will;
+            labelNavFish.Text = Convert.ToString(NavFish);
+            NavCraft = NavDefault + (Intelligence * 2);
+            labelNavCraft.Text = Convert.ToString(NavCraft);
+            NavMining = NavDefault + Strength + Endurance;
+            labelNavMining.Text = Convert.ToString(NavMining);
+            NavWood = NavDefault + Strength + Agility;
+            labelNavWood.Text = Convert.ToString(NavWood);
+        }
+
+        // Таймер для обновления статов
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Refresh_Stat();
         }
 
 
@@ -40,150 +105,115 @@ namespace Survival_on_island
         // прибавляет силу на 1
         private void SpecSPlus_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecS.Text) < 10 && Convert.ToInt16(SpecAdd.Text)>0)
+            if (Strength < 10 && SpecialAll > 0)
             {
-                SpecS.Text = Convert.ToString (Convert.ToInt16(SpecS.Text) + 1) ;
+                Strength++;
             }
         }
         // убавляет силу на 1
         private void SpecSMin_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecS.Text) > 1)
+            if (Strength > 2)
             {
-                SpecS.Text = Convert.ToString(Convert.ToInt16(SpecS.Text) - 1);
+                Strength--;
             }
         }
 
         private void SpecPPlus_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecP.Text) < 10 && Convert.ToInt16(SpecAdd.Text) > 0)
+            if (Perception < 10 && SpecialAll > 0)
             {
-                SpecP.Text = Convert.ToString(Convert.ToInt16(SpecP.Text) + 1);
+                Perception++;
             }
         }
 
         private void SpecPMin_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecP.Text) > 1)
+            if (Perception > 2)
             {
-                SpecP.Text = Convert.ToString(Convert.ToInt16(SpecP.Text) - 1);
+                Perception--;
             }
         }
 
-        //Метод обновления статов
-        void Refresh_Stat()
-        {
-            labelHP.Text = Convert.ToString ( 15 + Convert.ToInt16(SpecS.Text) + 2 * (Convert.ToInt16(SpecE.Text)) ); //здоровье
-            labelDef.Text = Convert.ToString(Convert.ToInt16(SpecA.Text));
-            labelOD.Text = Convert.ToString( (Convert.ToInt16(SpecA.Text)/2 ) + 5 ); // подсчет ОД относительно ловкости. ОД = ЛВ/2 +5
-            //Подсчет урона. Урон=Сила-5, но не меньше 1.
-            if ((Convert.ToInt16(SpecS.Text) - 5) > 0)
-            {
-                labelDamage.Text = Convert.ToString(Convert.ToInt16(SpecS.Text) - 5);
-            }
-            else
-            {
-                labelDamage.Text = "1";
-            }
-
-            //дополнительные очки SPECIAL
-            SpecAdd.Text = Convert.ToString(40 - Convert.ToInt16(SpecS.Text) - Convert.ToInt16(SpecP.Text) - Convert.ToInt16(SpecE.Text) - Convert.ToInt16(SpecC.Text) - Convert.ToInt16(SpecI.Text) - Convert.ToInt16(SpecA.Text) - Convert.ToInt16(SpecL.Text));
-            
-            //вывод имени
-            labelName.Text = name;
-            
-
-            //навыки. вывод
-            navSob.Text = Convert.ToString(NavSob + Convert.ToInt16(SpecP.Text) * 2) + "%";
-            navHunt.Text = Convert.ToString(NavHunt + Convert.ToInt16(SpecP.Text) + Convert.ToInt16(SpecS.Text)) + "%";
-            navFish.Text = Convert.ToString(NavFish + Convert.ToInt16(SpecE.Text) + Convert.ToInt16(SpecA.Text)) + "%";
-            navBuild.Text = Convert.ToString(NavBuild + Convert.ToInt16(SpecI.Text) + Convert.ToInt16(SpecE.Text)) + "%";
-            navNauka.Text = Convert.ToString(NavNauka + Convert.ToInt16(SpecI.Text) + Convert.ToInt16(SpecP.Text)) + "%";
-            navMed.Text = Convert.ToString(NavMed + Convert.ToInt16(SpecI.Text) + Convert.ToInt16(SpecA.Text)) + "%";
-        }
-        // Таймер для обновления статов
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Refresh_Stat();
-        }
+        
 
         private void SpecEPlus_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecE.Text) < 10 && Convert.ToInt16(SpecAdd.Text) > 0)
+            if (Endurance < 10 && SpecialAll > 0)
             {
-                SpecE.Text = Convert.ToString(Convert.ToInt16(SpecE.Text) + 1);
+                Endurance++;
             }
         }
 
         private void SpecEMin_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecE.Text) > 1)
+            if (Endurance > 2)
             {
-                SpecE.Text = Convert.ToString(Convert.ToInt16(SpecE.Text) - 1);
+                Endurance--;
             }
         }
 
         private void SpecCPlus_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecC.Text) < 10 && Convert.ToInt16(SpecAdd.Text) > 0)
+            if (Will < 10 && SpecialAll > 0)
             {
-                SpecC.Text = Convert.ToString(Convert.ToInt16(SpecC.Text) + 1);
+                Will++;
             }
         }
 
         private void SpecCMin_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecC.Text) > 1)
+            if (Will > 2)
             {
-                SpecC.Text = Convert.ToString(Convert.ToInt16(SpecC.Text) - 1);
+                Will--;
             }
         }
 
         private void SpecIPlus_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecI.Text) < 10 && Convert.ToInt16(SpecAdd.Text) > 0)
+            if (Intelligence < 10 && SpecialAll > 0)
             {
-                SpecI.Text = Convert.ToString(Convert.ToInt16(SpecI.Text) + 1);
+                Intelligence++;
             }
         }
 
         private void SpecIMin_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecI.Text) > 1)
+            if (Intelligence > 2)
             {
-                SpecI.Text = Convert.ToString(Convert.ToInt16(SpecI.Text) - 1);
+                Intelligence--;
             }
         }
 
         private void SpecAPlus_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecA.Text) < 10 && Convert.ToInt16(SpecAdd.Text) > 0)
+            if (Agility < 10 && SpecialAll > 0)
             {
-                SpecA.Text = Convert.ToString(Convert.ToInt16(SpecA.Text) + 1);
+                Agility++;
             }
         }
 
         private void SpecAMin_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecA.Text) > 1)
+            if (Agility > 2)
             {
-                SpecA.Text = Convert.ToString(Convert.ToInt16(SpecA.Text) - 1);
+                Agility--;
             }
         }
 
         private void SpecLPlus_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecL.Text) < 10 && Convert.ToInt16(SpecAdd.Text) > 0)
+            if (Luck < 10 && SpecialAll > 0)
             {
-                SpecL.Text = Convert.ToString(Convert.ToInt16(SpecL.Text) + 1);
+                Luck++;
             }
         }
 
         private void SpecLMin_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt16(SpecL.Text) > 1)
+            if (Luck > 2)
             {
-                SpecL.Text = Convert.ToString(Convert.ToInt16(SpecL.Text) - 1);
+                Luck--;
             }
         }
 
@@ -198,10 +228,7 @@ namespace Survival_on_island
         private void buttonOK_Click(object sender, EventArgs e)
         {
             //забираем параметры для передачи в другую форму
-            int hp = Convert.ToInt16(labelHP.Text);
-            int def = Convert.ToInt16(labelDef.Text);
-            int OD = Convert.ToInt16(labelOD.Text);
-            int damage = Convert.ToInt16(labelDamage.Text);
+            
             int[] param = {hp, def, OD, damage };
 
             Island form = new Island(param, name);

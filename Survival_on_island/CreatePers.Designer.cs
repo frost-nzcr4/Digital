@@ -65,19 +65,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.navSob = new System.Windows.Forms.Label();
-            this.navHunt = new System.Windows.Forms.Label();
-            this.navFish = new System.Windows.Forms.Label();
-            this.navBuild = new System.Windows.Forms.Label();
-            this.navNauka = new System.Windows.Forms.Label();
-            this.navMed = new System.Windows.Forms.Label();
+            this.labelNavSob = new System.Windows.Forms.Label();
+            this.labelNavHunt = new System.Windows.Forms.Label();
+            this.labelNavFish = new System.Windows.Forms.Label();
+            this.labelNavCraft = new System.Windows.Forms.Label();
+            this.labelNavMining = new System.Windows.Forms.Label();
+            this.labelNavWood = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelOD = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labelMorality = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSPlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecSMin)).BeginInit();
@@ -449,7 +451,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(375, 32);
+            this.label2.Location = new System.Drawing.Point(375, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 13);
             this.label2.TabIndex = 37;
@@ -461,7 +463,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(375, 54);
+            this.label3.Location = new System.Drawing.Point(375, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 38;
@@ -473,7 +475,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(375, 75);
+            this.label4.Location = new System.Drawing.Point(375, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 39;
@@ -485,107 +487,83 @@
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.Lime;
-            this.label5.Location = new System.Drawing.Point(375, 98);
+            this.label5.Location = new System.Drawing.Point(375, 100);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 40;
-            this.label5.Text = "Строительство";
+            this.label5.Text = "Ремесло";
             // 
-            // label6
+            // labelNavSob
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.Color.Lime;
-            this.label6.Location = new System.Drawing.Point(375, 122);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "Наука";
+            this.labelNavSob.AutoSize = true;
+            this.labelNavSob.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelNavSob.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNavSob.ForeColor = System.Drawing.Color.Lime;
+            this.labelNavSob.Location = new System.Drawing.Point(515, 40);
+            this.labelNavSob.Name = "labelNavSob";
+            this.labelNavSob.Size = new System.Drawing.Size(14, 13);
+            this.labelNavSob.TabIndex = 43;
+            this.labelNavSob.Text = "0";
             // 
-            // label7
+            // labelNavHunt
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.Color.Lime;
-            this.label7.Location = new System.Drawing.Point(375, 147);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "Медицина";
+            this.labelNavHunt.AutoSize = true;
+            this.labelNavHunt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelNavHunt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNavHunt.ForeColor = System.Drawing.Color.Lime;
+            this.labelNavHunt.Location = new System.Drawing.Point(515, 60);
+            this.labelNavHunt.Name = "labelNavHunt";
+            this.labelNavHunt.Size = new System.Drawing.Size(14, 13);
+            this.labelNavHunt.TabIndex = 44;
+            this.labelNavHunt.Text = "0";
             // 
-            // navSob
+            // labelNavFish
             // 
-            this.navSob.AutoSize = true;
-            this.navSob.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.navSob.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.navSob.ForeColor = System.Drawing.Color.Lime;
-            this.navSob.Location = new System.Drawing.Point(515, 32);
-            this.navSob.Name = "navSob";
-            this.navSob.Size = new System.Drawing.Size(14, 13);
-            this.navSob.TabIndex = 43;
-            this.navSob.Text = "0";
+            this.labelNavFish.AutoSize = true;
+            this.labelNavFish.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelNavFish.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNavFish.ForeColor = System.Drawing.Color.Lime;
+            this.labelNavFish.Location = new System.Drawing.Point(515, 80);
+            this.labelNavFish.Name = "labelNavFish";
+            this.labelNavFish.Size = new System.Drawing.Size(14, 13);
+            this.labelNavFish.TabIndex = 45;
+            this.labelNavFish.Text = "0";
             // 
-            // navHunt
+            // labelNavCraft
             // 
-            this.navHunt.AutoSize = true;
-            this.navHunt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.navHunt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.navHunt.ForeColor = System.Drawing.Color.Lime;
-            this.navHunt.Location = new System.Drawing.Point(515, 56);
-            this.navHunt.Name = "navHunt";
-            this.navHunt.Size = new System.Drawing.Size(14, 13);
-            this.navHunt.TabIndex = 44;
-            this.navHunt.Text = "0";
+            this.labelNavCraft.AutoSize = true;
+            this.labelNavCraft.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelNavCraft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNavCraft.ForeColor = System.Drawing.Color.Lime;
+            this.labelNavCraft.Location = new System.Drawing.Point(515, 100);
+            this.labelNavCraft.Name = "labelNavCraft";
+            this.labelNavCraft.Size = new System.Drawing.Size(14, 13);
+            this.labelNavCraft.TabIndex = 46;
+            this.labelNavCraft.Text = "0";
             // 
-            // navFish
+            // labelNavMining
             // 
-            this.navFish.AutoSize = true;
-            this.navFish.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.navFish.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.navFish.ForeColor = System.Drawing.Color.Lime;
-            this.navFish.Location = new System.Drawing.Point(515, 77);
-            this.navFish.Name = "navFish";
-            this.navFish.Size = new System.Drawing.Size(14, 13);
-            this.navFish.TabIndex = 45;
-            this.navFish.Text = "0";
+            this.labelNavMining.AutoSize = true;
+            this.labelNavMining.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelNavMining.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNavMining.ForeColor = System.Drawing.Color.Lime;
+            this.labelNavMining.Location = new System.Drawing.Point(515, 120);
+            this.labelNavMining.Name = "labelNavMining";
+            this.labelNavMining.Size = new System.Drawing.Size(14, 13);
+            this.labelNavMining.TabIndex = 47;
+            this.labelNavMining.Text = "0";
             // 
-            // navBuild
+            // labelNavWood
             // 
-            this.navBuild.AutoSize = true;
-            this.navBuild.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.navBuild.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.navBuild.ForeColor = System.Drawing.Color.Lime;
-            this.navBuild.Location = new System.Drawing.Point(515, 98);
-            this.navBuild.Name = "navBuild";
-            this.navBuild.Size = new System.Drawing.Size(14, 13);
-            this.navBuild.TabIndex = 46;
-            this.navBuild.Text = "0";
-            // 
-            // navNauka
-            // 
-            this.navNauka.AutoSize = true;
-            this.navNauka.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.navNauka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.navNauka.ForeColor = System.Drawing.Color.Lime;
-            this.navNauka.Location = new System.Drawing.Point(515, 122);
-            this.navNauka.Name = "navNauka";
-            this.navNauka.Size = new System.Drawing.Size(14, 13);
-            this.navNauka.TabIndex = 47;
-            this.navNauka.Text = "0";
-            // 
-            // navMed
-            // 
-            this.navMed.AutoSize = true;
-            this.navMed.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.navMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.navMed.ForeColor = System.Drawing.Color.Lime;
-            this.navMed.Location = new System.Drawing.Point(515, 147);
-            this.navMed.Name = "navMed";
-            this.navMed.Size = new System.Drawing.Size(14, 13);
-            this.navMed.TabIndex = 48;
-            this.navMed.Text = "0";
+            this.labelNavWood.AutoSize = true;
+            this.labelNavWood.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelNavWood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNavWood.ForeColor = System.Drawing.Color.Lime;
+            this.labelNavWood.Location = new System.Drawing.Point(515, 140);
+            this.labelNavWood.Name = "labelNavWood";
+            this.labelNavWood.Size = new System.Drawing.Size(14, 13);
+            this.labelNavWood.TabIndex = 48;
+            this.labelNavWood.Text = "0";
             // 
             // label8
             // 
@@ -598,7 +576,7 @@
             this.label8.Size = new System.Drawing.Size(122, 91);
             this.label8.TabIndex = 49;
             this.label8.Text = "СЛ - Сила\r\nВС - Восприятие\r\nВН - Выносливость\r\nВЛ - Воля\r\nИН - Интеллект\r\nЛВ - Ло" +
-    "вкость\r\nУД - Удача";
+                "вкость\r\nУД - Удача";
             // 
             // buttonOK
             // 
@@ -647,25 +625,75 @@
             this.labelOD.TabIndex = 53;
             this.labelOD.Text = "0";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.Lime;
+            this.label6.Location = new System.Drawing.Point(375, 120);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "Горное дело";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.Lime;
+            this.label7.Location = new System.Drawing.Point(375, 140);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "Лесозаготовка";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.Lime;
+            this.label10.Location = new System.Drawing.Point(197, 235);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 57;
+            this.label10.Text = "Мораль";
+            // 
+            // labelMorality
+            // 
+            this.labelMorality.AutoSize = true;
+            this.labelMorality.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelMorality.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMorality.ForeColor = System.Drawing.Color.Lime;
+            this.labelMorality.Location = new System.Drawing.Point(296, 235);
+            this.labelMorality.Name = "labelMorality";
+            this.labelMorality.Size = new System.Drawing.Size(14, 13);
+            this.labelMorality.TabIndex = 58;
+            this.labelMorality.Text = "0";
+            // 
             // CreatePers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(651, 490);
+            this.Controls.Add(this.labelMorality);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.labelOD);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.navMed);
-            this.Controls.Add(this.navNauka);
-            this.Controls.Add(this.navBuild);
-            this.Controls.Add(this.navFish);
-            this.Controls.Add(this.navHunt);
-            this.Controls.Add(this.navSob);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelNavWood);
+            this.Controls.Add(this.labelNavMining);
+            this.Controls.Add(this.labelNavCraft);
+            this.Controls.Add(this.labelNavFish);
+            this.Controls.Add(this.labelNavHunt);
+            this.Controls.Add(this.labelNavSob);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -765,19 +793,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label navSob;
-        private System.Windows.Forms.Label navHunt;
-        private System.Windows.Forms.Label navFish;
-        private System.Windows.Forms.Label navBuild;
-        private System.Windows.Forms.Label navNauka;
-        private System.Windows.Forms.Label navMed;
+        private System.Windows.Forms.Label labelNavSob;
+        private System.Windows.Forms.Label labelNavHunt;
+        private System.Windows.Forms.Label labelNavFish;
+        private System.Windows.Forms.Label labelNavCraft;
+        private System.Windows.Forms.Label labelNavMining;
+        private System.Windows.Forms.Label labelNavWood;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox buttonOK;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelOD;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelMorality;
         
     }
 }
