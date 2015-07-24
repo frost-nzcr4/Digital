@@ -11,13 +11,17 @@ namespace Survival_on_island
 {
     public partial class CreatePers : Form
     {
+        private Pers pers;
+
         public CreatePers(string Name1)
         {
             InitializeComponent();
-            this.name = Name1;
-
-            pictureFon.SendToBack();
             
+            pictureFon.SendToBack();
+
+            var form = (Enter) Program.GetFormByName ("Enter");
+            form.pers = new Pers(Name1);
+            this.pers = form.pers;
         }
 
         //Имя

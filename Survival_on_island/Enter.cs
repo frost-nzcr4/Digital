@@ -11,6 +11,14 @@ namespace Survival_on_island
 {
     public partial class Enter : Form
     {
+        /// <summary>
+        /// Глобальный персонаж, который может вызываться из любой формы.
+        /// </summary>
+        /// <example>
+        /// var pers = Program.pers;
+        /// </example>
+        public Pers pers;
+
         public Enter()
         {
             InitializeComponent();
