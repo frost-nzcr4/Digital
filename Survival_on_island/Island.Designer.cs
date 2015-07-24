@@ -90,6 +90,7 @@
             this.pictureStrongBowDouble = new System.Windows.Forms.PictureBox();
             this.pictureBatonDouble = new System.Windows.Forms.PictureBox();
             this.pictureLanceDouble = new System.Windows.Forms.PictureBox();
+            this.buttonExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -814,6 +815,19 @@
             this.pictureLanceDouble.TabIndex = 60;
             this.pictureLanceDouble.TabStop = false;
             // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonExit.Location = new System.Drawing.Point(815, 603);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(157, 34);
+            this.buttonExit.TabIndex = 61;
+            this.buttonExit.Text = "Выйти из игры";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // Island
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -821,6 +835,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 762);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.pictureLanceDouble);
             this.Controls.Add(this.pictureBatonDouble);
             this.Controls.Add(this.pictureStrongBowDouble);
@@ -985,6 +1000,7 @@
         private System.Windows.Forms.PictureBox pictureStrongBowDouble;
         private System.Windows.Forms.PictureBox pictureBatonDouble;
         private System.Windows.Forms.PictureBox pictureLanceDouble;
+        private System.Windows.Forms.Button buttonExit;
 
     }
 }
