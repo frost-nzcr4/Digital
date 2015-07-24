@@ -9,5 +9,13 @@
   "hp": 7,
   "def": 8,
   "od": 9,
-  "damage": 10
+  "damage": 10,
+  "morality": 11,
+  "Strength": 12,
+  "Perception": 13,
+  "Endurance": 14,
+  "Will": 15,
+  "Intelligence": 16,
+  "Agility": 17,
+  "Luck": 18
 }
