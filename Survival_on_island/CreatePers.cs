@@ -207,10 +207,7 @@ namespace Survival_on_island
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            //забираем параметры для передачи в другую форму
-
-            int[] param = {pers.hp, pers.def, pers.od, pers.damage };
-
+            int[] param = {};
             Island form = new Island(param, pers.name);
             this.Close();
             form.Show();

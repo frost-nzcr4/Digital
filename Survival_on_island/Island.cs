@@ -71,13 +71,12 @@ namespace Survival_on_island
             toolTipAll.SetToolTip(pictureSapogi1, SkinShoes.name + "\n" + SkinShoes.text);
 
             //присвоение параметрам формы значений входящих параметров
-            HPmax = param[0];
-            HPnow = param[0];
-            Def = param[1];
-            OD = param[2];
-            ODhod = param[2];
-            Damage = param[3];
-            Name = name;
+            HPmax = pers.hp;
+            HPnow = pers.hp;
+            Def = pers.def;
+            OD = pers.od;
+            ODhod = pers.od;
+            Damage = pers.damage;
             
             Refresh();
         }
@@ -159,7 +158,6 @@ namespace Survival_on_island
 
 
         // начальные навыки персонажа для проверки.
-        string Name = "";
         int NavSob = 30;
         int NavBuild = 33;
         int OD = 0;
@@ -679,7 +677,7 @@ namespace Survival_on_island
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Имя: " + Name + "\nHP: " + HPnow + "\nКласс брони: " + DefWithMod + "\nОД: " + OD + "\nУрон: " + DamageNow , "Характеристики персонажа");
+            MessageBox.Show("Имя: " + pers.name + "\nHP: " + HPnow + "\nКласс брони: " + DefWithMod + "\nОД: " + OD + "\nУрон: " + DamageNow , "Характеристики персонажа");
 
             
         }
