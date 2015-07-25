@@ -31,8 +31,26 @@ namespace Survival_on_island
         public int Luck;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Survival_on_island.Pers"/> class.
+        /// Короткая инициализация персонажа <see cref="Survival_on_island.Pers"/> только по имени.
         /// </summary>
+        /// <remarks>
+        /// Используется при создании новой игры.
+        /// </remarks>
+        /// <param name="name1">Имя персонажа.</param>
+        public Pers(string name1)
+        {
+            Initialize (name1,
+                20, 20, 20, 20, 20, 20,
+                0, 0, 0, 0, 0,
+                5, 5, 5, 5, 5, 5, 5);
+        }
+
+        /// <summary>
+        /// Полная инициализация персонажа <see cref="Survival_on_island.Pers"/> по всем переменным.
+        /// </summary>
+        /// <remarks>
+        /// Используется при восстановлении сохранённой игры.
+        /// </remarks>
         /// <param name="name1">Имя персонажа.</param>
         /// <param name="NavSob1">Навык собирательства.</param>
         /// <param name="NavHunt1">Навык охоты.</param>
@@ -53,6 +71,21 @@ namespace Survival_on_island
         /// <param name="Agility1">Agility1.</param>
         /// <param name="Luck1">Удача.</param>
         public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavCraft1, int NavMining1, int NavWood1,
+            int hp1, int def1, int od1, int damage1, int morality1,
+            int Strength1, int Perception1, int Endurance1, int Will1, int Intelligence1, int Agility1, int Luck1)
+        {
+            Initialize (name1,
+                NavSob1, NavHunt1, NavFish1, NavCraft1, NavMining1, NavWood1,
+                hp1, def1, od1, damage1, morality1,
+                Strength1, Perception1, Endurance1, Will1, Intelligence1, Agility1, Luck1);
+        }
+
+        /// <summary>
+        /// Присваивает значения переменным.
+        /// </summary>
+        private void Initialize(
+            string name1,
+            int NavSob1, int NavHunt1, int NavFish1, int NavCraft1, int NavMining1, int NavWood1,
             int hp1, int def1, int od1, int damage1, int morality1,
             int Strength1, int Perception1, int Endurance1, int Will1, int Intelligence1, int Agility1, int Luck1)
         {
