@@ -207,8 +207,7 @@ namespace Survival_on_island
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            int[] param = {};
-            Island form = new Island(param, pers.name);
+            Island form = new Island();
             this.Close();
             form.Show();
         }

@@ -17,13 +17,6 @@ namespace Survival_on_island
         {
             InitializeComponent();
             InitLocalPers();
-            Refresh();
-        }
-
-        public Island(int[] param, string name)
-        {
-            InitializeComponent();
-            InitLocalPers();
 
             //Прячем оружие за край экрана
                 //луки
