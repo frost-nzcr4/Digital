@@ -24,78 +24,54 @@ namespace Survival_on_island
             this.pers = form.pers;
         }
 
-        //Имя
-        string name;
-
         //начальные навыки
-        int NavSob = 0;
-        int NavHunt = 0;
-        int NavFish = 0;
-        int NavCraft = 0;
-        int NavMining = 0;
-        int NavWood = 0;
         int NavDefault = 20; //Кол-во % навыков по-умолчанию. Необходимо для ввода уровней сложности.
 
         //Характеристики
-        int Strength = 5;
-        int Perception = 5;
-        int Endurance  = 5;
-        int Will = 5;           //Воля. Вместо 'C'
-        int Intelligence  = 5;
-        int Agility  = 5;
-        int Luck = 5;
         int SpecialAll = 40;       //Всего навыков
-
-        //Параметры
-        int hp = 0;
-        int def = 0;
-        int OD = 0;
-        int damage = 0;
-        int morality = 0;
-
 
         //Метод обновления статов
         void Refresh_Stat()
         {
             //Вывод имени
-            labelName.Text = name;
+            labelName.Text = pers.name;
 
             //Выводим характеристики на экран
-            SpecS.Text = Convert.ToString(Strength);
-            SpecP.Text = Convert.ToString(Perception);
-            SpecE.Text = Convert.ToString(Endurance);
-            SpecC.Text = Convert.ToString(Will);
-            SpecI.Text = Convert.ToString(Intelligence);
-            SpecA.Text = Convert.ToString(Agility);
-            SpecL.Text = Convert.ToString(Luck);
-            SpecialAll = 40 - (Strength + Perception + Endurance + Will + Intelligence + Agility + Luck);
+            SpecS.Text = Convert.ToString(pers.Strength);
+            SpecP.Text = Convert.ToString(pers.Perception);
+            SpecE.Text = Convert.ToString(pers.Endurance);
+            SpecC.Text = Convert.ToString(pers.Will);
+            SpecI.Text = Convert.ToString(pers.Intelligence);
+            SpecA.Text = Convert.ToString(pers.Agility);
+            SpecL.Text = Convert.ToString(pers.Luck);
+            SpecialAll = 40 - (pers.Strength + pers.Perception + pers.Endurance + pers.Will + pers.Intelligence + pers.Agility + pers.Luck);
             SpecAdd.Text = Convert.ToString(SpecialAll);
 
             //Считаем и выводим основые параметры. HP, Защита, ОД, Урон, Мораль.
-            hp = Strength + (2*Endurance) + 15;
-            labelHP.Text = Convert.ToString(hp);
-            def = Agility;
-            labelDef.Text = Convert.ToString(def);
-            OD = (Agility/2) + 5;
-            labelOD.Text = Convert.ToString(OD);
-            damage = Strength;
-            labelDamage.Text = Convert.ToString(damage);
-            morality = 20 + (Will * 4);
-            labelMorality.Text = Convert.ToString(morality);
+            pers.hp = pers.Strength + (2*pers.Endurance) + 15;
+            labelHP.Text = Convert.ToString(pers.hp);
+            pers.def = pers.Agility;
+            labelDef.Text = Convert.ToString(pers.def);
+            pers.od = (pers.Agility/2) + 5;
+            labelOD.Text = Convert.ToString(pers.od);
+            pers.damage = pers.Strength;
+            labelDamage.Text = Convert.ToString(pers.damage);
+            pers.morality = 20 + (pers.Will * 4);
+            labelMorality.Text = Convert.ToString(pers.morality);
 
             //Подсчет и вывод навыков
-            NavSob = NavDefault + (Perception * 2);
-            labelNavSob.Text = Convert.ToString(NavSob);
-            NavHunt = NavDefault + Perception + Agility;
-            labelNavHunt.Text = Convert.ToString(NavHunt);
-            NavFish = NavDefault + Will + Will;
-            labelNavFish.Text = Convert.ToString(NavFish);
-            NavCraft = NavDefault + (Intelligence * 2);
-            labelNavCraft.Text = Convert.ToString(NavCraft);
-            NavMining = NavDefault + Strength + Endurance;
-            labelNavMining.Text = Convert.ToString(NavMining);
-            NavWood = NavDefault + Strength + Agility;
-            labelNavWood.Text = Convert.ToString(NavWood);
+            pers.NavSob = NavDefault + (pers.Perception * 2);
+            labelNavSob.Text = Convert.ToString(pers.NavSob);
+            pers.NavHunt = NavDefault + pers.Perception + pers.Agility;
+            labelNavHunt.Text = Convert.ToString(pers.NavHunt);
+            pers.NavFish = NavDefault + pers.Will + pers.Will;
+            labelNavFish.Text = Convert.ToString(pers.NavFish);
+            pers.NavCraft = NavDefault + (pers.Intelligence * 2);
+            labelNavCraft.Text = Convert.ToString(pers.NavCraft);
+            pers.NavMining = NavDefault + pers.Strength + pers.Endurance;
+            labelNavMining.Text = Convert.ToString(pers.NavMining);
+            pers.NavWood = NavDefault + pers.Strength + pers.Agility;
+            labelNavWood.Text = Convert.ToString(pers.NavWood);
         }
 
         // Таймер для обновления статов
@@ -109,33 +85,33 @@ namespace Survival_on_island
         // прибавляет силу на 1
         private void SpecSPlus_Click(object sender, EventArgs e)
         {
-            if (Strength < 10 && SpecialAll > 0)
+            if (pers.Strength < 10 && SpecialAll > 0)
             {
-                Strength++;
+                pers.Strength++;
             }
         }
         // убавляет силу на 1
         private void SpecSMin_Click(object sender, EventArgs e)
         {
-            if (Strength > 2)
+            if (pers.Strength > 2)
             {
-                Strength--;
+                pers.Strength--;
             }
         }
 
         private void SpecPPlus_Click(object sender, EventArgs e)
         {
-            if (Perception < 10 && SpecialAll > 0)
+            if (pers.Perception < 10 && SpecialAll > 0)
             {
-                Perception++;
+                pers.Perception++;
             }
         }
 
         private void SpecPMin_Click(object sender, EventArgs e)
         {
-            if (Perception > 2)
+            if (pers.Perception > 2)
             {
-                Perception--;
+                pers.Perception--;
             }
         }
 
@@ -143,81 +119,81 @@ namespace Survival_on_island
 
         private void SpecEPlus_Click(object sender, EventArgs e)
         {
-            if (Endurance < 10 && SpecialAll > 0)
+            if (pers.Endurance < 10 && SpecialAll > 0)
             {
-                Endurance++;
+                pers.Endurance++;
             }
         }
 
         private void SpecEMin_Click(object sender, EventArgs e)
         {
-            if (Endurance > 2)
+            if (pers.Endurance > 2)
             {
-                Endurance--;
+                pers.Endurance--;
             }
         }
 
         private void SpecCPlus_Click(object sender, EventArgs e)
         {
-            if (Will < 10 && SpecialAll > 0)
+            if (pers.Will < 10 && SpecialAll > 0)
             {
-                Will++;
+                pers.Will++;
             }
         }
 
         private void SpecCMin_Click(object sender, EventArgs e)
         {
-            if (Will > 2)
+            if (pers.Will > 2)
             {
-                Will--;
+                pers.Will--;
             }
         }
 
         private void SpecIPlus_Click(object sender, EventArgs e)
         {
-            if (Intelligence < 10 && SpecialAll > 0)
+            if (pers.Intelligence < 10 && SpecialAll > 0)
             {
-                Intelligence++;
+                pers.Intelligence++;
             }
         }
 
         private void SpecIMin_Click(object sender, EventArgs e)
         {
-            if (Intelligence > 2)
+            if (pers.Intelligence > 2)
             {
-                Intelligence--;
+                pers.Intelligence--;
             }
         }
 
         private void SpecAPlus_Click(object sender, EventArgs e)
         {
-            if (Agility < 10 && SpecialAll > 0)
+            if (pers.Agility < 10 && SpecialAll > 0)
             {
-                Agility++;
+                pers.Agility++;
             }
         }
 
         private void SpecAMin_Click(object sender, EventArgs e)
         {
-            if (Agility > 2)
+            if (pers.Agility > 2)
             {
-                Agility--;
+                pers.Agility--;
             }
         }
 
         private void SpecLPlus_Click(object sender, EventArgs e)
         {
-            if (Luck < 10 && SpecialAll > 0)
+            if (pers.Luck < 10 && SpecialAll > 0)
             {
-                Luck++;
+                pers.Luck++;
             }
         }
 
         private void SpecLMin_Click(object sender, EventArgs e)
         {
-            if (Luck > 2)
+            if (pers.Luck > 2)
             {
-                Luck--;
+                pers.Luck--;
             }
         }
 
@@ -232,10 +208,10 @@ namespace Survival_on_island
         private void buttonOK_Click(object sender, EventArgs e)
         {
             //забираем параметры для передачи в другую форму
-            
-            int[] param = {hp, def, OD, damage };
 
-            Island form = new Island(param, name);
+            int[] param = {pers.hp, pers.def, pers.od, pers.damage };
+
+            Island form = new Island(param, pers.name);
             this.Close();
             form.Show();
         }
