@@ -125,6 +125,30 @@ namespace Survival_on_island
         }
 
         /// <summary>
+        /// Загружает данные и перезаписывает ими значения переменных у данного экземпляра.
+        /// </summary>
+        public void Load()
+        {
+            string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string filename = Path.Combine(projectPath, "saves", EscapeName() + ".json");
+            Load(filename);
+        }
+
+        /// <summary>
+        /// Загружает данные из указанного файла и перезаписывает ими значения переменных у данного экземпляра.
+        /// </summary>
+        /// <param name="filename">Путь к файлу.</param>
+        public void Load(string filename)
+        {
+            Pers pers_loaded = PersFile.Load(this, filename);
+            Initialize(
+                pers_loaded.name,
+                pers_loaded.NavSob, pers_loaded.NavHunt, pers_loaded.NavFish, pers_loaded.NavCraft, pers_loaded.NavMining, pers_loaded.NavWood,
+                pers_loaded.hp, pers_loaded.def, pers_loaded.od, pers_loaded.damage, pers_loaded.morality,
+                pers_loaded.Strength, pers_loaded.Perception, pers_loaded.Endurance, pers_loaded.Will, pers_loaded.Intelligence, pers_loaded.Agility, pers_loaded.Luck);
+        }
+
+        /// <summary>
         /// Save this instance to predefined filename.
         /// </summary>
         public void Save()
