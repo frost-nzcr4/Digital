@@ -829,18 +829,12 @@ namespace Survival_on_island
         //Кнопка "Выйти из игры"
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            if (!System.IO.Directory.Exists(pers.GetPathToSave())) {
+                MessageBox.Show(String.Format("Чтобы сохранить персонажа создайте папку \"{0}\" и нажмите \"Ok\".", pers.GetPathToSave()), "Нет папки для сохранения");
+            }
+            pers.Save();
             this.Close();
             Program.GetFormByName("Enter").Show(); //находит скрытую форму и оказывает её.
-
         }
-
-
-
-
-
-
-
-
-        
     }
 }

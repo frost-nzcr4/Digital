@@ -42,10 +42,12 @@ namespace Survival_on_island
         private void buttonContin_Click(object sender, EventArgs e)
         {
             name = textBoxName.Text;
-            CreatePers CP = new CreatePers(name);
-            Enter En = new Enter();
+            this.pers = new Pers(name);
+            this.pers.Load();
+
             this.Hide();
-            CP.Show();
+            Island form = new Island();
+            form.Show();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using Newtonsoft.Json;
+using System.IO;
 
 namespace Survival_on_island
 {
@@ -70,6 +71,7 @@ namespace Survival_on_island
         /// <param name="Intelligence1">Intelligence1.</param>
         /// <param name="Agility1">Agility1.</param>
         /// <param name="Luck1">Удача.</param>
+        [JsonConstructor]
         public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavCraft1, int NavMining1, int NavWood1,
             int hp1, int def1, int od1, int damage1, int morality1,
             int Strength1, int Perception1, int Endurance1, int Will1, int Intelligence1, int Agility1, int Luck1)
@@ -151,7 +153,7 @@ namespace Survival_on_island
         /// <param name="filename">Путь к файлу.</param>
         public void Load(string filename)
         {
-            Pers pers_loaded = PersFile.Load(this, filename);
+            Pers pers_loaded = PersFile.Load(filename);
             Initialize(
                 pers_loaded.name,
                 pers_loaded.NavSob, pers_loaded.NavHunt, pers_loaded.NavFish, pers_loaded.NavCraft, pers_loaded.NavMining, pers_loaded.NavWood,
