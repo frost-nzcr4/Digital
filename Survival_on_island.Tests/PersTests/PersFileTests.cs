@@ -10,9 +10,9 @@ namespace Survival_on_island.Tests.PersTests
         //private string projectPath = Directory.GetParent(System.AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
 
         [Theory]
-        [InlineData("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18)]
+        [InlineData("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)]
         public void Load(string name, int NavSob, int NavHunt, int NavFish, int NavCraft, int NavMining, int NavWood,
-            int hp, int def, int od, int damage, int morality,
+            int hp, int hpMax, int def, int od, int damage, int morality,
             int Strength, int Perception, int Endurance, int Will, int Intelligence, int Agility, int Luck)
         {
             string fixturePersIn = Path.Combine(projectPath, "PersTests", "fixtures", "Pers.json");
@@ -27,6 +27,7 @@ namespace Survival_on_island.Tests.PersTests
             Assert.Equal(NavWood, pers.NavWood);
 
             Assert.Equal(hp, pers.hp);
+            Assert.Equal(hpMax, pers.hpMax);
             Assert.Equal(def, pers.def);
             Assert.Equal(od, pers.od);
             Assert.Equal(damage, pers.damage);
@@ -43,13 +44,13 @@ namespace Survival_on_island.Tests.PersTests
         }
 
         [Theory]
-        [InlineData("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18)]
+        [InlineData("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)]
         public void Save(string name, int NavSob, int NavHunt, int NavFish, int NavCraft, int NavMining, int NavWood,
-            int hp, int def, int od, int damage, int morality,
+            int hp, int hpMax, int def, int od, int damage, int morality,
             int Strength, int Perception, int Endurance, int Will, int Intelligence, int Agility, int Luck)
         {
             Pers pers1 = new Pers(name, NavSob, NavHunt, NavFish, NavCraft, NavMining, NavWood,
-                hp, def, od, damage, morality,
+                hp, hpMax, def, od, damage, morality,
                 Strength, Perception, Endurance, Will, Intelligence, Agility, Luck);
             string fixturePersOut = Path.Combine(projectPath, "PersTests", "fixtures", pers1.EscapeName() + ".json");
 
@@ -65,6 +66,7 @@ namespace Survival_on_island.Tests.PersTests
             Assert.Equal(pers1.NavWood, pers2.NavWood);
 
             Assert.Equal(pers1.hp, pers2.hp);
+            Assert.Equal(pers1.hpMax, pers2.hpMax);
             Assert.Equal(pers1.def, pers2.def);
             Assert.Equal(pers1.od, pers2.od);
             Assert.Equal(pers1.damage, pers2.damage);

@@ -10,13 +10,13 @@ namespace Survival_on_island.Tests.PersTests
         //private string projectPath = Directory.GetParent(System.AppDomain.CurrentDomain.BaseDirectory).Parent.FullName;
 
         [Theory]
-        [InlineData("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18)]
+        [InlineData("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19)]
         public void Pers(string name, int NavSob, int NavHunt, int NavFish, int NavCraft, int NavMining, int NavWood,
-            int hp, int def, int od, int damage, int morality,
+            int hp, int hpMax, int def, int od, int damage, int morality,
             int Strength, int Perception, int Endurance, int Will, int Intelligence, int Agility, int Luck)
         {
             Pers pers = new Pers(name, NavSob, NavHunt, NavFish, NavCraft, NavMining, NavWood,
-                hp, def, od, damage, morality,
+                hp, hpMax, def, od, damage, morality,
                 Strength, Perception, Endurance, Will, Intelligence, Agility, Luck);
             Assert.Equal(name, pers.name);
             Assert.Equal(NavSob, pers.NavSob);
@@ -27,6 +27,7 @@ namespace Survival_on_island.Tests.PersTests
             Assert.Equal(NavWood, pers.NavWood);
 
             Assert.Equal(hp, pers.hp);
+            Assert.Equal(hpMax, pers.hpMax);
             Assert.Equal(def, pers.def);
             Assert.Equal(od, pers.od);
             Assert.Equal(damage, pers.damage);
@@ -44,7 +45,7 @@ namespace Survival_on_island.Tests.PersTests
         [Fact]
         public void EscapeName()
         {
-            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18);
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
             Assert.Equal("Герой", pers.EscapeName());
             pers.name = "\\//:?";
             Assert.Equal("\\//:?", pers.EscapeName());
@@ -53,7 +54,7 @@ namespace Survival_on_island.Tests.PersTests
         [Fact]
         public void SaveWithPredefinedName()
         {
-            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18);
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
             string save_folder = Path.Combine(projectPath, "saves");
             string pers_saved = Path.Combine(projectPath, "saves", pers.EscapeName() + ".json");
 
@@ -67,7 +68,7 @@ namespace Survival_on_island.Tests.PersTests
         [Fact]
         public void SaveWithSpecifiedName()
         {
-            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18);
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
             string save_folder = Path.Combine(projectPath, "saves");
             string pers_saved = Path.Combine(projectPath, "saves", pers.EscapeName() + "-specified-name.json");
 
