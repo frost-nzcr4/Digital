@@ -15,7 +15,8 @@ namespace Survival_on_island
         /// Глобальный персонаж, который может вызываться из любой формы.
         /// </summary>
         /// <example>
-        /// var pers = Program.pers;
+        /// var form = (Enter) Program.GetFormByName("Enter");
+        /// Pers pers = form.pers; // Локальная переменная pers ссылается на условно глобальную переменную, единую для всех.
         /// </example>
         public Pers pers;
 
