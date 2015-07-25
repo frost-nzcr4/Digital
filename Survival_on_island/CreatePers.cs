@@ -48,8 +48,9 @@ namespace Survival_on_island
             SpecAdd.Text = Convert.ToString(SpecialAll);
 
             //Считаем и выводим основые параметры. HP, Защита, ОД, Урон, Мораль.
-            pers.hp = pers.Strength + (2*pers.Endurance) + 15;
-            labelHP.Text = Convert.ToString(pers.hp);
+            pers.hpMax = pers.Strength + (2 * pers.Endurance) + 15;
+            pers.hp = pers.hpMax;
+            labelHP.Text = Convert.ToString(pers.hpMax);
             pers.def = pers.Agility;
             labelDef.Text = Convert.ToString(pers.def);
             pers.od = (pers.Agility/2) + 5;

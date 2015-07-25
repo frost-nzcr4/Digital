@@ -64,7 +64,6 @@ namespace Survival_on_island
             toolTipAll.SetToolTip(pictureSapogi1, SkinShoes.name + "\n" + SkinShoes.text);
 
             //присвоение параметрам формы значений входящих параметров
-            HPmax = pers.hp;
             ODhod = pers.od;
             
             Refresh();
@@ -150,16 +149,14 @@ namespace Survival_on_island
         int NavSob = 30;
         int NavBuild = 33;
         int ODhod = 0;
-        int HPmax = 0;
         int DefWithMod = 0;
         int DamageNow = 0;
 
         void Refresh()
         {
             //Проверка на HP
-            if (pers.hp > HPmax)
-            {
-                pers.hp = HPmax;
+            if (pers.hp > pers.hpMax) {
+                pers.hp = pers.hpMax;
             }
 
             //заполнение полей с данными
@@ -167,7 +164,7 @@ namespace Survival_on_island
             label_wood.Text = Convert.ToString(wood);
             label_rock.Text = Convert.ToString(rock);
             labelOD.Text = "ОД: " + ODhod;
-            labelHP.Text = Convert.ToString( pers.hp);
+            labelHP.Text = Convert.ToString(pers.hp);
 
             
 
