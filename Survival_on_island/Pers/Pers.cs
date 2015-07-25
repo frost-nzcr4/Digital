@@ -17,6 +17,7 @@ namespace Survival_on_island
 
         // Параметры.
         public int hp;
+        public int hpMax;
         public int def;
         public int od;
         public int damage;
@@ -40,9 +41,9 @@ namespace Survival_on_island
         /// <param name="name1">Имя персонажа.</param>
         public Pers(string name1)
         {
-            Initialize (name1,
+            Initialize(name1,
                 20, 20, 20, 20, 20, 20,
-                0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0,
                 5, 5, 5, 5, 5, 5, 5);
         }
 
@@ -73,12 +74,13 @@ namespace Survival_on_island
         /// <param name="Luck1">Удача.</param>
         [JsonConstructor]
         public Pers (string name1, int NavSob1, int NavHunt1, int NavFish1, int NavCraft1, int NavMining1, int NavWood1,
-            int hp1, int def1, int od1, int damage1, int morality1,
+            int hp1, int hpMax1, int def1, int od1, int damage1, int morality1,
             int Strength1, int Perception1, int Endurance1, int Will1, int Intelligence1, int Agility1, int Luck1)
         {
-            Initialize (name1,
+            Initialize(
+                name1,
                 NavSob1, NavHunt1, NavFish1, NavCraft1, NavMining1, NavWood1,
-                hp1, def1, od1, damage1, morality1,
+                hp1, hpMax1, def1, od1, damage1, morality1,
                 Strength1, Perception1, Endurance1, Will1, Intelligence1, Agility1, Luck1);
         }
 
@@ -88,7 +90,7 @@ namespace Survival_on_island
         private void Initialize(
             string name1,
             int NavSob1, int NavHunt1, int NavFish1, int NavCraft1, int NavMining1, int NavWood1,
-            int hp1, int def1, int od1, int damage1, int morality1,
+            int hp1, int hpMax1, int def1, int od1, int damage1, int morality1,
             int Strength1, int Perception1, int Endurance1, int Will1, int Intelligence1, int Agility1, int Luck1)
         {
             name = name1;
@@ -101,6 +103,7 @@ namespace Survival_on_island
             NavWood = NavWood1;
 
             hp = hp1;
+            hpMax = hpMax1;
             def = def1;
             od = od1;
             damage = damage1;
@@ -157,7 +160,7 @@ namespace Survival_on_island
             Initialize(
                 pers_loaded.name,
                 pers_loaded.NavSob, pers_loaded.NavHunt, pers_loaded.NavFish, pers_loaded.NavCraft, pers_loaded.NavMining, pers_loaded.NavWood,
-                pers_loaded.hp, pers_loaded.def, pers_loaded.od, pers_loaded.damage, pers_loaded.morality,
+                pers_loaded.hp, pers_loaded.hpMax, pers_loaded.def, pers_loaded.od, pers_loaded.damage, pers_loaded.morality,
                 pers_loaded.Strength, pers_loaded.Perception, pers_loaded.Endurance, pers_loaded.Will, pers_loaded.Intelligence, pers_loaded.Agility, pers_loaded.Luck);
         }
 
