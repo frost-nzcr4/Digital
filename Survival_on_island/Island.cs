@@ -11,17 +11,19 @@ namespace Survival_on_island
 {
     public partial class Island : Form
     {
+        private Pers pers;
+
         public Island()
         {
             InitializeComponent();
+            InitLocalPers();
             Refresh();
-            
-
         }
 
         public Island(int[] param, string name)
         {
             InitializeComponent();
+            InitLocalPers();
 
             //Прячем оружие за край экрана
                 //луки
@@ -79,7 +81,18 @@ namespace Survival_on_island
             
             Refresh();
         }
-        
+
+        /// <summary>
+        /// Инициализирует локальную переменную pers.
+        /// </summary>
+        /// <remarks>
+        /// Берёт для неё значение из главной формы. После вызова данного метода можно пользоваться локальной переменной pers.
+        /// </remarks>
+        private void InitLocalPers()
+        {
+            var form = (Enter) Program.GetFormByName("Enter");
+            this.pers = form.pers;
+        }
 
         // ПРЕДМЕТЫ \ ИНСТРУМЕНТЫ
             //основные
