@@ -119,6 +119,24 @@ namespace Survival_on_island
         }
 
         /// <summary>
+        /// Безопасно изменяет текущее значение HP.
+        /// </summary>
+        /// <remarks>
+        /// Значение HP гарантированно не будет больше hpMax или меньше 0.
+        /// </remarks>
+        /// <param name="hpChange">Значение на которое изменяется текущее HP. Положительное или отрицательное число.</param>
+        public void ChangeHP(int hpChange)
+        {
+            if (hp + hpChange > hpMax) {
+                hp = hpMax;
+            } else if (hp + hpChange < 0) {
+                hp = 0;
+            } else {
+                hp = hp + hpChange;
+            }
+        }
+
+        /// <summary>
         /// Escapes the name to write JSON to it.
         /// </summary>
         /// <returns>The name.</returns>
@@ -139,6 +157,15 @@ namespace Survival_on_island
             string save_folder = Path.Combine(projectPath, "saves");
 
             return save_folder;
+        }
+
+        /// <summary>
+        /// Определяет мёртв ли персонаж.
+        /// </summary>
+        /// <returns><c>true</c> если мёртв; иначе, <c>false</c>.</returns>
+        public bool IsDead()
+        {
+            return hp <= 0 ? true : false;
         }
 
         /// <summary>
