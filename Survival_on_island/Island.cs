@@ -65,11 +65,7 @@ namespace Survival_on_island
 
             //присвоение параметрам формы значений входящих параметров
             HPmax = pers.hp;
-            HPnow = pers.hp;
-            Def = pers.def;
-            OD = pers.od;
             ODhod = pers.od;
-            Damage = pers.damage;
             
             Refresh();
         }
@@ -153,21 +149,17 @@ namespace Survival_on_island
         // начальные навыки персонажа для проверки.
         int NavSob = 30;
         int NavBuild = 33;
-        int OD = 0;
         int ODhod = 0;
         int HPmax = 0;
-        int HPnow = 0;
-        int Def = 0;
         int DefWithMod = 0;
-        int Damage = 0;
         int DamageNow = 0;
 
         void Refresh()
         {
             //Проверка на HP
-            if (HPnow > HPmax)
+            if (pers.hp > HPmax)
             {
-                HPnow = HPmax;
+                pers.hp = HPmax;
             }
 
             //заполнение полей с данными
@@ -175,7 +167,7 @@ namespace Survival_on_island
             label_wood.Text = Convert.ToString(wood);
             label_rock.Text = Convert.ToString(rock);
             labelOD.Text = "ОД: " + ODhod;
-            labelHP.Text = Convert.ToString( HPnow);
+            labelHP.Text = Convert.ToString( pers.hp);
 
             
 
@@ -272,7 +264,7 @@ namespace Survival_on_island
             }
 
             //проверка на экипированное оружие
-            DamageNow = Damage;
+            DamageNow = pers.damage;
             if (Bow.equip == 1) { DamageNow += 3; }
             if (StrongBow.equip == 1) { DamageNow += 5; }
             if (Baton.equip == 1) { DamageNow += 2; }
@@ -297,7 +289,7 @@ namespace Survival_on_island
             //
             //  экипировка
             //
-            DefWithMod = Def;
+            DefWithMod = pers.def;
             if (SkinHat.value > 0)
             {
                 pictureShlem1.Visible = true;
@@ -337,7 +329,7 @@ namespace Survival_on_island
 
 
             //проверка на смерть
-            if (HPnow <= 0)
+            if (pers.hp <= 0)
             {
                 MessageBox.Show("Сожалеем, но вы умерли");
                 this.Close();
@@ -593,13 +585,13 @@ namespace Survival_on_island
             NextDay();
 
             eat -= 2;
-            ODhod = OD;
+            ODhod = pers.od;
 
             //обновляет все показатели экрана
             Refresh();
             if (eat < 0)
             {
-                HPnow -= 5;
+                pers.hp -= 5;
                 MessageBox.Show("Вы голодаете. Кол-во HP уменьшено", "ГОЛОД!");
             }
             Refresh();
@@ -670,7 +662,7 @@ namespace Survival_on_island
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Имя: " + pers.name + "\nHP: " + HPnow + "\nКласс брони: " + DefWithMod + "\nОД: " + OD + "\nУрон: " + DamageNow , "Характеристики персонажа");
+            MessageBox.Show("Имя: " + pers.name + "\nHP: " + pers.hp + "\nКласс брони: " + DefWithMod + "\nОД: " + pers.od + "\nУрон: " + DamageNow , "Характеристики персонажа");
 
             
         }
@@ -771,7 +763,7 @@ namespace Survival_on_island
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             eat += 10;
-            HPnow += 10;
+            pers.hp += 10;
             Refresh();
         }
 
