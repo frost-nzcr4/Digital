@@ -154,11 +154,6 @@ namespace Survival_on_island
 
         void Refresh()
         {
-            //Проверка на HP
-            if (pers.hp > pers.hpMax) {
-                pers.hp = pers.hpMax;
-            }
-
             //заполнение полей с данными
             label_eat.Text = Convert.ToString(eat);
             label_wood.Text = Convert.ToString(wood);
@@ -326,8 +321,7 @@ namespace Survival_on_island
 
 
             //проверка на смерть
-            if (pers.hp <= 0)
-            {
+            if (pers.IsDead()) {
                 MessageBox.Show("Сожалеем, но вы умерли");
                 this.Close();
 
@@ -588,7 +582,7 @@ namespace Survival_on_island
             Refresh();
             if (eat < 0)
             {
-                pers.hp -= 5;
+                pers.ChangeHP(-5);
                 MessageBox.Show("Вы голодаете. Кол-во HP уменьшено", "ГОЛОД!");
             }
             Refresh();
@@ -760,7 +754,7 @@ namespace Survival_on_island
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             eat += 10;
-            pers.hp += 10;
+            pers.ChangeHP(10);
             Refresh();
         }
 
