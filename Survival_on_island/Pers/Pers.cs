@@ -125,12 +125,23 @@ namespace Survival_on_island
         }
 
         /// <summary>
+        /// Возвращает путь к папке для сохранения.
+        /// </summary>
+        /// <returns>Папка для сохранения.</returns>
+        public string GetPathToSave()
+        {
+            string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string save_folder = Path.Combine(projectPath, "saves");
+
+            return save_folder;
+        }
+
+        /// <summary>
         /// Загружает данные и перезаписывает ими значения переменных у данного экземпляра.
         /// </summary>
         public void Load()
         {
-            string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            string filename = Path.Combine(projectPath, "saves", EscapeName() + ".json");
+            string filename = Path.Combine(GetPathToSave(), EscapeName() + ".json");
             Load(filename);
         }
 
@@ -153,8 +164,7 @@ namespace Survival_on_island
         /// </summary>
         public void Save()
         {
-            string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            string filename = Path.Combine(projectPath, "saves", EscapeName() + ".json");
+            string filename = Path.Combine(GetPathToSave(), EscapeName() + ".json");
             Save(filename);
         }
 
