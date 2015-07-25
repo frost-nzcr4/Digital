@@ -43,12 +43,35 @@ namespace Survival_on_island.Tests.PersTests
         }
 
         [Fact]
+        public void ChangeHP()
+        {
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
+            pers.ChangeHP(999999);
+            Assert.Equal(pers.hpMax, pers.hp);
+            pers.ChangeHP(-7);
+            Assert.Equal(pers.hpMax - 7, pers.hp);
+            pers.ChangeHP(5);
+            Assert.Equal(pers.hpMax - 7 + 5, pers.hp);
+            pers.ChangeHP(-999999);
+            Assert.Equal(0, pers.hp);
+        }
+
+        [Fact]
         public void EscapeName()
         {
             Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
             Assert.Equal("Герой", pers.EscapeName());
             pers.name = "\\//:?";
             Assert.Equal("\\//:?", pers.EscapeName());
+        }
+
+        [Fact]
+        public void IsDead()
+        {
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
+            Assert.False(pers.IsDead());
+            pers.hp = 0;
+            Assert.True(pers.IsDead());
         }
 
         [Fact]
