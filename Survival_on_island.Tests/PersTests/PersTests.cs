@@ -43,6 +43,18 @@ namespace Survival_on_island.Tests.PersTests
         }
 
         [Fact]
+        public void AddItem()
+        {
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
+
+            pers.itemsMax = 1;
+            Assert.True(pers.AddItem(new Items("Нож", "Деревянный нож 1", 0, 0, 0)));
+            Assert.False(pers.AddItem(new Items("Нож", "Деревянный нож 2", 0, 0, 0)));
+            pers.itemsMax = 2;
+            Assert.True(pers.AddItem(new Items("Нож", "Деревянный нож 3", 0, 0, 0)));
+        }
+
+        [Fact]
         public void ChangeHP()
         {
             Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
@@ -97,6 +109,23 @@ namespace Survival_on_island.Tests.PersTests
 
             Directory.CreateDirectory(save_folder);
             pers.Save(pers_saved);
+            Assert.True(File.Exists(pers_saved));
+            File.Delete(pers_saved);
+            Directory.Delete(save_folder);
+        }
+
+        [Fact]
+        public void SaveWithPredefinedNameAndItems()
+        {
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
+            string save_folder = Path.Combine(projectPath, "saves");
+            string pers_saved = Path.Combine(projectPath, "saves", pers.EscapeName() + ".json");
+
+            pers.itemsMax = 1;
+            Assert.True(pers.AddItem(new Items("Нож", "Деревянный нож 1", 0, 0, 0)));
+
+            Directory.CreateDirectory(save_folder);
+            pers.Save();
             Assert.True(File.Exists(pers_saved));
             File.Delete(pers_saved);
             Directory.Delete(save_folder);
