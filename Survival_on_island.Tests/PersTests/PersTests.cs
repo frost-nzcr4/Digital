@@ -55,6 +55,20 @@ namespace Survival_on_island.Tests.PersTests
         }
 
         [Fact]
+        public void RemoveItem()
+        {
+            Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
+
+            pers.itemsMax = 2;
+            pers.AddItem(new Items("Нож 1", "Деревянный нож 1", 0, 0, 0));
+            pers.AddItem(new Items("Нож 2", "Деревянный нож 2", 0, 0, 0));
+            Assert.Equal(2, pers.items.Count);
+            Assert.True(pers.RemoveItem("Нож 1"));
+            Assert.Equal(1, pers.items.Count);
+            Assert.Equal("Нож 2", pers.items[0].name);
+        }
+
+        [Fact]
         public void ChangeHP()
         {
             Pers pers = new Pers("Герой", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19);
