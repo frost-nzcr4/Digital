@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Survival_on_island
 {
@@ -131,6 +132,22 @@ namespace Survival_on_island
         {
             if (items.Count < itemsMax) {
                 items.Add(item);
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Удаляет предмет из инвентаря по его имени.
+        /// </summary>
+        /// <returns><c>true</c>, если предмет был удалён, иначе <c>false</c>.</returns>
+        /// <param name="name">Название предмета.</param>
+        public bool RemoveItem(string name)
+        {
+            Items item = items.Find(i => i.name == name);
+            if (item != null) {
+                items.Remove(item);
                 return true;
             }
 
