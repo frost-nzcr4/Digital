@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Survival_on_island
@@ -31,6 +32,9 @@ namespace Survival_on_island
         public int Intelligence;
         public int Agility;
         public int Luck;
+
+        public int itemsMax;
+        public List<Items> items = new List<Items>();
 
         /// <summary>
         /// Короткая инициализация персонажа <see cref="Survival_on_island.Pers"/> только по имени.
@@ -116,6 +120,21 @@ namespace Survival_on_island
             Intelligence = Intelligence1;
             Agility = Agility1;
             Luck = Luck1;
+        }
+
+        /// <summary>
+        /// Добавляет предмет в инвентарь героя.
+        /// </summary>
+        /// <returns><c>true</c>, если предмет был добавлен, иначе <c>false</c>.</returns>
+        /// <param name="item">Предмет.</param>
+        public bool AddItem(Items item)
+        {
+            if (items.Count < itemsMax) {
+                items.Add(item);
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
